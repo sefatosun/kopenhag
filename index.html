@@ -27,110 +27,92 @@
   body{
     background:var(--paper);color:var(--ink);
     font-family:var(--body);font-size:16px;line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-    padding-bottom:56px;
+    -webkit-font-smoothing:antialiased;padding-bottom:56px;
   }
   .wrap{max-width:720px;margin:0 auto;padding:0 18px}
 
-  /* ---------- header ---------- */
   header{padding:34px 0 22px}
-  .eyebrow{
-    font-family:var(--data);font-size:15px;font-weight:600;
-    letter-spacing:.18em;text-transform:uppercase;color:var(--sea);
-  }
-  h1{
-    font-family:var(--display);font-weight:800;
-    font-size:clamp(38px,10vw,60px);line-height:.92;
-    letter-spacing:-.02em;margin:8px 0 14px;
-  }
+  .eyebrow{font-family:var(--data);font-size:15px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sea)}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,10vw,60px);line-height:.92;letter-spacing:-.02em;margin:8px 0 14px}
   h1 em{font-style:normal;display:block;color:var(--sea)}
-  .facts{
-    display:flex;flex-wrap:wrap;gap:0;
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  }
+  .facts{display:flex;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .fact{flex:1 1 130px;padding:12px 14px 12px 0;border-right:1px solid var(--line)}
   .fact:last-child{border-right:0}
   .fact dt{font-family:var(--data);font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
   .fact dd{font-weight:600;font-size:15px;margin-top:2px}
+  .hint{margin-top:14px;font-size:14px;color:var(--soft)}
+  .hint b{display:inline-block;width:20px;height:20px;line-height:18px;text-align:center;border:1px solid var(--sea);color:var(--sea);border-radius:50%;font-weight:600;font-size:15px;margin-right:4px;vertical-align:-3px}
 
-  /* ---------- day nav ---------- */
-  nav{
-    position:sticky;top:0;z-index:20;
-    background:rgba(230,233,228,.94);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
+  nav{position:sticky;top:0;z-index:20;background:rgba(230,233,228,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .rail{display:flex;gap:6px;overflow-x:auto;padding:10px 18px;max-width:720px;margin:0 auto;scrollbar-width:none}
   .rail::-webkit-scrollbar{display:none}
-  .rail a{
-    flex:0 0 auto;text-decoration:none;color:var(--ink);
-    font-family:var(--data);font-size:16px;font-weight:600;letter-spacing:.06em;
-    padding:7px 12px;border:1px solid var(--line);border-radius:2px;background:var(--card);
-    white-space:nowrap;
-  }
+  .rail a{flex:0 0 auto;text-decoration:none;color:var(--ink);font-family:var(--data);font-size:16px;font-weight:600;letter-spacing:.06em;padding:7px 12px;border:1px solid var(--line);border-radius:2px;background:var(--card);white-space:nowrap}
   .rail a:hover,.rail a:focus-visible{border-color:var(--sea);color:var(--sea)}
   .rail a b{display:block;font-size:12px;font-weight:500;color:var(--soft);letter-spacing:.1em;text-transform:uppercase}
 
-  /* ---------- day ---------- */
   .day{margin-top:44px}
   .day-head{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:8px}
-  .day-num{
-    font-family:var(--data);font-size:46px;font-weight:700;line-height:.8;
-    color:var(--sand);
-  }
+  .day-num{font-family:var(--data);font-size:46px;font-weight:700;line-height:.8;color:var(--sand)}
   .day-date{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.01em}
   .day-date span{display:block;font-family:var(--data);font-size:15px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
   .day-theme{margin-left:auto;font-family:var(--data);font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);text-align:right}
 
-  /* ---------- timeline (signature) ---------- */
   .stops{list-style:none;margin-top:6px}
-  .stop{display:grid;grid-template-columns:58px 1fr;gap:0}
-  .clock{
-    position:relative;padding-top:20px;
-    font-family:var(--data);font-size:21px;font-weight:700;letter-spacing:.02em;
-    color:var(--sea);font-variant-numeric:tabular-nums;
-  }
-  .clock::after{
-    content:"";position:absolute;left:46px;top:0;bottom:0;width:1px;background:var(--line);
-  }
+  .stop{display:grid;grid-template-columns:58px 1fr}
+  .clock{position:relative;padding-top:20px;font-family:var(--data);font-size:21px;font-weight:700;letter-spacing:.02em;color:var(--sea);font-variant-numeric:tabular-nums}
+  .clock::after{content:"";position:absolute;left:46px;top:0;bottom:0;width:1px;background:var(--line)}
   .stop:first-child .clock::after{top:22px}
   .stop:last-child .clock::after{bottom:auto;height:28px}
-  .clock i{
-    position:absolute;left:42px;top:26px;width:9px;height:9px;border-radius:50%;
-    background:var(--paper);border:2px solid var(--sea);font-style:normal;
-  }
-  .card{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:14px 16px;margin:14px 0 0 18px}
+  .clock i{position:absolute;left:42px;top:26px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--sea);font-style:normal}
+  .card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:3px;padding:14px 16px;margin:14px 0 0 18px}
   .stop.res .card{border-left:3px solid var(--red)}
   .stop.res .clock i{border-color:var(--red)}
-  .meal{
-    font-family:var(--data);font-size:14px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-    color:var(--sand);margin-bottom:2px;
-  }
-  .card h3{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.01em;line-height:1.2}
+  .meal{font-family:var(--data);font-size:14px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);margin-bottom:2px}
+  .card h3{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.01em;line-height:1.2;padding-right:34px}
   .addr{font-family:var(--data);font-size:16px;letter-spacing:.03em;color:var(--soft);margin-top:2px}
   .card p{font-size:14.5px;color:#37474F;margin-top:8px}
   .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-  .tag{
-    font-family:var(--data);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-    padding:2px 8px;border:1px solid var(--line);border-radius:2px;color:var(--soft);
-  }
+  .tag{font-family:var(--data);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border:1px solid var(--line);border-radius:2px;color:var(--soft)}
   .tag.red{border-color:var(--red);color:var(--red)}
   .tag.sea{border-color:var(--sea);color:var(--sea)}
-  .leg{
-    grid-column:2;margin:8px 0 0 18px;
-    font-family:var(--data);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);
-  }
+  .leg{grid-column:2;margin:8px 0 0 18px;font-family:var(--data);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
   .leg::before{content:"— "}
 
-  /* ---------- blocks ---------- */
+  /* ---- açılır ayrıntı ---- */
+  details.more{position:absolute;top:12px;right:12px}
+  details.more summary{
+    list-style:none;cursor:pointer;
+    width:26px;height:26px;border:1px solid var(--sea);border-radius:50%;
+    color:var(--sea);font-family:var(--data);font-size:20px;font-weight:600;
+    line-height:23px;text-align:center;background:var(--card);
+  }
+  details.more summary::-webkit-details-marker{display:none}
+  details.more summary::after{content:"+"}
+  details.more[open] summary::after{content:"–"}
+  details.more summary:focus-visible{outline:2px solid var(--sea);outline-offset:2px}
+  details.more .panel{
+    position:absolute;right:0;top:32px;width:min(78vw,320px);z-index:9;
+    background:var(--card);border:1px solid var(--sea);border-radius:3px;
+    padding:12px 14px;box-shadow:0 10px 28px rgba(20,32,42,.14);
+    font-size:14px;line-height:1.45;color:#37474F;text-align:left;
+  }
+  details.more .panel h4{
+    font-family:var(--data);font-size:14px;font-weight:600;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--sand);margin-bottom:4px;
+  }
+  details.more .panel p + h4{margin-top:10px}
+  details.more .panel a{
+    display:inline-block;margin-top:12px;
+    font-family:var(--data);font-size:16px;font-weight:600;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--sea);text-decoration:none;
+    border-bottom:1px solid var(--sea);
+  }
+
   .block{margin-top:52px;border-top:2px solid var(--ink);padding-top:18px}
   .block h2{font-family:var(--display);font-weight:800;font-size:27px;letter-spacing:-.02em}
   .block > p{color:#37474F;font-size:15px;margin-top:8px}
   table{width:100%;border-collapse:collapse;margin-top:14px;font-size:15px}
-  th{
-    font-family:var(--data);font-size:15px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
-    text-align:left;color:var(--soft);border-bottom:1px solid var(--line);padding:6px 8px 6px 0;
-  }
+  th{font-family:var(--data);font-size:15px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-align:left;color:var(--soft);border-bottom:1px solid var(--line);padding:6px 8px 6px 0}
   td{border-bottom:1px solid var(--line);padding:10px 8px 10px 0;vertical-align:top}
   td:last-child{font-family:var(--data);font-size:16px;letter-spacing:.03em;white-space:nowrap;color:var(--sea);font-weight:600}
   tr.must td:first-child{font-weight:600}
@@ -140,9 +122,7 @@
   .notes strong{font-family:var(--display);font-weight:600;font-size:16px;display:block;margin-bottom:3px}
   .notes span{font-size:14.5px;color:#37474F}
 
-  footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--line);
-    font-family:var(--data);font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);
-    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--data);font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   @media (max-width:420px){
     .stop{grid-template-columns:48px 1fr}
@@ -151,10 +131,7 @@
     .clock i{left:34px}
     .day-theme{flex-basis:100%;text-align:left;margin:6px 0 0}
   }
-  @media print{
-    nav{display:none}body{background:#fff}
-    .day{break-inside:avoid}
-  }
+  @media print{nav,details.more{display:none}body{background:#fff}.day{break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -169,6 +146,7 @@
     <div class="fact"><dt>Dönüş</dt><dd>4 Eyl · 12:55</dd></div>
     <div class="fact"><dt>Kart</dt><dd>Copenhagen Card<br>Discover 120 saat</dd></div>
   </dl>
+  <p class="hint"><b>+</b> Her durağın köşesindeki artıya dokunun: ne yenir, ne kadar sürer, hangi ipucu işe yarar — ve fotoğraflarla harita.</p>
 </header>
 </div>
 
@@ -188,280 +166,432 @@
 
 <!-- ============ GÜN 1 ============ -->
 <section class="day" id="g1">
-  <div class="day-head">
-    <div class="day-num">1</div>
+  <div class="day-head"><div class="day-num">1</div>
     <div class="day-date">30 Ağustos<span>Pazar</span></div>
-    <div class="day-theme">Varış &amp; Tivoli</div>
-  </div>
+    <div class="day-theme">Varış &amp; Tivoli</div></div>
   <ul class="stops">
+
     <li class="stop"><div class="clock">13:30<i></i></div>
-      <div class="card"><h3>Otele bagaj bırakma</h3><div class="addr">ProfilHotels Copenhagen Plaza · Bernstorffsgade 4</div>
-        <p>Havalimanından direkt tren, 13 dakika. Gardan otele 2 dakika. Check-in 15:00.</p></div>
-      <div class="leg">Karşı kaldırım · 1 dk</div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ulaşım</h4><p>Havalimanından direkt tren, 13 dakika, Copenhagen Card'a dahil. Gardan otele 2 dakika.</p>
+          <h4>İpucu</h4><p>Check-in 15:00 ama bagajı resepsiyona bırakabilirsiniz. Kartı da bu sırada aktive edin.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=ProfilHotels+Copenhagen+Plaza+Bernstorffsgade+4" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Otele bagaj bırakma</h3><div class="addr">ProfilHotels Copenhagen Plaza · Bernstorffsgade 4</div></div>
+      <div class="leg">Karşı kaldırım · 1 dk</div></li>
+
     <li class="stop"><div class="clock">14:00<i></i></div>
-      <div class="card"><div class="meal">Öğle yemeği</div><h3>Gasoline Grill · Tivoli Food Hall</h3><div class="addr">Bernstorffsgade 5 · otelin karşısı</div>
-        <p>Tivoli'nin dışında, park bileti gerekmiyor. Gasoline Grill'in tezgâhı salonun içinde; çocuklar başka bir şey isterse diğer dokuz tezgâh da aynı masaya taşınıyor. Musluk suyu isteyin: <em>“postevand, tak.”</em></p>
-        <div class="tags"><span class="tag">11:00–21:00</span><span class="tag">Rezervasyon yok</span></div></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne yenir</h4><p>Gasoline Grill'in klasik cheeseburger + patates ikilisi. Çocuklar başka bir şey isterse salondaki diğer dokuz tezgâh aynı masaya taşınır.</p>
+          <h4>İpucu</h4><p>Tivoli'nin dışında, park bileti gerekmiyor. 13:30–14:30 en yoğun saat. Musluk suyu isteyin: “postevand, tak.”</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Tivoli+Food+Hall+Bernstorffsgade+5+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <div class="meal">Öğle yemeği</div><h3>Gasoline Grill · Tivoli Food Hall</h3><div class="addr">Bernstorffsgade 5 · otelin karşısı</div>
+        <div class="tags"><span class="tag">11:00–21:00</span><span class="tag">Rezervasyon yok</span></div></div></li>
+
     <li class="stop"><div class="clock">15:00<i></i></div>
       <div class="card"><h3>Check-in ve mola</h3><div class="addr">Otel</div></div>
-      <div class="leg">Yürüyüş · 5 dk</div>
-    </li>
+      <div class="leg">Yürüyüş · 5 dk</div></li>
+
     <li class="stop"><div class="clock">15:45<i></i></div>
-      <div class="card"><h3>Rådhuspladsen → Strøget</h3><div class="addr">Belediye Meydanı · Frederiksberggade</div>
-        <p>Strøget beş caddenin arka arkaya dizildiği 1,1 km'lik yaya hattı. Yolda Gammeltorv'daki 1608 tarihli Caritas Çeşmesi ve Højbro Plads'taki Piskopos Absalon heykeli.</p></div>
-      <div class="leg">Yürüyüş · 8 dk</div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne görülür</h4><p>Strøget beş caddenin arka arkaya dizildiği 1,1 km'lik yaya hattı. Yolda Gammeltorv'daki 1608 tarihli Caritas Çeşmesi ve Højbro Plads'taki Piskopos Absalon heykeli.</p>
+          <h4>Süre</h4><p>Aheste yürünürse 45 dakika. Vitrinlere bakarsanız daha uzun — bugün acele yok.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Str%C3%B8get+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Rådhuspladsen → Strøget</h3><div class="addr">Belediye Meydanı · Frederiksberggade</div></div>
+      <div class="leg">Yürüyüş · 8 dk</div></li>
+
     <li class="stop"><div class="clock">16:45<i></i></div>
-      <div class="card"><h3>Christiansborg Kulesi</h3><div class="addr">Christiansborg Slotsplads</div>
-        <p>Şehrin en yüksek kulesi, 106 m, iki asansörle çıkılıyor. Havaalanı tipi güvenlik var, sıraya erken girin.</p>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne var</h4><p>Şehrin en yüksek kulesi, 106 metre. İki asansörle çıkılıyor, son bölüm birkaç basamak. Dört cepheden panorama.</p>
+          <h4>İpucu</h4><p>Havaalanı tipi güvenlik var, sıra 20–30 dakika sürebiliyor. Pazar günü 17:30'da kapanıyor — 16:45'te sırada olun.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Christiansborg+Tower+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Christiansborg Kulesi</h3><div class="addr">Christiansborg Slotsplads</div>
         <div class="tags"><span class="tag sea">Ücretsiz</span><span class="tag">Pazar 17:30 kapanış</span></div></div>
-      <div class="leg">Yürüyüş · 12 dk</div>
-    </li>
+      <div class="leg">Yürüyüş · 12 dk</div></li>
+
     <li class="stop"><div class="clock">17:45<i></i></div>
-      <div class="card"><h3>Nyhavn</h3><div class="addr">1670'ten kalma liman kanalı</div>
-        <p>Renkli evlerin önünde dondurma molası.</p></div>
-      <div class="leg">Yürüyüş · 20 dk</div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne var</h4><p>1670'te kazılmış liman kanalı, iki yanı 17. yüzyıl evleri. 9 numara caddenin en eskisi, 1681'den kalma.</p>
+          <h4>İpucu</h4><p>Kanalın güneşli tarafı kuzey sırası. Dondurma için Vaffelbageriet'in külahları meşhur.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Nyhavn</h3><div class="addr">Dondurma molası</div></div>
+      <div class="leg">Yürüyüş · 20 dk</div></li>
+
     <li class="stop res"><div class="clock">19:00<i></i></div>
-      <div class="card"><div class="meal">Akşam yemeği</div><h3>Figaro – bar &amp; bistro</h3><div class="addr">Tivoli içinde · Vesterbrogade 3</div>
-        <p>Parkın en yüksek puanlı restoranı. Fish and chips, linguine, biftek, çocuk menüsü. 18:45'te parkta olun. %25 servis ücreti ekleniyor, su şişesi getirtmeyin.</p>
-        <div class="tags"><span class="tag red">Rezervasyon</span><span class="tag">4 kişi · 19:00</span></div></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne yenir</h4><p>Fish and chips ve linguine en çok övülen iki tabak. Çocuk menüsü var. Tatlıya yer bırakın.</p>
+          <h4>İpucu</h4><p>Tivoli girişi ayrı bilet, 18:45'te parkta olun. Hesaba %25 servis ekleniyor; sorulmadan gelen şişe suya “postevand, tak” deyin.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Figaro+bar+bistro+Tivoli+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <div class="meal">Akşam yemeği</div><h3>Figaro – bar &amp; bistro</h3><div class="addr">Tivoli içinde · Vesterbrogade 3</div>
+        <div class="tags"><span class="tag red">Rezervasyon</span><span class="tag">4 kişi · 19:00</span></div></div></li>
+
     <li class="stop"><div class="clock">20:15<i></i></div>
-      <div class="card"><h3>Tivoli'de ışıklar</h3><div class="addr">Gün batımı</div>
-        <p>Park turu, oyuncaklar. 22:00'de 5 dakikada otele.</p>
-        <div class="tags"><span class="tag">Bileklik 269 DKK</span></div></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Oyuncaklar</h4><p>Rutschebanen 1914'ten kalma ahşap hız treni, frencisi hâlâ arabada oturuyor. Küçükler için Ballongyngen ve Minen. Boy sınırlarını girişte kontrol edin.</p>
+          <h4>İpucu</h4><p>Bileklik 269 DKK, kartla gelmiyor. Işıklar gün batımında, 20:15 civarında yanıyor — göl kenarı en iyi nokta.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Tivoli+Gardens+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Tivoli'de ışıklar</h3><div class="addr">Gün batımı · 22:00'de otel</div>
+        <div class="tags"><span class="tag">Bileklik 269 DKK</span></div></div></li>
   </ul>
 </section>
 
 <!-- ============ GÜN 2 ============ -->
 <section class="day" id="g2">
-  <div class="day-head">
-    <div class="day-num">2</div>
+  <div class="day-head"><div class="day-num">2</div>
     <div class="day-date">31 Ağustos<span>Pazartesi</span></div>
-    <div class="day-theme">Experimentarium</div>
-  </div>
+    <div class="day-theme">Experimentarium</div></div>
   <ul class="stops">
+
     <li class="stop"><div class="clock">09:00<i></i></div>
-      <div class="card"><div class="meal">Kahvaltı</div><h3>Rug Bakery</h3><div class="addr">Tietgensgade 39 · otele 4 dk</div>
-        <p>Kakuleli çörek ve tarçınlı çörek. Otel kahvaltınız dahilse orayı kullanın, bu yedek.</p></div>
-      <div class="leg">S-tog A/B/C → Hellerup · 12 dk + 10 dk yürüyüş</div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne alınır</h4><p>Kakuleli çörek (kardemommesnurre) ve tarçınlı çörek. Yumurtalı tabaklar da var.</p>
+          <h4>İpucu</h4><p>07:00'de açılıyor, oturma alanı geniş. Otel kahvaltınız dahilse burayı öğlen için sandviç almaya kullanın.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Rug+Bakery+Tietgensgade+39+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <div class="meal">Kahvaltı</div><h3>Rug Bakery</h3><div class="addr">Tietgensgade 39 · otele 4 dk</div></div>
+      <div class="leg">S-tog A/B/C → Hellerup · 12 dk + 10 dk yürüyüş</div></li>
+
     <li class="stop"><div class="clock">10:45<i></i></div>
-      <div class="card"><h3>Experimentarium</h3><div class="addr">Tuborg Havnevej 7, Hellerup</div>
-        <p>Dört katlı interaktif bilim merkezi. Dev sabun köpüğü atölyesi, vücut bölümü, tünel labirenti, çatı katı.</p>
-        <div class="tags"><span class="tag red">Saatli bilet</span><span class="tag">4 saat ayırın</span></div></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne var</h4><p>Dört katlı interaktif bilim merkezi. Dev sabun köpüğü atölyesi, insan vücudu bölümü, tünel labirenti ve çatı katı en sevilenler.</p>
+          <h4>İpucu</h4><p>Dolaplar ücretsiz, mont ve çantayı bırakın. Su doldurma noktaları var, matara götürün. Dört saat kolay geçiyor.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Experimentarium+Tuborg+Havnevej+7+Hellerup" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Experimentarium</h3><div class="addr">Tuborg Havnevej 7, Hellerup</div>
+        <div class="tags"><span class="tag red">Saatli bilet</span><span class="tag">4 saat</span></div></div></li>
+
     <li class="stop"><div class="clock">13:00<i></i></div>
       <div class="card"><div class="meal">Öğle yemeği</div><h3>Experimentarium restoranı</h3><div class="addr">Müzenin içinde</div>
-        <p>Pratik ama vasat. İsterseniz sabah Rug Bakery'den sandviç alıp piknik alanını kullanın.</p></div>
-      <div class="leg">Tren Hellerup → Østerport · 8 dk</div>
-    </li>
+        <p>Pratik ama vasat. Sabah Rug Bakery'den sandviç aldıysanız piknik alanını kullanın.</p></div>
+      <div class="leg">Tren Hellerup → Østerport · 8 dk</div></li>
+
     <li class="stop"><div class="clock">15:20<i></i></div>
-      <div class="card"><h3>Apotek 57</h3><div class="addr">Fredericiagade 57</div>
-        <p>Frama tasarım mağazasının üst katındaki kafe; bina eski bir eczane, orijinal ahşap dolapları duruyor. Kahve, tarçınlı çörek ve alışveriş.</p>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne yenir</h4><p>Tarçınlı çörek (kanelsnegl) ve kruvasan. Kahve sade filtre, latte beklemeyin.</p>
+          <h4>Alışveriş</h4><p>Kafe, Frama'nın tasarım mağazasının üst katında — bina 19. yüzyıldan kalma bir eczane, orijinal ahşap dolapları duruyor. Sabun ve mumlar küçük hediyelik olarak iyi.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Apotek+57+Frama+Fredericiagade+57+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Apotek 57</h3><div class="addr">Fredericiagade 57</div>
         <div class="tags"><span class="tag red">16:00 kapanış</span></div></div>
-      <div class="leg">Yürüyüş · 8 dk</div>
-    </li>
+      <div class="leg">Yürüyüş · 8 dk</div></li>
+
     <li class="stop"><div class="clock">16:15<i></i></div>
-      <div class="card"><h3>Kastellet</h3><div class="addr">Yıldız planlı deniz kalesi, 1660'lar</div>
-        <p>Hendek, yel değirmeni, surlarda yürüyüş.</p></div>
-      <div class="leg">Yürüyüş · 10 dk</div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne var</h4><p>1660'lardan kalma yıldız planlı deniz kalesi. Hendek çevresi 1,5 km, içinde yel değirmeni, kilise ve kışlalar. Hâlâ askeri alan, ama gezmeye açık.</p>
+          <h4>Çocuklar için</h4><p>Surların üstünde yürümek ve hendekteki ördekler asıl eğlence. Küçük Deniz Kızı'na buradan 10 dakika.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Kastellet+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Kastellet</h3><div class="addr">Yıldız planlı deniz kalesi</div></div>
+      <div class="leg">Yürüyüş · 10 dk</div></li>
+
     <li class="stop"><div class="clock">16:45<i></i></div>
-      <div class="card"><h3>Den Lille Havfrue</h3><div class="addr">Langelinie rıhtımı</div>
-        <p>Küçük Deniz Kızı, 1913. Ardından Amalienborg üzerinden Nyhavn'a sahil yürüyüşü.</p></div>
-      <div class="leg">Yürüyüş · 25 dk</div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne var</h4><p>Andersen'in masalından, 1913 tarihli bronz heykel. Sanılandan çok küçük — 1,25 metre.</p>
+          <h4>İpucu</h4><p>Gün boyu kalabalık, on dakika yeter. Sonra Amalienborg üzerinden Nyhavn'a sahil yürüyüşü.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=The+Little+Mermaid+statue+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Den Lille Havfrue</h3><div class="addr">Langelinie rıhtımı</div></div>
+      <div class="leg">Yürüyüş · 25 dk</div></li>
+
     <li class="stop"><div class="clock">18:30<i></i></div>
-      <div class="card"><div class="meal">Akşam yemeği</div><h3>Gasoline Grill</h3><div class="addr">Landgreven 10</div>
-        <p>Terk edilmiş bir benzin istasyonunda; günlük sınırlı sayıda burger yapıp tükenince kapatıyorlar.</p>
-        <div class="tags"><span class="tag">Rezervasyon yok</span><span class="tag red">20:30 kapanış</span></div></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne yenir</h4><p>Menü kısa: cheeseburger, tavuklu ve vejetaryen. Patates ayrı söylenir.</p>
+          <h4>İpucu</h4><p>Terk edilmiş bir benzin istasyonunda; günlük sınırlı sayıda üretip tükenince kapatıyorlar. 20:30 kapanış — geç kalırsanız Købmagergade şubesi yedeğiniz.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Gasoline+Grill+Landgreven+10+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <div class="meal">Akşam yemeği</div><h3>Gasoline Grill</h3><div class="addr">Landgreven 10</div>
+        <div class="tags"><span class="tag">Rezervasyon yok</span><span class="tag red">20:30 kapanış</span></div></div></li>
   </ul>
 </section>
 
 <!-- ============ GÜN 3 ============ -->
 <section class="day" id="g3">
-  <div class="day-head">
-    <div class="day-num">3</div>
+  <div class="day-head"><div class="day-num">3</div>
     <div class="day-date">1 Eylül<span>Salı</span></div>
-    <div class="day-theme">Hayvanat Bahçesi</div>
-  </div>
+    <div class="day-theme">Hayvanat Bahçesi</div></div>
   <ul class="stops">
+
     <li class="stop"><div class="clock">09:00<i></i></div>
-      <div class="card"><div class="meal">Kahvaltı</div><h3>Otel ya da Better Bakery</h3><div class="addr">Helgolandsgade 10 · otele 8 dk</div>
-        <p>Küçük ve çok iyi puanlı bir mahalle fırını.</p></div>
-      <div class="leg">M3 → Frederiksberg + park içinden 20 dk, ya da 26 numaralı otobüs</div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne alınır</h4><p>Küçük bir mahalle fırını, 4,8 puanlı. Wienerbrød ve kahve.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Better+Bakery+Helgolandsgade+10+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <div class="meal">Kahvaltı</div><h3>Otel ya da Better Bakery</h3><div class="addr">Helgolandsgade 10 · otele 8 dk</div></div>
+      <div class="leg">M3 → Frederiksberg + park içinden 20 dk, ya da 26 numaralı otobüs</div></li>
+
     <li class="stop"><div class="clock">10:15<i></i></div>
-      <div class="card"><h3>Zoologisk Have</h3><div class="addr">Roskildevej 32, Frederiksberg</div>
-        <p>1859'dan beri açık. Panda Huset (Bjarke Ingels), Elefanthuset (Norman Foster), Børnezoo'da keçi besleme ve dokunma alanı.</p></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Kaçırmayın</h4><p>Panda Huset (Bjarke Ingels'in yin-yang planlı yapısı), Elefanthuset (Norman Foster'ın cam kubbesi), Børnezoo'da keçi besleme ve dokunma alanı.</p>
+          <h4>İpucu</h4><p>Açılışta pandalar en hareketli. Besleme saatleri girişteki tabelada yazıyor, güne ona göre plan yapın.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Copenhagen+Zoo+Roskildevej+32" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Zoologisk Have</h3><div class="addr">Roskildevej 32, Frederiksberg</div></div></li>
+
     <li class="stop"><div class="clock">13:00<i></i></div>
       <div class="card"><div class="meal">Öğle yemeği</div><h3>Zoo içindeki restoran</h3></div>
-      <div class="leg">Yürüyüş · 10 dk</div>
-    </li>
+      <div class="leg">Yürüyüş · 10 dk</div></li>
+
     <li class="stop"><div class="clock">15:15<i></i></div>
-      <div class="card"><h3>Frederiksberg Have</h3><div class="addr">Kraliyet parkı, 1700'ler</div>
-        <p>Kanallar, gölet, tepede Frederiksberg Slot. Parkın güney kenarından zoo'nun fillerini bedavaya görüyorsunuz.</p></div>
-      <div class="leg">Metro · otelde dinlenme 16:30</div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne var</h4><p>1700'lerden kalma İngiliz tarzı kraliyet parkı: kanallar, gölet, tepede Frederiksberg Slot ve bir Çin pavyonu.</p>
+          <h4>İpucu</h4><p>Parkın güney kenarından hayvanat bahçesinin fillerini bedavaya görüyorsunuz. Gölette kürek sandalı kiralanıyor.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Frederiksberg+Have+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Frederiksberg Have</h3><div class="addr">Kraliyet parkı</div></div>
+      <div class="leg">Metro · 16:30 otelde dinlenme</div></li>
+
     <li class="stop res"><div class="clock">18:30<i></i></div>
-      <div class="card"><div class="meal">Akşam yemeği</div><h3>Bæst</h3><div class="addr">Guldbergsgade 29, Nørrebro</div>
-        <p>Mozzarella ve burratayı kendi mandıralarında üretiyorlar, şarküteri kendi imalatları, hamur ekşi mayalı. Ulaşım: 5C otobüsü ya da M3 Nørrebro + 10 dk.</p>
-        <div class="tags"><span class="tag red">Rezervasyon şart</span><span class="tag">Hafta içi sadece akşam</span></div></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne yenir</h4><p>Başlangıçta burrata ve kendi kurdukları salumi tabağı. Pizzalarda nduja'lı ve sucuklu öne çıkıyor; çocuklara sade margherita.</p>
+          <h4>İpucu</h4><p>Mozzarellayı kendi mandıralarında üretiyorlar, hamur ekşi mayalı. Hafta içi sadece akşam açık, masalar haftalar öncesinden doluyor.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Baest+Guldbergsgade+29+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <div class="meal">Akşam yemeği</div><h3>Bæst</h3><div class="addr">Guldbergsgade 29, Nørrebro</div>
+        <div class="tags"><span class="tag red">Rezervasyon şart</span><span class="tag">5C otobüsü ya da M3</span></div></div></li>
   </ul>
 </section>
 
 <!-- ============ GÜN 4 ============ -->
 <section class="day" id="g4">
-  <div class="day-head">
-    <div class="day-num">4</div>
+  <div class="day-head"><div class="day-num">4</div>
     <div class="day-date">2 Eylül<span>Çarşamba</span></div>
-    <div class="day-theme">Kraliyet &amp; Alışveriş</div>
-  </div>
+    <div class="day-theme">Kraliyet &amp; Alışveriş</div></div>
   <ul class="stops">
+
     <li class="stop"><div class="clock">09:00<i></i></div>
-      <div class="card"><div class="meal">Kahvaltı</div><h3>Atelier September</h3><div class="addr">Kronprinsessegade 62</div>
-        <p>Şehirdeki avokadolu ekmek modasını başlatan kafe. Bademli krep ve tereyağlı ekşi maya ekmeği.</p>
-        <div class="tags"><span class="tag">Rezervasyon yok · kuyruk</span></div></div>
-      <div class="leg">Yürüyüş · 5 dk</div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne yenir</h4><p>Bademli krep ve tereyağlı ekşi maya ekmeği. Şehirdeki avokadolu ekmek modasını başlatan yer burası.</p>
+          <h4>İpucu</h4><p>Rezervasyon almıyorlar, isim de yazdırmıyorsunuz — kapıda sıraya giriyorsunuz. 09:00'da 20-30 dakika bekleyebilirsiniz.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Atelier+September+Kronprinsessegade+62+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <div class="meal">Kahvaltı</div><h3>Atelier September</h3><div class="addr">Kronprinsessegade 62</div></div>
+      <div class="leg">Yürüyüş · 5 dk</div></li>
+
     <li class="stop"><div class="clock">10:30<i></i></div>
-      <div class="card"><h3>Kongens Have</h3><div class="addr">Rosenborg'un bahçesi, 1606</div>
-        <p>Danimarka'nın en eski kraliyet bahçesi. Çocuk oyun alanı burada.</p></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Çocuklar için</h4><p>Oyun alanı bahçenin kuzey tarafında, Kronprinsessegade kapısına yakın. Yazın kukla tiyatrosu da oluyor.</p>
+          <h4>Ne var</h4><p>Danimarka'nın en eski kraliyet bahçesi, 1606. Gül bahçesi ve Herkül pavyonu.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Kongens+Have+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Kongens Have</h3><div class="addr">Rosenborg'un bahçesi</div></div></li>
+
     <li class="stop"><div class="clock">11:30<i></i></div>
-      <div class="card"><h3>Livgarden'ın yürüyüşü</h3><div class="addr">Rosenborg Kışlası · Gothersgade 100</div>
-        <p>Kraliyet muhafızları bando eşliğinde şehir içinden yürüyor. Peşlerinden gidin — yol da gösterinin parçası.</p></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Nasıl işliyor</h4><p>Muhafızlar Gothersgade 100'deki kışladan 11:30'da çıkıp şehrin içinden Amalienborg'a yürüyor. Yol boyunca trafik durduruluyor.</p>
+          <h4>İpucu</h4><p>Meydanda beklemek yerine alayın peşinden yürüyün — çocuklar için asıl gösteri bu.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Rosenborg+Barracks+Gothersgade+100+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Livgarden'ın yürüyüşü</h3><div class="addr">Rosenborg Kışlası · Gothersgade 100</div></div></li>
+
     <li class="stop"><div class="clock">12:00<i></i></div>
-      <div class="card"><h3>Amalienborg nöbet değişimi</h3><div class="addr">Dört rokoko sarayın çevrelediği meydan</div></div>
-      <div class="leg">Yürüyüş · 12 dk</div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne var</h4><p>Kraliyet ailesinin kışlık ikametgâhı: dört özdeş rokoko sarayın çevrelediği sekizgen meydan. Nöbet değişimi ortadaki atlı heykelin çevresinde.</p>
+          <h4>İpucu</h4><p>Meydanın kuzey köşesi daha az kalabalık. Marmorkirken'in kubbesi arka planda güzel kare veriyor.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Amalienborg+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Amalienborg nöbet değişimi</h3><div class="addr">Dört rokoko saray</div></div>
+      <div class="leg">Yürüyüş · 12 dk</div></li>
+
     <li class="stop"><div class="clock">12:45<i></i></div>
-      <div class="card"><div class="meal">Öğle yemeği</div><h3>Kong Hans Bakery — duvar penceresi</h3><div class="addr">Vingårdstræde 6</div>
-        <p>İki Michelin yıldızlı Kong Hans Kælder'in aynı binadaki fırını; sokağa açılan pencereden satış. Sandviç ve hamur işi alıp Kongens Nytorv'da yiyin.</p>
-        <div class="tags"><span class="tag">Tükenince kapanıyor</span></div></div>
-      <div class="leg">Yürüyüş · 10 dk</div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne alınır</h4><p>Sandviç ve hamur işi. İki Michelin yıldızlı Kong Hans Kælder'in aynı binadaki fırını — sokağa açılan bir pencereden satış yapıyorlar.</p>
+          <h4>İpucu</h4><p>Tükenince kapanıyor, 12:45 güvenli saat. Alıp Kongens Nytorv'un banklarında yiyin.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Kong+Hans+Bakery+Ving%C3%A5rdstr%C3%A6de+6+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <div class="meal">Öğle yemeği</div><h3>Kong Hans Bakery — duvar penceresi</h3><div class="addr">Vingårdstræde 6</div></div>
+      <div class="leg">Yürüyüş · 10 dk</div></li>
+
     <li class="stop"><div class="clock">14:00<i></i></div>
-      <div class="card"><h3>Rosenborg Slot</h3><div class="addr">Øster Voldgade 4A</div>
-        <p>IV. Christian'ın 1606 tarihli Rönesans şatosu. Bodrumda kraliyet tacı ve mücevherleri.</p>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Kaçırmayın</h4><p>Bodrumdaki hazine dairesinde kraliyet tacı ve mücevherleri. Üst katta Uzun Salon ve gümüş aslanlar.</p>
+          <h4>İpucu</h4><p>IV. Christian'ın 1606 tarihli Rönesans şatosu. 17:00'de kapanıyor, hazine dairesine sıra olabiliyor — önce oraya inin.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Rosenborg+Castle+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Rosenborg Slot</h3><div class="addr">Øster Voldgade 4A</div>
         <div class="tags"><span class="tag">17:00 kapanış</span></div></div>
-      <div class="leg">Yürüyüş · 12 dk</div>
-    </li>
+      <div class="leg">Yürüyüş · 12 dk</div></li>
+
     <li class="stop"><div class="clock">15:45<i></i></div>
-      <div class="card"><h3>Magasin du Nord</h3><div class="addr">Kongens Nytorv 13</div>
-        <p>1868'den beri açık. 3. katta H.C. Andersen'in yaşadığı tavan arası odası ücretsiz gezilebiliyor.</p>
-        <div class="tags"><span class="tag sea">Tax free formu isteyin</span><span class="tag">21:00'e kadar</span></div></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Kaçırmayın</h4><p>3. katta H.C. Andersen'in genç yaşta kaldığı tavan arası odası — girişi ücretsiz ve çoğu turist bilmiyor.</p>
+          <h4>Alışveriş</h4><p>Zemin katta Danimarka tasarımı, üst katta Royal Copenhagen ve Georg Jensen. 300 DKK üstü alışverişte kasada tax-free formu isteyin.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Magasin+du+Nord+Kongens+Nytorv+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Magasin du Nord</h3><div class="addr">Kongens Nytorv 13</div>
+        <div class="tags"><span class="tag sea">Tax free</span><span class="tag">21:00'e kadar</span></div></div></li>
+
     <li class="stop"><div class="clock">16:15<i></i></div>
-      <div class="card"><h3>ILLUM</h3><div class="addr">Østergade 52 · Strøget</div>
-        <p>Üst katında çatı terası ve yeme-içme bölümü var.</p>
-        <div class="tags"><span class="tag">20:00'e kadar</span></div></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne var</h4><p>Strøget üzerindeki büyük mağaza. Üst katında çatı terası ve yeme-içme bölümü var, mola için iyi.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=ILLUM+%C3%98stergade+52+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>ILLUM</h3><div class="addr">Østergade 52 · Strøget</div>
+        <div class="tags"><span class="tag">20:00'e kadar</span></div></div></li>
+
     <li class="stop"><div class="clock">16:45<i></i></div>
-      <div class="card"><h3>Rundetårn</h3><div class="addr">Købmagergade 52A</div>
-        <p>1642 tarihli gözlemevi. Merdiven yok — 209 metrelik sarmal rampadan yürüyerek çıkılıyor.</p></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne var</h4><p>1642 tarihli gözlemevi. Merdiven yok — 209 metrelik sarmal rampadan yürüyerek çıkılıyor. Çar 1. Petro atıyla çıkmış.</p>
+          <h4>Çocuklar için</h4><p>Ortadaki cam zeminli boşluk 25 metre aşağıyı gösteriyor; üstünde durmak cesaret işi.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Rundet%C3%A5rn+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Rundetårn</h3><div class="addr">Købmagergade 52A</div></div></li>
+
     <li class="stop"><div class="clock">17:20<i></i></div>
-      <div class="card"><h3>LEGO Store</h3><div class="addr">Vimmelskaftet 37 · Strøget</div>
-        <p>Kendi mini figürünü yaratma istasyonu ve tek tek parça alınan Pick a Brick duvarı.</p>
-        <div class="tags"><span class="tag">19:00 kapanış</span></div></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Çocuklar için</h4><p>Kendi mini figürünü yaratma istasyonu ve tek tek parça alınan Pick a Brick duvarı. Danimarka'ya özel setler burada.</p>
+          <h4>İpucu</h4><p>19:00'da kapanıyor. Mağaza küçük ve kalabalık, uzun kalmayı planlamayın.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=LEGO+Store+Vimmelskaftet+37+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>LEGO Store</h3><div class="addr">Vimmelskaftet 37 · Strøget</div>
+        <div class="tags"><span class="tag">19:00 kapanış</span></div></div></li>
+
     <li class="stop"><div class="clock">17:50<i></i></div>
-      <div class="card"><h3>Build-A-Bear Workshop</h3><div class="addr">Købmagergade 44</div>
-        <p>Ayıyı seç, doldur, kalbini koy, doğum belgesini al.</p>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Nasıl işliyor</h4><p>Ayıyı seç, doldurma makinesinde doldur, içine kalp koy, yıka-tara, kıyafet seç, doğum belgesini al. 30–40 dakika sürüyor.</p>
+          <h4>İpucu</h4><p>Kalbe ses kaydı ekleme seçeneği var — çocuklar için en akılda kalan kısım bu.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Build-A-Bear+Workshop+K%C3%B8bmagergade+44+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Build-A-Bear Workshop</h3><div class="addr">Købmagergade 44</div>
         <div class="tags"><span class="tag">19:00 kapanış</span></div></div>
-      <div class="leg">Metro + yürüyüş · 20 dk</div>
-    </li>
+      <div class="leg">Metro + yürüyüş · 20 dk</div></li>
+
     <li class="stop res"><div class="clock">19:00<i></i></div>
-      <div class="card"><div class="meal">Akşam yemeği</div><h3>Madklubben Vesterbro</h3><div class="addr">Vesterbrogade 62</div>
-        <p>Sabit fiyatlı, bir-iki-üç tabak seçilen format. Kopenhag fiyatlarına göre en makul akşam yemeği.</p>
-        <div class="tags"><span class="tag red">Rezervasyon önerilir</span></div></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Nasıl işliyor</h4><p>Sabit fiyatlı format: bir, iki ya da üç tabak seçiyorsunuz. Kopenhag fiyatlarına göre en makul akşam yemeği.</p>
+          <h4>İpucu</h4><p>Salon büyük ve gürültülü, çocuklu masalar için sorun değil. Rezervasyon önerilir.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Madklubben+Vesterbro+Vesterbrogade+62+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <div class="meal">Akşam yemeği</div><h3>Madklubben Vesterbro</h3><div class="addr">Vesterbrogade 62</div>
+        <div class="tags"><span class="tag red">Rezervasyon önerilir</span></div></div></li>
   </ul>
 </section>
 
 <!-- ============ GÜN 5 ============ -->
 <section class="day" id="g5">
-  <div class="day-head">
-    <div class="day-num">5</div>
+  <div class="day-head"><div class="day-num">5</div>
     <div class="day-date">3 Eylül<span>Perşembe</span></div>
-    <div class="day-theme">Nørrebro &amp; Strøget</div>
-  </div>
+    <div class="day-theme">Nørrebro &amp; Strøget</div></div>
   <ul class="stops">
+
     <li class="stop"><div class="clock">09:00<i></i></div>
-      <div class="card"><div class="meal">Kahvaltı</div><h3>BUKA</h3><div class="addr">Store Kongensgade 18</div>
-        <p>Fıstıklı-baklavalı kruvasanıyla tanınıyor. Kuyruk uzun ama hızlı ilerliyor.</p></div>
-      <div class="leg">Yürüyüş · 10 dk</div>
-    </li>
-    <li class="stop"><div class="clock">10:30<i></i></div>
-      <div class="card"><h3>Nyhavn</h3><div class="addr">Kanal ağzı</div>
-        <p>Sabah saatleri en sakin ve fotoğraf için en iyi ışık.</p></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne alınır</h4><p>Fıstıklı-baklavalı kruvasan meşhur olan. Sade kruvasan ve kanelsnegl de çok iyi.</p>
+          <h4>İpucu</h4><p>Kuyruk uzun görünüyor ama hızlı ilerliyor. Oturacak yer az, alıp yürümeye hazır olun.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=BUKA+Store+Kongensgade+18+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <div class="meal">Kahvaltı</div><h3>BUKA</h3><div class="addr">Store Kongensgade 18</div></div>
+      <div class="leg">Yürüyüş · 10 dk</div></li>
+
     <li class="stop res"><div class="clock">11:00<i></i></div>
-      <div class="card"><h3>Kanal turu</h3><div class="addr">Kalkış: Nyhavn</div>
-        <p>1 saat. Christianshavn kanalları, Opera Binası, Küçük Deniz Kızı ve Christiansborg'un alçak köprüleri rotada.</p>
-        <div class="tags"><span class="tag sea">Copenhagen Card'a dahil</span><span class="tag red">Saatli bilet</span></div></div>
-      <div class="leg">Metro M3 → Nørrebro · 15 dk</div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Rota</h4><p>1 saat. Christianshavn kanalları, Opera Binası, Küçük Deniz Kızı ve Christiansborg'un altındaki alçak köprüler.</p>
+          <h4>İpucu</h4><p>Açık üst kat için erken sıraya girin. Alçak köprülerde eğilmeniz söyleniyor. Suda rüzgâr oluyor, hırka alın.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Nyhavn+canal+tour+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Kanal turu</h3><div class="addr">Kalkış: Nyhavn · 10:30'da orada olun</div>
+        <div class="tags"><span class="tag sea">Karta dahil</span><span class="tag red">Saatli bilet</span></div></div>
+      <div class="leg">Metro M3 → Nørrebro · 15 dk</div></li>
+
     <li class="stop res"><div class="clock">12:45<i></i></div>
-      <div class="card"><div class="meal">Öğle yemeği</div><h3>Poulette</h3><div class="addr">Møllegade 1, Nørrebro</div>
-        <p>Kızarmış tavuk sandviçi. Oturma yeri yok, sadece paket — yemeği 3 dakika ötedeki Sankt Hans Torv'da yiyin.</p>
-        <div class="tags"><span class="tag red">Telefonla ön sipariş</span></div></div>
-      <div class="leg">Yürüyüş · 12 dk</div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne yenir</h4><p>Kızarmış tavuk sandviçi — acılı ve sade seçeneği var. Patatesleri de iyi.</p>
+          <h4>İpucu</h4><p>Oturma yeri yok, sadece paket. Telefonla ön sipariş verin, yoksa 30 dakika beklersiniz. Yemeği 3 dakika ötedeki Sankt Hans Torv'da yiyin.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Poulette+M%C3%B8llegade+1+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <div class="meal">Öğle yemeği</div><h3>Poulette</h3><div class="addr">Møllegade 1, Nørrebro</div>
+        <div class="tags"><span class="tag red">Ön sipariş</span><span class="tag">Sadece paket</span></div></div>
+      <div class="leg">Yürüyüş · 12 dk</div></li>
+
     <li class="stop"><div class="clock">14:00<i></i></div>
-      <div class="card"><h3>Jægersborggade &amp; Elmegade</h3><div class="addr">Nørrebro butik caddeleri</div>
-        <p>Seramikçiler, ikinci el, küçük tasarımcılar, Coffee Collective (No. 57), Meyers Bageri. Strøget'ten tamamen farklı bir alışveriş.</p></div>
-      <div class="leg">Metro → merkez · 15 dk</div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne var</h4><p>Nørrebro'nun butik caddesi: seramikçiler, ikinci el, küçük tasarımcılar. 57 numarada Coffee Collective, birkaç kapı ötede Meyers Bageri.</p>
+          <h4>İpucu</h4><p>Dükkânlar küçük ve çoğu 17:30'da kapanıyor. Ardından daha genç ve ucuz olan Elmegade'ye geçin.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=J%C3%A6gersborggade+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Jægersborggade &amp; Elmegade</h3><div class="addr">Nørrebro butik caddeleri</div></div>
+      <div class="leg">Metro → merkez · 15 dk</div></li>
+
     <li class="stop"><div class="clock">15:45<i></i></div>
-      <div class="card"><h3>Guinness World Records Museum</h3><div class="addr">Østergade 16 · Strøget</div>
-        <p>Rekorların birebir maketleri ve kendi rekorunuzu denediğiniz istasyonlar.</p></div>
-      <div class="leg">Yürüyüş · 10 dk</div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne var</h4><p>Rekorların birebir maketleri ve kendi rekorunuzu denediğiniz interaktif istasyonlar.</p>
+          <h4>Süre</h4><p>Bir saat yeter. Strøget üzerinde, dükkânların arasında kalıyor — tabelayı kaçırmayın.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Guinness+World+Records+Museum+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Guinness World Records Museum</h3><div class="addr">Østergade 16 · Strøget</div></div>
+      <div class="leg">Yürüyüş · 10 dk</div></li>
+
     <li class="stop"><div class="clock">17:00<i></i></div>
-      <div class="card"><h3>Museum of Illusions</h3><div class="addr">Frederiksberggade 24 · otele 8 dk</div>
-        <p>Ters oda, sonsuzluk odası, Ames odası. Telefonunuz şarjlı olsun.</p>
-        <div class="tags"><span class="tag">20:00'e kadar açık</span></div></div>
-    </li>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Kaçırmayın</h4><p>Ters oda, sonsuzluk odası ve Ames odası — aynı odada bir kişi dev, diğeri cüce görünüyor.</p>
+          <h4>İpucu</h4><p>Baştan sona fotoğraf çekiyorsunuz, telefonun şarjı dolu olsun. 20:00'ye kadar açık, acele etmeyin. Otele 8 dakika.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Museum+of+Illusions+Frederiksberggade+24+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Museum of Illusions</h3><div class="addr">Frederiksberggade 24</div>
+        <div class="tags"><span class="tag">20:00'e kadar</span></div></div></li>
+
     <li class="stop"><div class="clock">19:30<i></i></div>
       <div class="card"><div class="meal">Akşam yemeği</div><h3>Veda akşamı</h3><div class="addr">Tivoli ya da otel civarı</div>
-        <p>Tivoli'ye ikinci giriş kartla bedava değil, ~195 DKK/yetişkin. Alternatif: otel çevresinde sakin bir yemek ve erken yatış.</p></div>
-    </li>
+        <p>Tivoli'ye ikinci giriş kartla bedava değil, ~195 DKK/yetişkin.</p></div></li>
   </ul>
 </section>
 
 <!-- ============ GÜN 6 ============ -->
 <section class="day" id="g6">
-  <div class="day-head">
-    <div class="day-num">6</div>
+  <div class="day-head"><div class="day-num">6</div>
     <div class="day-date">4 Eylül<span>Cuma</span></div>
-    <div class="day-theme">Dönüş</div>
-  </div>
+    <div class="day-theme">Dönüş</div></div>
   <ul class="stops">
     <li class="stop"><div class="clock">08:30<i></i></div>
-      <div class="card"><div class="meal">Kahvaltı</div><h3>Otelde</h3><div class="addr">Ya da Rug Bakery · 07:00 açık</div></div>
-    </li>
+      <div class="card"><div class="meal">Kahvaltı</div><h3>Otelde</h3><div class="addr">Ya da Rug Bakery · 07:00 açık</div></div></li>
     <li class="stop"><div class="clock">10:00<i></i></div>
       <div class="card"><h3>Check-out ve havalimanı treni</h3><div class="addr">Københavns Hovedbanegård</div>
-        <p>13 dakikada Kastrup. Copenhagen Card 120 saat 4 Eylül 13:00'e kadar geçerli, bu bileti de kapsıyor.</p></div>
-    </li>
+        <p>13 dakikada Kastrup. Copenhagen Card 4 Eylül 13:00'e kadar geçerli, bu bileti de kapsıyor.</p></div></li>
     <li class="stop"><div class="clock">10:30<i></i></div>
       <div class="card"><h3>Københavns Lufthavn, Kastrup</h3>
-        <p>Tax-free formunuz varsa güvenlikten <strong>önce</strong> gişeye uğrayın, 15 dakika ayırın.</p></div>
-    </li>
+        <p>Tax-free formunuz varsa güvenlikten <strong>önce</strong> gişeye uğrayın, 15 dakika ayırın.</p></div></li>
     <li class="stop"><div class="clock">12:55<i></i></div>
-      <div class="card"><h3>Kalkış</h3></div>
-    </li>
+      <div class="card"><h3>Kalkış</h3></div></li>
   </ul>
 </section>
 
@@ -485,23 +615,19 @@
   </table>
 </section>
 
-<!-- ============ REZERVASYONSUZ ============ -->
 <section class="block">
   <h2>Rezervasyon almayan yerler</h2>
   <p>Bunlarda tek stratejiniz saat seçmek.</p>
-  <table>
-    <tbody>
-      <tr><td>Atelier September</td><td>09:00'da kapıda</td></tr>
-      <tr><td>BUKA</td><td>Kuyruk hızlı ilerler</td></tr>
-      <tr><td>Gasoline Grill</td><td>18:30 · 20:30 kapanış</td></tr>
-      <tr><td>Apotek 57</td><td>16:00 kapanış</td></tr>
-      <tr><td>Christiansborg Kulesi</td><td>Ücretsiz · 16:45</td></tr>
-      <tr><td>Kong Hans penceresi</td><td>12:45 güvenli</td></tr>
-    </tbody>
-  </table>
+  <table><tbody>
+    <tr><td>Atelier September</td><td>09:00'da kapıda</td></tr>
+    <tr><td>BUKA</td><td>Kuyruk hızlı ilerler</td></tr>
+    <tr><td>Gasoline Grill</td><td>18:30 · 20:30 kapanış</td></tr>
+    <tr><td>Apotek 57</td><td>16:00 kapanış</td></tr>
+    <tr><td>Christiansborg Kulesi</td><td>Ücretsiz · 16:45</td></tr>
+    <tr><td>Kong Hans penceresi</td><td>12:45 güvenli</td></tr>
+  </tbody></table>
 </section>
 
-<!-- ============ NOTLAR ============ -->
 <section class="block">
   <h2>Pratik notlar</h2>
   <ul class="notes">
@@ -515,7 +641,7 @@
 </section>
 
 <footer>
-  <span>Sürüm 2 · 6 Ağustos 2026</span>
+  <span>Sürüm 3 · 7 Ağustos 2026</span>
   <span>2 yetişkin · 2 çocuk</span>
 </footer>
 
