@@ -65,8 +65,14 @@
   .tag{font-family:var(--data);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border:1px solid var(--line);border-radius:2px;color:var(--soft)}
   .tag.red{border-color:var(--red);color:var(--red)}
   .tag.sea{border-color:var(--sea);color:var(--sea)}
-  .leg{grid-column:2;margin:8px 0 0 18px;font-family:var(--data);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
-  .leg::before{content:"— "}
+  .leg{grid-column:2;margin:10px 0 0 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+  .leg .step{display:inline-flex;align-items:center;gap:6px;font-family:var(--body);font-size:14px;color:var(--soft);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:4px 12px 4px 10px}
+  .leg .step i{font-style:normal;font-size:16px;line-height:1}
+  .leg .arrow{color:var(--line);font-size:15px;padding:0 1px}
+  .transit-guide{margin-top:10px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:3px;font-size:13.5px;color:var(--soft)}
+  .transit-guide .icons{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:6px}
+  .transit-guide .icons span{display:inline-flex;align-items:center;gap:5px}
+  .transit-guide .icons i{font-style:normal;font-size:17px}
 
   details.more{position:absolute;top:12px;right:12px}
   details.more summary{list-style:none;cursor:pointer;width:26px;height:26px;border:1px solid var(--sea);border-radius:50%;color:var(--sea);font-family:var(--data);font-size:20px;font-weight:600;line-height:23px;text-align:center;background:var(--card)}
@@ -118,6 +124,16 @@
     <div class="fact"><dt>Kur</dt><dd>1 DKK ≈ 7,3 TL<br>Ağustos 2026</dd></div>
   </dl>
   <p class="hint"><b>+</b> Her durağın köşesindeki artıya dokunun: ne yenir, ne kadar sürer, hangi ipucu işe yarar — ve fotoğraflarla harita.</p>
+  <div class="transit-guide">
+    <div class="icons">
+      <span><i>🚶</i> Yürüyüş</span>
+      <span><i>🚇</i> Metro</span>
+      <span><i>🚆</i> S-tog</span>
+      <span><i>🚌</i> Otobüs</span>
+      <span><i>🚗</i> Özel araç</span>
+    </div>
+    S-tog, metronun banliyölere uzanan tren hattı — bilet ve peron mantığı metroyla aynı, Copenhagen Card'a dahil. Nørreport, Hellerup, Østerport, Nørrebro gibi adlar istasyon ya da semt isimleri; her durakta nereye gideceğiniz zaten yazıyor.
+  </div>
 </header>
 </div>
 
@@ -150,7 +166,7 @@
           <h4>İpucu</h4><p>Şoför çıkışta isim tabelasıyla bekliyor olacak. Otele yol 20 dakika.</p>
         </div></details>
         <h3>İniş · Kastrup</h3><div class="addr">Pasaport ve bagaj</div></div>
-      <div class="leg">VIP transfer · 20 dk</div></li>
+      <div class="leg"><span class="step"><i>🚗</i>Özel araç (VIP transfer) · 20 dk</span></div></li>
 
     <li class="stop"><div class="clock">13:15<i></i></div>
       <div class="card">
@@ -159,7 +175,7 @@
           <a href="https://www.google.com/maps/search/?api=1&query=ProfilHotels+Copenhagen+Plaza+Bernstorffsgade+4" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <h3>Otele bagaj bırakma</h3><div class="addr">ProfilHotels Copenhagen Plaza · Bernstorffsgade 4</div></div>
-      <div class="leg">Karşı kaldırım · 1 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>1 dk · karşı kaldırım</span></div></li>
 
     <li class="stop"><div class="clock">13:45<i></i></div>
       <div class="card">
@@ -173,7 +189,7 @@
 
     <li class="stop"><div class="clock">15:00<i></i></div>
       <div class="card"><h3>Check-in ve mola</h3><div class="addr">Otel</div></div>
-      <div class="leg">Yürüyüş · 5 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>5 dk</span></div></li>
 
     <li class="stop"><div class="clock">15:45<i></i></div>
       <div class="card">
@@ -183,7 +199,7 @@
           <a href="https://www.google.com/maps/search/?api=1&query=Str%C3%B8get+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <h3>Rådhuspladsen → Strøget</h3><div class="addr">Belediye Meydanı · Frederiksberggade</div></div>
-      <div class="leg">Yürüyüş · 15 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>15 dk</span></div></li>
 
     <li class="stop"><div class="clock">16:30<i></i></div>
       <div class="card">
@@ -193,22 +209,23 @@
           <a href="https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <h3>Nyhavn</h3><div class="addr">Dondurma molası</div></div>
-      <div class="leg">Yürüyüş · 20 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>20 dk</span></div></li>
 
     <li class="stop"><div class="clock">17:15<i></i></div>
-      <div class="card"><h3>Otele dönüş ve mola</h3><div class="addr">Metro Kongens Nytorv → København H · 5 dk</div>
+      <div class="card"><h3>Otele dönüş ve mola</h3><div class="addr">Yürüyerek otele</div>
         <p>Yolculuk gününün ortasında bir buçuk saat dinlenme. Çocuklar ayaklarını uzatsın, siz üstünüzü değiştirin.</p></div>
-      <div class="leg">Yürüyüş · 2 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>2 dk</span></div></li>
 
     <li class="stop"><div class="clock">18:40<i></i></div>
       <div class="card">
         <details class="more"><summary></summary><div class="panel">
           <h4>Bugün ne yapmayın</h4><p>Oyuncak bilekliğini önceden almayın. Yemekten sonra çocuklarda enerji kalırsa kapıdan alırsınız, 269 DKK <span class="try">(≈ 1.965 TL)</span>. Kalmazsa hiç ödemezsiniz.</p>
-          <h4>Kaçırmayın</h4><p>20:15 civarı ışıklar yanıyor — göl kenarı en iyi nokta. Otel iki dakika ötede, istediğiniz an çıkabilirsiniz.</p>
+          <h4>Kartla giriş</h4><p>Copenhagen Card bu girişte QR kodunuzu bir kez okutuyor, bugünkü tek girişiniz bu. Bu akşam park içinde kalıp yemeği de ışıkları da görebilirsiniz — çıkıp geri dönmeniz gerekmiyor.</p>
+          <h4>Kaçırmayın</h4><p>20:15 civarı ışıklar yanıyor — göl kenarı en iyi nokta. Otel iki dakika ötede, isterseniz erken de çıkabilirsiniz (aşağıda "damga" notuna bakın).</p>
           <a href="https://www.google.com/maps/search/?api=1&query=Tivoli+Gardens+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <h3>Tivoli'ye giriş</h3><div class="addr">Vesterbrogade 3 · otelin karşısı</div>
-        <div class="tags"><span class="tag sea">Giriş karta dahil</span><span class="tag">Bileklik isteğe bağlı</span></div></div></li>
+        <div class="tags"><span class="tag sea">Giriş karta dahil</span><span class="tag red">Damga isteyin</span></div></div></li>
 
     <li class="stop res"><div class="clock">19:00<i></i></div>
       <div class="card">
@@ -242,7 +259,7 @@
         </div></details>
         <div class="meal">Kahvaltı</div><h3>Atelier September</h3><div class="addr">Kronprinsessegade 62</div>
         <div class="tags"><span class="tag">Kuyruk var</span></div></div>
-      <div class="leg">Yürüyüş Nørreport · 10 dk, sonra S-tog → Hellerup · 15 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>10 dk · Nørreport istasyonuna</span><span class="arrow">→</span><span class="step"><i>🚆</i>15 dk · S-tog ile Hellerup semtine</span></div></li>
 
     <li class="stop"><div class="clock">10:50<i></i></div>
       <div class="card">
@@ -257,7 +274,7 @@
     <li class="stop"><div class="clock">13:15<i></i></div>
       <div class="card"><div class="meal">Öğle yemeği</div><h3>Experimentarium restoranı</h3><div class="addr">Müzenin içinde</div>
         <p>Pratik ama vasat. Sabah Atelier September'dan ekstra bir şey aldıysanız piknik alanını kullanın.</p></div>
-      <div class="leg">Tren Hellerup → Østerport · 8 dk</div></li>
+      <div class="leg"><span class="step"><i>🚆</i>8 dk · S-tog ile Hellerup'tan Østerport istasyonuna</span></div></li>
 
     <li class="stop"><div class="clock">15:20<i></i></div>
       <div class="card">
@@ -268,7 +285,7 @@
         </div></details>
         <h3>Apotek 57</h3><div class="addr">Fredericiagade 57</div>
         <div class="tags"><span class="tag red">16:00 kapanış</span></div></div>
-      <div class="leg">Yürüyüş · 8 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>8 dk</span></div></li>
 
     <li class="stop"><div class="clock">16:15<i></i></div>
       <div class="card">
@@ -279,7 +296,7 @@
         </div></details>
         <h3>Kastellet</h3><div class="addr">Yıldız planlı deniz kalesi</div>
         <div class="tags"><span class="tag sea">Ücretsiz</span></div></div>
-      <div class="leg">Yürüyüş · 10 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>10 dk</span></div></li>
 
     <li class="stop"><div class="clock">16:45<i></i></div>
       <div class="card">
@@ -289,7 +306,7 @@
           <a href="https://www.google.com/maps/search/?api=1&query=The+Little+Mermaid+statue+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <h3>Den Lille Havfrue</h3><div class="addr">Langelinie rıhtımı</div></div>
-      <div class="leg">Yürüyüş · 25 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>25 dk</span></div></li>
 
     <li class="stop"><div class="clock">18:30<i></i></div>
       <div class="card">
@@ -318,7 +335,7 @@
           <a href="https://www.google.com/maps/search/?api=1&query=Hart+Bageri+Gl.+Kongevej+109+Frederiksberg" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <div class="meal">Kahvaltı</div><h3>Hart</h3><div class="addr">Gl. Kongevej 109, Frederiksberg</div></div>
-      <div class="leg">Otobüs veya metro · 15 dk</div></li>
+      <div class="leg"><span class="step"><i>🚌</i>ya da <i>🚇</i> 15 dk · otobüs veya metro</span></div></li>
 
     <li class="stop"><div class="clock">10:15<i></i></div>
       <div class="card">
@@ -331,7 +348,7 @@
 
     <li class="stop"><div class="clock">13:00<i></i></div>
       <div class="card"><div class="meal">Öğle yemeği</div><h3>Zoo içindeki restoran</h3></div>
-      <div class="leg">Yürüyüş · 10 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>10 dk</span></div></li>
 
     <li class="stop"><div class="clock">15:15<i></i></div>
       <div class="card">
@@ -342,7 +359,7 @@
         </div></details>
         <h3>Frederiksberg Have</h3><div class="addr">Kraliyet parkı</div>
         <div class="tags"><span class="tag sea">Ücretsiz</span></div></div>
-      <div class="leg">Metro · 16:30 otelde dinlenme</div></li>
+      <div class="leg"><span class="step"><i>🚇</i>metro</span><span class="step">16:30 otelde dinlenme</span></div></li>
 
     <li class="stop res"><div class="clock">18:30<i></i></div>
       <div class="card">
@@ -371,7 +388,7 @@
           <a href="https://www.google.com/maps/search/?api=1&query=BUKA+Store+Kongensgade+18+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <div class="meal">Kahvaltı</div><h3>BUKA</h3><div class="addr">Store Kongensgade 18</div></div>
-      <div class="leg">Yürüyüş · 8 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>8 dk</span></div></li>
 
     <li class="stop"><div class="clock">10:15<i></i></div>
       <div class="card">
@@ -400,7 +417,7 @@
           <a href="https://www.google.com/maps/search/?api=1&query=Amalienborg+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <h3>Amalienborg nöbet değişimi</h3><div class="addr">Dört rokoko saray</div></div>
-      <div class="leg">Yürüyüş · 12 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>12 dk</span></div></li>
 
     <li class="stop"><div class="clock">12:45<i></i></div>
       <div class="card">
@@ -410,7 +427,7 @@
           <a href="https://www.google.com/maps/search/?api=1&query=Kong+Hans+Bakery+Ving%C3%A5rdstr%C3%A6de+6+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <div class="meal">Öğle yemeği</div><h3>Kong Hans Bakery — duvar penceresi</h3><div class="addr">Vingårdstræde 6</div></div>
-      <div class="leg">Yürüyüş · 10 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>10 dk</span></div></li>
 
     <li class="stop"><div class="clock">14:00<i></i></div>
       <div class="card">
@@ -421,7 +438,7 @@
         </div></details>
         <h3>Rosenborg Slot</h3><div class="addr">Øster Voldgade 4A</div>
         <div class="tags"><span class="tag">17:00 kapanış</span></div></div>
-      <div class="leg">Yürüyüş · 12 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>12 dk</span></div></li>
 
     <li class="stop"><div class="clock">15:30<i></i></div>
       <div class="card">
@@ -441,7 +458,7 @@
         </div></details>
         <h3>ILLUM</h3><div class="addr">Østergade 52 · Strøget</div>
         <div class="tags"><span class="tag">20:00'e kadar</span></div></div>
-      <div class="leg">Yürüyüş · 5 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>5 dk</span></div></li>
 
     <li class="stop"><div class="clock">16:40<i></i></div>
       <div class="card">
@@ -452,7 +469,7 @@
         </div></details>
         <div class="meal">Kahve molası</div><h3>La Cabra</h3><div class="addr">Møntergade 3A</div>
         <div class="tags"><span class="tag red">18:00 kapanış</span></div></div>
-      <div class="leg">Yürüyüş · 3 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>3 dk</span></div></li>
 
     <li class="stop"><div class="clock">17:10<i></i></div>
       <div class="card">
@@ -482,7 +499,7 @@
         </div></details>
         <h3>Build-A-Bear Workshop</h3><div class="addr">Købmagergade 44</div>
         <div class="tags"><span class="tag red">19:00 kapanış</span></div></div>
-      <div class="leg">Metro + yürüyüş · 20 dk</div></li>
+      <div class="leg"><span class="step"><i>🚇</i>metro</span><span class="arrow">+</span><span class="step"><i>🚶</i>toplam 20 dk</span></div></li>
 
     <li class="stop res"><div class="clock">19:30<i></i></div>
       <div class="card">
@@ -511,7 +528,7 @@
           <a href="https://www.google.com/maps/search/?api=1&query=Juno+the+Bakery+%C3%85rhusgade+48+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <div class="meal">Kahvaltı</div><h3>Juno the Bakery</h3><div class="addr">Århusgade 48, Østerbro</div></div>
-      <div class="leg">1A otobüsü → Nyhavn · 15 dk</div></li>
+      <div class="leg"><span class="step"><i>🚌</i>15 dk · 1A otobüsü ile Nyhavn'a</span></div></li>
 
     <li class="stop res"><div class="clock">11:00<i></i></div>
       <div class="card">
@@ -522,7 +539,7 @@
         </div></details>
         <h3>Kanal turu</h3><div class="addr">Kalkış: Nyhavn</div>
         <div class="tags"><span class="tag sea">Karta dahil</span><span class="tag red">Saatli bilet</span></div></div>
-      <div class="leg">Metro M3 → Nørrebro · 15 dk</div></li>
+      <div class="leg"><span class="step"><i>🚇</i>15 dk · M3 hattıyla Nørrebro semtine</span></div></li>
 
     <li class="stop res"><div class="clock">12:45<i></i></div>
       <div class="card">
@@ -533,7 +550,7 @@
         </div></details>
         <div class="meal">Öğle yemeği</div><h3>Poulette</h3><div class="addr">Møllegade 1, Nørrebro</div>
         <div class="tags"><span class="tag red">Ön sipariş</span><span class="tag">Sadece paket</span></div></div>
-      <div class="leg">Yürüyüş · 12 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>12 dk</span></div></li>
 
     <li class="stop"><div class="clock">14:00<i></i></div>
       <div class="card">
@@ -543,7 +560,7 @@
           <a href="https://www.google.com/maps/search/?api=1&query=J%C3%A6gersborggade+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <h3>Jægersborggade &amp; Elmegade</h3><div class="addr">Nørrebro butik caddeleri</div></div>
-      <div class="leg">Metro → merkez · 15 dk</div></li>
+      <div class="leg"><span class="step"><i>🚇</i>15 dk · metroyla şehir merkezine</span></div></li>
 
     <li class="stop"><div class="clock">15:45<i></i></div>
       <div class="card">
@@ -553,7 +570,7 @@
           <a href="https://www.google.com/maps/search/?api=1&query=Guinness+World+Records+Museum+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <h3>Guinness World Records Museum</h3><div class="addr">Østergade 16 · Strøget</div></div>
-      <div class="leg">Yürüyüş · 10 dk</div></li>
+      <div class="leg"><span class="step"><i>🚶</i>10 dk</span></div></li>
 
     <li class="stop"><div class="clock">17:00<i></i></div>
       <div class="card">
@@ -670,7 +687,8 @@
 <section class="block">
   <h2>Pratik notlar</h2>
   <ul class="notes">
-    <li><strong>Copenhagen Card</strong><span>Discover 120 saat. Her yetişkin yanına 3–11 yaş iki çocuğu ücretsiz alıyor — asıl kazanç burada. Transferler VIP araçla olduğu için havalimanı ulaşımı karttan çıktı, kâr eskisi kadar büyük değil ama hâlâ pozitif. 30 Ağustos 13:15'te aktive edin, 4 Eylül 13:15'e kadar geçer.</span></li>
+    <li><strong>Copenhagen Card</strong><span>Discover 120 saat. Her yetişkin yanına 3–11 yaş iki çocuğu ücretsiz alıyor — asıl kazanç burada. Gidiş VIP araçla, dönüş trenle olduğu için tek yön havalimanı ulaşımı karttan çıktı, kâr eskisi kadar büyük değil ama hâlâ pozitif. 30 Ağustos 13:15'te aktive edin, 4 Eylül 13:15'e kadar geçer.</span></li>
+    <li><strong>Tivoli'ye kartla giriş — tek seferlik</strong><span>Kart, kişi başı Tivoli'ye 120 saatlik süre boyunca <strong>bir kez</strong> giriş veriyor; QR kod okutulunca o kod parkta bir daha geçerli olmuyor. 1. günkü akşam bu hakkı kullanıyorsunuz. Aynı gün içinde çıkıp geri dönmek isterseniz (örneğin dinlenmek için otele gidip tekrar gelmek), çıkarken Tivoli Food Hall tarafındaki görevliden "re-entry" damgası isteyin — damgayla akşama kadar girip çıkabilirsiniz, damgasız ikinci giriş reddedilir. 5. gündeki veda akşamı ayrı bir takvim günü olduğu için kart orada geçerli değil, kişi başı 195 DKK ödenir.</span></li>
     <li><strong>Hava</strong><span>18–21°C, iki günde bir yağmur ihtimali. İnce yağmurluk ve çabuk kuruyan ayakkabı. Yağmur yedekleri: Nationalmuseet (girişi ücretsiz, alt katta çocuk müzesi) ve Den Blå Planet akvaryumu (21:00'e kadar açık).</span></li>
     <li><strong>Su</strong><span>Musluk suyu içilir. Restoranda sorulmadan şişe su getiriyorlar — <em>“postevand, tak”</em> deyin, 510 TL cebinizde kalır.</span></li>
     <li><strong>Vergi iadesi</strong><span>AB dışı olduğunuz için 300 DKK üstü alışverişlerde %25 KDV'nin bir kısmı geri alınabiliyor. Magasin ve ILLUM'da tek fişte toplayın, kasada formu isteyin, havalimanında güvenlikten önce gişeye uğrayın.</span></li>
@@ -680,7 +698,7 @@
 </section>
 
 <footer>
-  <span>Sürüm 5 · 7 Ağustos 2026</span>
+  <span>Sürüm 6 · 7 Ağustos 2026</span>
   <span>2 yetişkin · 2 çocuk</span>
 </footer>
 
