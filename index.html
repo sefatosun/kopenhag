@@ -34,6 +34,8 @@
   .hint b{display:inline-block;width:20px;height:20px;line-height:18px;text-align:center;border:1px solid var(--sea);color:var(--sea);border-radius:50%;font-weight:600;font-size:15px;margin-right:4px;vertical-align:-3px}
 
   nav{position:sticky;top:0;z-index:20;background:rgba(230,233,228,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .current-day-bar{background:var(--ink);color:var(--paper);font-family:var(--data);font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:7px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .current-day-bar b{color:var(--sand);font-weight:600}
   .rail{display:flex;gap:6px;overflow-x:auto;padding:10px 18px;max-width:720px;margin:0 auto;scrollbar-width:none}
   .rail::-webkit-scrollbar{display:none}
   .rail a{flex:0 0 auto;text-decoration:none;color:var(--ink);font-family:var(--data);font-size:16px;font-weight:600;letter-spacing:.06em;padding:7px 12px;border:1px solid var(--line);border-radius:2px;background:var(--card);white-space:nowrap}
@@ -138,6 +140,7 @@
 </div>
 
 <nav>
+  <div class="current-day-bar" id="currentDayBar">30 Ağustos Pazar · <b>Varış &amp; Tivoli</b></div>
   <div class="rail">
     <a href="#g1"><b>30 Ağu Paz</b>Varış &amp; Tivoli</a>
     <a href="#g2"><b>31 Ağu Pzt</b>Şehir Keşfi</a>
@@ -832,10 +835,47 @@
 </section>
 
 <footer>
-  <span>Sürüm 27 · 7 Ağustos 2026</span>
+  <span>Sürüm 28 · 7 Ağustos 2026</span>
   <span>2 yetişkin · 2 çocuk</span>
 </footer>
 
 </div>
+<script>
+(function(){
+  var days = Array.prototype.slice.call(document.querySelectorAll('.day'));
+  var bar = document.getElementById('currentDayBar');
+  if(!days.length || !bar) return;
+
+  var info = days.map(function(d){
+    var dateEl = d.querySelector('.day-date');
+    var weekday = dateEl.querySelector('span') ? dateEl.querySelector('span').textContent.trim() : '';
+    var dateText = dateEl.firstChild ? dateEl.firstChild.textContent.trim() : '';
+    var theme = d.querySelector('.day-theme') ? d.querySelector('.day-theme').textContent.trim() : '';
+    return dateText + ' ' + weekday + ' · <b>' + theme + '</b>';
+  });
+
+  var navH = (document.querySelector('nav') || {}).offsetHeight || 90;
+
+  function update(){
+    var current = 0;
+    for (var i = 0; i < days.length; i++){
+      var rect = days[i].getBoundingClientRect();
+      if (rect.top <= navH + 4) current = i;
+    }
+    var next = info[current];
+    if (bar.innerHTML !== next) bar.innerHTML = next;
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if (!ticking){
+      window.requestAnimationFrame(function(){ update(); ticking = false; });
+      ticking = true;
+    }
+  }, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body>
 </html>
