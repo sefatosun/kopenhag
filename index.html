@@ -48,12 +48,12 @@
   .day-theme{margin-left:auto;font-family:var(--data);font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);text-align:right}
 
   .stops{list-style:none;margin-top:6px}
-  .stop{display:grid;grid-template-columns:58px 1fr}
+  .stop{display:grid;grid-template-columns:66px 1fr}
   .clock{position:relative;padding-top:20px;font-family:var(--data);font-size:21px;font-weight:700;letter-spacing:.02em;color:var(--sea);font-variant-numeric:tabular-nums}
-  .clock::after{content:"";position:absolute;left:46px;top:0;bottom:0;width:1px;background:var(--line)}
+  .clock::after{content:"";position:absolute;left:54px;top:0;bottom:0;width:1px;background:var(--line)}
   .stop:first-child .clock::after{top:22px}
   .stop:last-child .clock::after{bottom:auto;height:28px}
-  .clock i{position:absolute;left:42px;top:26px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--sea);font-style:normal}
+  .clock i{position:absolute;left:50px;top:26px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--sea);font-style:normal}
   .card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:3px;padding:14px 16px;margin:14px 0 0 18px}
   .stop.res .card{border-left:3px solid var(--red)}
   .stop.res .clock i{border-color:var(--red)}
@@ -104,8 +104,8 @@
   footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--data);font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   @media (max-width:420px){
-    .stop{grid-template-columns:48px 1fr}
-    .clock{font-size:19px}.clock::after{left:38px}.clock i{left:34px}
+    .stop{grid-template-columns:56px 1fr}
+    .clock{font-size:18px}.clock::after{left:44px}.clock i{left:40px}
     .day-theme{flex-basis:100%;text-align:left;margin:6px 0 0}
   }
   @media print{nav,details.more{display:none}body{background:#fff}.day{break-inside:avoid}}
@@ -807,7 +807,7 @@
 </section>
 
 <footer>
-  <span>Sürüm 17 · 7 Ağustos 2026</span>
+  <span>Sürüm 18 · 7 Ağustos 2026</span>
   <span>2 yetişkin · 2 çocuk</span>
 </footer>
 
