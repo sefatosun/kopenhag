@@ -54,6 +54,16 @@
   .day-date span{display:block;font-family:var(--data);font-size:15px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
   .day-theme{margin-left:auto;font-family:var(--data);font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);text-align:right}
 
+  .day-route{margin-top:12px;border:1px solid var(--line);border-radius:3px;background:var(--card)}
+  .day-route summary{list-style:none;cursor:pointer;padding:12px 16px;font-family:var(--data);font-size:15px;font-weight:600;letter-spacing:.04em;color:var(--sea);display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .day-route summary::-webkit-details-marker{display:none}
+  .day-route summary::after{content:"+";font-size:20px;line-height:1;color:var(--sea);flex:0 0 auto}
+  .day-route[open] summary::after{content:"–"}
+  .day-route-panel{padding:0 16px 16px;border-top:1px solid var(--line)}
+  .day-route-panel ol{margin:14px 0 14px 20px;padding:0}
+  .day-route-panel ol li{font-family:var(--body);font-size:14.5px;color:#37474F;padding:4px 0;line-height:1.4}
+  .day-route-btn{display:block;text-align:center;padding:11px 16px;background:var(--sea);color:var(--paper);text-decoration:none;border-radius:3px;font-family:var(--data);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+
   .stops{list-style:none;margin-top:6px}
   .stop{display:grid;grid-template-columns:66px 1fr}
   .clock{position:relative;padding-top:20px;font-family:var(--data);font-size:21px;font-weight:700;letter-spacing:.02em;color:var(--sea);font-variant-numeric:tabular-nums}
@@ -166,6 +176,19 @@
   <div class="day-head"><div class="day-num">1</div>
     <div class="day-date">30 Ağustos<span>Pazar</span></div>
     <div class="day-theme">Varış &amp; Tivoli</div></div>
+  <details class="day-route">
+    <summary>🗺️ Bugünün rotası · 4 durak</summary>
+    <div class="day-route-panel">
+      <ol>
+        <li>Otele bagaj bırakma</li>
+        <li>Gasoline Grill · Tivoli içinde</li>
+        <li>Tivoli'ye yeniden giriş</li>
+        <li>Figaro – bar &amp; bistro</li>
+      </ol>
+      <a href="https://www.google.com/maps/dir/?api=1&origin=ProfilHotels+Copenhagen+Plaza+Bernstorffsgade+4&destination=Figaro+bar+bistro+Tivoli+Copenhagen&travelmode=walking&waypoints=Gasoline+Grill+Tivoli+Copenhagen%7CTivoli+Gardens+Copenhagen" target="_blank" rel="noopener" class="day-route-btn">Google Maps'te aç ↗</a>
+    </div>
+  </details>
+
   <ul class="stops">
 
     <li class="stop"><div class="clock">05:40<i></i></div>
@@ -265,6 +288,29 @@
   <div class="day-head"><div class="day-num">2</div>
     <div class="day-date">31 Ağustos<span>Pazartesi</span></div>
     <div class="day-theme">Şehir Keşfi</div></div>
+  <details class="day-route">
+    <summary>🗺️ Bugünün rotası · 14 durak</summary>
+    <div class="day-route-panel">
+      <ol>
+        <li>Atelier September</li>
+        <li>Rådhuspladsen → Strøget</li>
+        <li>La Cabra</li>
+        <li>ILLUM &amp; HAY</li>
+        <li>Build-A-Bear Workshop</li>
+        <li>Amalienborg</li>
+        <li>Marmorkirken</li>
+        <li>BUKA — Esplanaden</li>
+        <li>Kastellet</li>
+        <li>Nyboder</li>
+        <li>Den Lille Havfrue</li>
+        <li>Østerberg Ice Cream</li>
+        <li>Kanal turu</li>
+        <li>Poulette</li>
+      </ol>
+      <a href="https://www.google.com/maps/dir/?api=1&origin=Atelier+September+Kronprinsessegade+62+Copenhagen&destination=Poulette+M%C3%B8llegade+1+Copenhagen&travelmode=walking&waypoints=R%C3%A5dhuspladsen+Copenhagen%7CLa+Cabra+M%C3%B8ntergade+3A+Copenhagen%7CILLUM+%C3%98stergade+52+Copenhagen%7CBuild-A-Bear+Workshop+K%C3%B8bmagergade+44+Copenhagen%7CAmalienborg+Copenhagen%7CMarmorkirken+Frederiksgade+4+Copenhagen%7CBUKA+Esplanaden+14+Copenhagen%7CKastellet+Copenhagen%7CNyboder+Copenhagen%7CThe+Little+Mermaid+statue+Copenhagen%7C%C3%98sterberg+Ice+Cream+Rosenv%C3%A6ngets+All%C3%A9+7C+Copenhagen%7CNyhavn+canal+tour+Copenhagen" target="_blank" rel="noopener" class="day-route-btn">Google Maps'te aç ↗</a>
+    </div>
+  </details>
+
   <ul class="stops">
 
     <li class="stop"><div class="clock">08:20<i></i></div>
@@ -431,6 +477,21 @@
   <div class="day-head"><div class="day-num">3</div>
     <div class="day-date">1 Eylül<span>Salı</span></div>
     <div class="day-theme">Tasarım &amp; Experimentarium</div></div>
+  <details class="day-route">
+    <summary>🗺️ Bugünün rotası · 6 durak</summary>
+    <div class="day-route-panel">
+      <ol>
+        <li>ARKET</li>
+        <li>Kronprinsensgade</li>
+        <li>Illums Bolighus</li>
+        <li>Hooked — Gråbrødretorv</li>
+        <li>Experimentarium</li>
+        <li>Bæst</li>
+      </ol>
+      <a href="https://www.google.com/maps/dir/?api=1&origin=ARKET+K%C3%B8bmagergade+33+Copenhagen&destination=Baest+Guldbergsgade+29+Copenhagen&travelmode=walking&waypoints=Kronprinsensgade+Copenhagen%7CIllums+Bolighus+Amagertorv+10+Copenhagen%7CHooked+Klosterstr%C3%A6de+20+Gr%C3%A5br%C3%B8dretorv+Copenhagen%7CExperimentarium+Tuborg+Havnevej+7+Hellerup" target="_blank" rel="noopener" class="day-route-btn">Google Maps'te aç ↗</a>
+    </div>
+  </details>
+
   <ul class="stops">
 
     <li class="stop"><div class="clock">08:45<i></i></div>
@@ -515,6 +576,24 @@
   <div class="day-head"><div class="day-num">4</div>
     <div class="day-date">2 Eylül<span>Çarşamba</span></div>
     <div class="day-theme">Kraliyet &amp; Keşif</div></div>
+  <details class="day-route">
+    <summary>🗺️ Bugünün rotası · 9 durak</summary>
+    <div class="day-route-panel">
+      <ol>
+        <li>Apotek 57</li>
+        <li>Kongens Have</li>
+        <li>Rosenborg Slot</li>
+        <li>Livgarden'ın yürüyüşü</li>
+        <li>Amalienborg</li>
+        <li>Gasoline Grill — benzin istasyonu şubesi</li>
+        <li>Magasin du Nord</li>
+        <li>ByOasen</li>
+        <li>Barr</li>
+      </ol>
+      <a href="https://www.google.com/maps/dir/?api=1&origin=Apotek+57+Frama+Fredericiagade+57+Copenhagen&destination=Barr+Strandgade+93+Christianshavn+Copenhagen&travelmode=walking&waypoints=Kongens+Have+Copenhagen%7CRosenborg+Castle+Copenhagen%7CRosenborg+Barracks+Gothersgade+100+Copenhagen%7CAmalienborg+Copenhagen%7CGasoline+Grill+Landgreven+10+Copenhagen%7CMagasin+du+Nord+Kongens+Nytorv+Copenhagen%7CByOasen+M%C3%B8llegade+25+Copenhagen" target="_blank" rel="noopener" class="day-route-btn">Google Maps'te aç ↗</a>
+    </div>
+  </details>
+
   <ul class="stops">
 
     <li class="stop"><div class="clock">08:15<i></i></div>
@@ -628,6 +707,21 @@
   <div class="day-head"><div class="day-num">5</div>
     <div class="day-date">3 Eylül<span>Perşembe</span></div>
     <div class="day-theme">Hart, Zoo &amp; Şehir</div></div>
+  <details class="day-route">
+    <summary>🗺️ Bugünün rotası · 6 durak</summary>
+    <div class="day-route-panel">
+      <ol>
+        <li>Hart Bageri — ana şube</li>
+        <li>Zoologisk Have</li>
+        <li>Gaza Grill</li>
+        <li>Guinness World Records Museum</li>
+        <li>Museum of Illusions</li>
+        <li>Juno the Bakery</li>
+      </ol>
+      <a href="https://www.google.com/maps/dir/?api=1&origin=Hart+Bageri+Gammel+Kongevej+109+Frederiksberg&destination=Juno+the+Bakery+%C3%85rhusgade+48+Copenhagen&travelmode=walking&waypoints=Copenhagen+Zoo+Roskildevej+32%7CGaza+Grill+F%C3%A6lledvej+22C+Copenhagen%7CGuinness+World+Records+Museum+Copenhagen%7CMuseum+of+Illusions+Frederiksberggade+24+Copenhagen" target="_blank" rel="noopener" class="day-route-btn">Google Maps'te aç ↗</a>
+    </div>
+  </details>
+
   <ul class="stops">
 
     <li class="stop"><div class="clock">08:00<i></i></div>
@@ -860,7 +954,7 @@
 </section>
 
 <footer>
-  <span>Sürüm 34 · 7 Ağustos 2026</span>
+  <span>Sürüm 35 · 9 Ağustos 2026</span>
   <span>2 yetişkin · 2 çocuk</span>
 </footer>
 
