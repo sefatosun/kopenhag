@@ -36,6 +36,9 @@
   nav{position:sticky;top:0;z-index:20;background:rgba(230,233,228,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .current-day-bar{background:var(--ink);color:var(--paper);font-family:var(--data);font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:7px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .current-day-bar b{color:var(--sand);font-weight:600}
+  #myNotes{width:100%;min-height:160px;margin-top:14px;padding:14px;border:1px solid var(--line);border-radius:3px;background:var(--card);font-family:var(--body);font-size:15px;line-height:1.5;color:var(--ink);resize:vertical}
+  #myNotes:focus{outline:none;border-color:var(--sea)}
+  .notes-status{margin-top:8px;font-family:var(--data);font-size:13px;color:var(--soft);letter-spacing:.06em;text-transform:uppercase;min-height:16px}
   .rail{display:flex;gap:6px;overflow-x:auto;padding:10px 18px;max-width:720px;margin:0 auto;scrollbar-width:none}
   .rail::-webkit-scrollbar{display:none}
   .rail a{flex:0 0 auto;text-decoration:none;color:var(--ink);font-family:var(--data);font-size:16px;font-weight:600;letter-spacing:.06em;padding:7px 12px;border:1px solid var(--line);border-radius:2px;background:var(--card);white-space:nowrap}
@@ -150,6 +153,7 @@
     <a href="#g6"><b>4 Eyl Cum</b>Dönüş</a>
     <a href="#rez"><b>Liste</b>Rezervasyon</a>
     <a href="#fiyat"><b>DKK / TL</b>Fiyat rehberi</a>
+    <a href="#notlar"><b>✎</b>Notlarım</a>
   </div>
 </nav>
 
@@ -640,18 +644,12 @@
           <a href="https://www.google.com/maps/search/?api=1&query=Juno+the+Bakery+%C3%85rhusgade+48+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <div class="meal">Kahvaltı</div><h3>Juno the Bakery</h3><div class="addr">Århusgade 48, Østerbro</div></div>
-      <div class="leg"><span class="step"><i>🚶</i>6 dk · istasyona</span><span class="arrow">→</span><span class="step"><i>🚇</i>12 dk · M4 ile København H'e</span><span class="arrow">→</span><span class="step"><i>🚇</i>4 dk · M1/M2 ile Christianshavn'a</span><span class="arrow">→</span><span class="step"><i>🚶</i>5 dk · restorana</span></div></li>
+      <div class="leg"><span class="step"><i>🚶</i>6 dk · istasyona</span><span class="arrow">→</span><span class="step"><i>🚇</i>12 dk · M4 ile şehir merkezine, sonra Nørrebro'ya</span></div></li>
 
     <li class="stop"><div class="clock">12:00<i></i></div>
-      <div class="card">
-        <details class="more"><summary></summary><div class="panel">
-          <h4>Ne yenir</h4><p>1779'dan beri açık, klasik Danimarka smørrebrød'u ve ev yapımı schnapps. Ringa balığı meraklı damaklar için, çocuklara rozbif ya da köfteli sandviç güvenli seçim. Kişi başı ~250 DKK <span class="try">(≈ 1.825 TL)</span>.</p>
-          <h4>İpucu</h4><p>Kanalın hemen kenarında, tarihi bir denizci evinde — 1880 tarihli İsveç itfaiye teknesi de mekânın parçası. Rezervasyon önerilir, özellikle tekne masası isterseniz.</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Christianshavns+F%C3%A6rgecaf%C3%A9+Strandgade+50+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
-        </div></details>
-        <div class="meal">Öğle yemeği</div><h3>Christianshavns Færgecafé</h3><div class="addr">Strandgade 50</div>
-        <div class="tags"><span class="tag red">Rezervasyon önerilir</span></div></div>
-      <div class="leg"><span class="step"><i>🚶</i>3 dk · istasyona</span><span class="arrow">→</span><span class="step"><i>🚇</i>12 dk · M1/M2 ile Kongens Nytorv'a, sonra M3'e aktarma</span><span class="arrow">→</span><span class="step"><i>🚶</i>5 dk · mağazalara</span></div></li>
+      <div class="card"><div class="meal">Öğle yemeği · henüz kesinleşmedi</div><h3>Karar bekleniyor</h3><div class="addr">Nørrebro civarı düşünülüyor</div>
+        <p>Aday: <strong>Mad &amp; Kaffe</strong> — Nørrebro'da rahat bir kahvaltı-öğle mekânı, karides ketçaplı çırpılmış yumurta ve chicken nugget'larıyla tanınıyor. Onaylanınca saat ve adres eklenecek.</p></div>
+      <div class="leg"><span class="step"><i>🚶</i>5 dk · istasyona</span><span class="arrow">→</span><span class="step"><i>🚇</i>8 dk · M3 ile şehir merkezine</span><span class="arrow">→</span><span class="step"><i>🚶</i>5 dk</span></div></li>
 
     <li class="stop"><div class="clock">14:15<i></i></div>
       <div class="card">
@@ -693,20 +691,9 @@
         </div></details>
         <h3>LEGO Store</h3><div class="addr">Vimmelskaftet 37 · Strøget</div>
         <div class="tags"><span class="tag red">19:00 kapanış</span></div></div>
-      <div class="leg"><span class="step"><i>🚶</i>3 dk</span></div></li>
+      <div class="leg"><span class="step"><i>🚶</i>8 dk</span></div></li>
 
-    <li class="stop"><div class="clock">18:05<i></i></div>
-      <div class="card">
-        <details class="more"><summary></summary><div class="panel">
-          <h4>Nasıl işliyor</h4><p>Ayıyı seç, doldurma makinesinde doldur, içine kalp koy, yıka-tara, kıyafet seç, doğum belgesini al. 30–40 dakika sürüyor.</p>
-          <h4>Fiyat</h4><p>Ayının kendisi 299–499 DKK <span class="try">(≈ 2.180–3.640 TL)</span>, kıyafet ve aksesuar ayrı ücretli. İki çocuk için kabaca 600–1.000 DKK <span class="try">(≈ 4.400–7.300 TL)</span>.</p>
-          <h4>İpucu</h4><p>Kalbe ses kaydı ekleme seçeneği var. 19:00 kapanış — hemen başlayın.</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Build-A-Bear+Workshop+K%C3%B8bmagergade+44+Copenhagen" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
-        </div></details>
-        <h3>Build-A-Bear Workshop</h3><div class="addr">Købmagergade 44</div>
-        <div class="tags"><span class="tag">299–499 DKK</span><span class="tag red">19:00 kapanış</span></div></div></li>
-
-    <li class="stop"><div class="clock">19:15<i></i></div>
+    <li class="stop"><div class="clock">18:15<i></i></div>
       <div class="card"><div class="meal">Akşam yemeği</div><h3>Veda akşamı</h3><div class="addr">Tivoli ya da otel civarı</div>
         <p>Tivoli'ye ikinci giriş kartla bedava değil: 195 DKK <span class="try">(≈ 1.425 TL)</span> kişi başı.</p></div></li>
   </ul>
@@ -794,7 +781,7 @@
       <tr class="must"><td>Kanal turu · Nyhavn kalkışlı</td><td>31 Ağu · 15:15</td></tr>
       <tr class="must"><td>VIP transfer · sadece geliş</td><td>30 Ağu · İniş 11:50</td></tr>
       <tr class="must"><td>Barr · Strandgade 93</td><td>2 Eyl · 19:30</td></tr>
-      <tr><td>Christianshavns Færgecafé</td><td>3 Eyl · 12:00</td></tr>
+      <tr><td>5. gün öğle · Mad &amp; Kaffe (aday)</td><td>Henüz kesinleşmedi</td></tr>
       <tr><td>Poulette · telefonla ön sipariş</td><td>31 Ağu · 18:00</td></tr>
       <tr><td>Tivoli oyuncak bilekliği</td><td>Kapıdan da alınır</td></tr>
     </tbody>
@@ -849,16 +836,24 @@
     <li><strong>Su</strong><span>Musluk suyu içilir. Restoranda sorulmadan şişe su getiriyorlar — <em>“postevand, tak”</em> deyin, 510 TL cebinizde kalır.</span></li>
     <li><strong>Vergi iadesi</strong><span>AB dışı olduğunuz için 300 DKK üstü alışverişlerde %25 KDV'nin bir kısmı geri alınabiliyor. Magasin ve ILLUM'da tek fişte toplayın, kasada formu isteyin, havalimanında güvenlikten önce gişeye uğrayın.</span></li>
     <li><strong>Bedava tekne gezisi</strong><span>991 ve 992 numaralı liman otobüsleri normal toplu taşıma sayılıyor, yani kartınıza dahil. Ücretli kanal turunun bedava versiyonu gibi.</span></li>
-    <li><strong>Yedekte duranlar</strong><span>Reffen sokak lezzetleri (Refshaleøen, 22:00'ye kadar), Nationalmuseet çocuk müzesi, Torvehallerne yemek pazarı (19:00 kapanış), Christiansborg Kulesi (ücretsiz, 21:00'e kadar).</span></li>
-    <li><strong>3. gün baştan kuruldu</strong><span>Hayvanat bahçesi, Hart kahvaltısı ve Frederiksberg Have çıktı; yerine Kronprinsensgade ve Illums Bolighus'ta kısa bir tasarım turu, öğle yemeğinde Hooked'ın Gråbrødretorv şubesi, ardından Experimentarium girdi. Experimentarium artık 1. Eylül'de. LEGO Store ve Build-A-Bear 5. günde kaldı.</span></li>
+    <li><strong>Yedekte duranlar</strong><span>Reffen sokak lezzetleri (Refshaleøen, 22:00'ye kadar) — eski bir tersane arazisinde 30'u aşkın tezgahlı, dünya mutfaklarından oluşan açık hava pazarı, liman manzaralı; Nyhavn'dan bisikletle ~20 dk ya da liman otobüsüyle. Ayrıca Nationalmuseet çocuk müzesi, Torvehallerne yemek pazarı (19:00 kapanış), Christiansborg Kulesi (ücretsiz, 21:00'e kadar).</span></li>
+    <li><strong>3. gün baştan kuruldu</strong><span>Hayvanat bahçesi, Hart kahvaltısı ve Frederiksberg Have çıktı; yerine Kronprinsensgade ve Illums Bolighus'ta kısa bir tasarım turu, öğle yemeğinde Hooked'ın Gråbrødretorv şubesi, ardından Experimentarium girdi. Experimentarium artık 1. Eylül'de. LEGO Store 5. günde kaldı, Build-A-Bear 2. güne taşındı.</span></li>
     <li><strong>4. gün ikinci kez yeniden kuruldu</strong><span>Kahvaltı Apotek 57 oldu (BUKA çıktı), öğle yemeği Gasoline Grill'in benzin istasyonu şubesi (Kong Hans Bakery çıktı). Rundetårn çıktı. ByOasen 5. günden buraya taşındı (15:30) — Nørrebro'dan sonra Christianshavn'a geçiliyor, şehri bir uçtan bir uca kesen bir rota ama metroyla yönetilebilir. Barr da 5. günden buraya taşındı, akşam yemeği oldu (19:30). 5. günün akşamı bu yüzden yeniden esnek "veda akşamı" halinde.</span></li>
     <li><strong>Nyboder ve Marmorkirken eklendi, Glyptotek ve Christiansborg'un içi bilerek dışarıda bırakıldı</strong><span>2. güne Amalienborg sonrası kısa bir Marmorkirken molası (12:10, ücretsiz, içeriden bakmak yeterli) ve Kastellet sonrası Nyboder yürüyüşü (13:45, 1631'den kalma sarı-kırmızı deniz subayı evleri) eklendi — ikisi de rotanın üzerinde, ekstra sapma gerektirmiyor. Ny Carlsberg Glyptotek ve Christiansborg Sarayı'nın iç mekânları ise kasıtlı olarak eklenmedi: ikisi de sessiz, "bak ama dokunma" tarzı kapalı salonlar — Rosenborg'da zaten benzer bir deneyim var, tekrar olurdu. Açık havada gezmeyi tercih eden bir aile için bu ikisi öncelikli değil.</span></li>
     <li><strong>2. gün yeniden düzenlendi</strong><span>11:00'deki kanal turu yerine Build-A-Bear geldi (10:45) — 5. gündeki ile aynı marka ama farklı bir mola, çocuklar için ekstra bir hatıra. Bu değişiklik Amalienborg varışını da 12:00'ye getirdi, yani artık nöbet değişimini tam vaktinde görüyorsunuz. Kanal turu günün sonuna, 15:15'e taşındı. Apotek 57 4. güne geçti — Amalienborg'un hemen yanı, Kong Hans'tan önce kısa bir kahve molası oldu.</span></li>
+    <li><strong>5. günden Build-A-Bear çıktı, öğle yemeği açık</strong><span>Build-A-Bear artık sadece 2. günde var, 5. gündeki tekrarı kaldırıldı — LEGO Store'dan sonra akşam yemeğine (18:15) direkt geçiliyor. Christianshavns Færgecafé de çıktı; Barr'ın 4. güne taşınmasıyla o gün Christianshavn'a gitmek için bir sebep kalmamıştı. Öğle yemeği yeri henüz kesinleşmedi, Nørrebro'da Mad &amp; Kaffe aday olarak duruyor.</span></li>
   </ul>
 </section>
 
+<section class="block" id="notlar">
+  <h2>Notlarım</h2>
+  <p>Aklınıza takılanları, kararlaştırdığınız ama henüz yazdırmadığınız şeyleri buraya not edin. Sadece bu telefonda/tarayıcıda saklanıyor, sayfayı kapatıp açsanız da kalıyor.</p>
+  <textarea id="myNotes" placeholder="Örnek: Barr rezervasyonunu ara, çocuklara mont al..."></textarea>
+  <div class="notes-status" id="notesStatus"></div>
+</section>
+
 <footer>
-  <span>Sürüm 30 · 7 Ağustos 2026</span>
+  <span>Sürüm 31 · 7 Ağustos 2026</span>
   <span>2 yetişkin · 2 çocuk</span>
 </footer>
 
@@ -897,6 +892,30 @@
   }, {passive:true});
   window.addEventListener('resize', update);
   update();
+})();
+
+(function(){
+  var ta = document.getElementById('myNotes');
+  var status = document.getElementById('notesStatus');
+  if (!ta) return;
+  var KEY = 'kopenhag-notlar-2026';
+  try {
+    var saved = localStorage.getItem(KEY);
+    if (saved) ta.value = saved;
+  } catch(e){}
+  var t;
+  ta.addEventListener('input', function(){
+    if (status) status.textContent = 'Yazılıyor…';
+    clearTimeout(t);
+    t = setTimeout(function(){
+      try {
+        localStorage.setItem(KEY, ta.value);
+        if (status) status.textContent = 'Kaydedildi ✓';
+      } catch(e){
+        if (status) status.textContent = 'Kaydedilemedi — tarayıcı depolamayı engelliyor olabilir';
+      }
+    }, 500);
+  });
 })();
 </script>
 </body>
