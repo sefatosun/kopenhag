@@ -140,7 +140,7 @@
 </div>
 
 <nav>
-  <div class="current-day-bar" id="currentDayBar">30 Ağustos Pazar · <b>Varış &amp; Tivoli</b></div>
+  <div class="current-day-bar" id="currentDayBar">1. Gün · 30 Ağustos Pazar</div>
   <div class="rail">
     <a href="#g1"><b>30 Ağu Paz</b>Varış &amp; Tivoli</a>
     <a href="#g2"><b>31 Ağu Pzt</b>Şehir Keşfi</a>
@@ -835,7 +835,7 @@
 </section>
 
 <footer>
-  <span>Sürüm 28 · 7 Ağustos 2026</span>
+  <span>Sürüm 29 · 7 Ağustos 2026</span>
   <span>2 yetişkin · 2 çocuk</span>
 </footer>
 
@@ -846,12 +846,11 @@
   var bar = document.getElementById('currentDayBar');
   if(!days.length || !bar) return;
 
-  var info = days.map(function(d){
+  var info = days.map(function(d, idx){
     var dateEl = d.querySelector('.day-date');
     var weekday = dateEl.querySelector('span') ? dateEl.querySelector('span').textContent.trim() : '';
     var dateText = dateEl.firstChild ? dateEl.firstChild.textContent.trim() : '';
-    var theme = d.querySelector('.day-theme') ? d.querySelector('.day-theme').textContent.trim() : '';
-    return dateText + ' ' + weekday + ' · <b>' + theme + '</b>';
+    return (idx + 1) + '. Gün · ' + dateText + ' ' + weekday;
   });
 
   var navH = (document.querySelector('nav') || {}).offsetHeight || 90;
