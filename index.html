@@ -36,10 +36,11 @@
   nav{position:sticky;top:0;z-index:20;background:rgba(230,233,228,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .current-day-bar{background:var(--ink);color:var(--paper);font-family:var(--data);font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:7px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .current-day-bar b{color:var(--sand);font-weight:600}
-  .note-list{list-style:none;margin-top:14px}
-  .note-list li{display:flex;align-items:flex-start;gap:10px;border-bottom:1px solid var(--line);padding:10px 0}
-  .note-list li::before{content:"—";color:var(--sand);flex:0 0 auto}
-  .note-list li span{flex:1;font-size:15px;line-height:1.4;word-break:break-word}
+  .note-list{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:10px}
+  .note-list li{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--sand);border-radius:3px;padding:14px 16px}
+  .note-list li .note-text{font-size:15px;line-height:1.5;color:var(--ink);word-break:break-word}
+  .note-list li .note-text a{color:var(--sea);text-decoration:underline;text-decoration-color:var(--line);word-break:break-all}
+  .note-list li .note-text a:active{color:var(--sand)}
   .notes-status{margin-top:8px;font-family:var(--data);font-size:13px;color:var(--soft);letter-spacing:.06em;text-transform:uppercase;min-height:16px}
   .rail{display:flex;gap:6px;overflow-x:auto;padding:10px 18px;max-width:720px;margin:0 auto;scrollbar-width:none}
   .rail::-webkit-scrollbar{display:none}
@@ -954,7 +955,7 @@
 </section>
 
 <footer>
-  <span>Sürüm 36 · 9 Ağustos 2026</span>
+  <span>Sürüm 37 · 9 Ağustos 2026</span>
   <span>2 yetişkin · 2 çocuk</span>
 </footer>
 
@@ -1002,6 +1003,17 @@
 
   var RAW_URL = 'https://raw.githubusercontent.com/sefatosun/kopenhag/main/notes.json';
 
+  function escapeHtml(str){
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function linkify(text){
+    var urlRe = /(https?:\/\/[^\s]+)/g;
+    return escapeHtml(text).replace(urlRe, function(url){
+      return '<a href="' + url + '" target="_blank" rel="noopener">' + url + '</a>';
+    });
+  }
+
   function render(notes){
     listEl.innerHTML = '';
     if (!notes.length){
@@ -1010,9 +1022,10 @@
     }
     notes.forEach(function(text){
       var li = document.createElement('li');
-      var span = document.createElement('span');
-      span.textContent = text;
-      li.appendChild(span);
+      var div = document.createElement('div');
+      div.className = 'note-text';
+      div.innerHTML = linkify(text);
+      li.appendChild(div);
       listEl.appendChild(li);
     });
     status.textContent = '';
