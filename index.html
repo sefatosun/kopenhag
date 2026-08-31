@@ -55,6 +55,13 @@
   .day-date span{display:block;font-family:var(--data);font-size:15px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
   .day-theme{margin-left:auto;font-family:var(--data);font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);text-align:right}
 
+  .day-fold summary{list-style:none;cursor:pointer;position:relative}
+  .day-fold summary::-webkit-details-marker{display:none}
+  .day-fold summary::after{content:"+ Göster";position:absolute;right:0;bottom:-6px;font-family:var(--data);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+  .day-fold[open] summary::after{content:"– Gizle"}
+  .day-collapsed:not(:has(.day-fold[open])) .day-head{opacity:.55}
+  .day-fold-body{margin-top:4px}
+
   .day-route{margin-top:12px;border:1px solid var(--line);border-radius:3px;background:var(--card)}
   .day-route summary{list-style:none;cursor:pointer;padding:12px 16px;font-family:var(--data);font-size:15px;font-weight:600;letter-spacing:.04em;color:var(--sea);display:flex;justify-content:space-between;align-items:center;gap:10px}
   .day-route summary::-webkit-details-marker{display:none}
@@ -173,10 +180,14 @@
 <div class="wrap">
 
 <!-- ============ GÜN 1 ============ -->
-<section class="day" id="g1">
-  <div class="day-head"><div class="day-num">1</div>
-    <div class="day-date">30 Ağustos<span>Pazar</span></div>
-    <div class="day-theme">Varış &amp; Tivoli</div></div>
+<section class="day day-collapsed" id="g1">
+  <details class="day-fold">
+    <summary>
+      <div class="day-head"><div class="day-num">1</div>
+        <div class="day-date">30 Ağustos<span>Pazar</span></div>
+        <div class="day-theme">Varış &amp; Tivoli</div></div>
+    </summary>
+    <div class="day-fold-body">
   <details class="day-route">
     <summary>🗺️ Bugünün rotası · 4 durak</summary>
     <div class="day-route-panel">
@@ -282,6 +293,8 @@
       <div class="card"><h3>Tivoli'de ışıklar</h3><div class="addr">Tivoli Illuminations · Tivoli Lake kenarı</div>
         <p>Tivoli'nin resmi programına göre gösteri tam bu saatte. Görüp göl kenarında birkaç dakika kaldıktan sonra 22:00'de otele.</p></div></li>
   </ul>
+    </div>
+  </details>
 </section>
 
 <!-- ============ GÜN 2 ============ -->
@@ -967,7 +980,7 @@
 </section>
 
 <footer>
-  <span>Sürüm 41 · 30 Ağustos 2026</span>
+  <span>Sürüm 42 · 30 Ağustos 2026</span>
   <span>2 yetişkin · 2 çocuk</span>
 </footer>
 
