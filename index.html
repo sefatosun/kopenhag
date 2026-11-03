@@ -152,6 +152,59 @@
     .day-theme{margin-left:64px}
   }
   @media print{nav,details.more{display:none}body{background:#fff}.day{break-inside:avoid}.card,.block{box-shadow:none;border:1px solid #ddd}}
+
+  /* v4: gün renkleri, sabit gün başlığı, arama, listemiz */
+  html{scroll-padding-top:calc(var(--navh,108px) + 84px)}
+  #g1{--day-bg:#FDEEE4;--day-accent:#C96F43}
+  #g2{--day-bg:#E5F4EC;--day-accent:#35866A}
+  #g3{--day-bg:#EEE9F8;--day-accent:#6E57A6}
+  #g4{--day-bg:#E4EEF9;--day-accent:#356BA3}
+  #g5{--day-bg:#FAE7EE;--day-accent:#BC4F78}
+  #g6{--day-bg:#F5ECDC;--day-accent:#A47835}
+  #g7{--day-bg:#E8F0E3;--day-accent:#5B7D4B}
+  .day{background:var(--day-bg);border-radius:28px;padding:0 12px 20px;margin-top:26px}
+  .day-head{position:sticky;top:var(--navh,108px);z-index:6;background:var(--day-bg);padding:14px 4px 12px;border-radius:28px 28px 18px 18px;box-shadow:0 10px 14px -14px rgba(31,39,51,.35)}
+  .day-num{background:var(--day-accent);box-shadow:none}
+  .day-theme{background:rgba(255,255,255,.75);color:var(--day-accent)}
+  .day-route summary{color:var(--day-accent)}
+  .day-route summary::after{background:var(--day-bg);color:var(--day-accent)}
+  .day-route-btn{background:var(--day-accent)}
+  .day .clock{color:var(--day-accent)}
+  .day .clock i{border-color:var(--day-accent)}
+  .day .stop.res .clock i{border-color:var(--red)}
+  .day .stop.warn .clock i{border-color:var(--amber)}
+  .day .clock::after{background:rgba(31,39,51,.10)}
+  .day .leg .step{background:rgba(255,255,255,.72)}
+  .day details.more summary{background:var(--day-bg);color:var(--day-accent)}
+  .day details.more[open] summary{background:var(--day-accent);color:#fff}
+  .day details.more .panel a{background:var(--day-accent)}
+  .rail a[href^="#g"] b::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px;background:var(--dot)}
+  .rail a[href="#g1"]{--dot:#E39168}.rail a[href="#g2"]{--dot:#5DB08F}.rail a[href="#g3"]{--dot:#9A84CF}.rail a[href="#g4"]{--dot:#6A9BD1}.rail a[href="#g5"]{--dot:#DE7BA0}.rail a[href="#g6"]{--dot:#CDA463}.rail a[href="#g7"]{--dot:#8DAF7B}
+  .search{max-width:720px;margin:0 auto;padding:10px 16px 0;display:flex;gap:10px;align-items:center}
+  .search input{flex:1;min-width:0;border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 16px;font:inherit;font-size:15px;color:var(--ink);box-shadow:var(--shadow);outline:none;-webkit-appearance:none;appearance:none}
+  .search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+  #qcount{font-size:12.5px;font-weight:600;color:var(--soft);white-space:nowrap}
+  .stop.hit .card{box-shadow:0 0 0 3px #F2B84B,var(--shadow)!important}
+  .dimmed{opacity:.28;transition:opacity .2s ease}
+  tr.hit td{background:#FFF3DF}
+  .notes li.hit{box-shadow:0 0 0 3px #F2B84B}
+  .list-table td{vertical-align:middle}
+  .list-table td:first-child{font-weight:600;font-size:14.5px;padding-right:10px}
+  .list-table td:last-child{white-space:normal;text-align:left;font-weight:500;color:var(--soft);font-size:13px}
+  .st{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:3px 9px;margin:0 6px 3px 0}
+  .st.ok{background:var(--green-soft);color:var(--green)}
+  .st.part{background:var(--amber-soft);color:var(--amber)}
+  .st.no{background:var(--red-soft);color:var(--red)}
+  .st-info a{color:var(--accent);font-weight:600;text-decoration:none}
+  @media (max-width:420px){
+    .day{padding:0 8px 18px}
+    .list-table td:first-child{width:42%}
+    .day-head{flex-wrap:nowrap;gap:10px;padding:10px 4px}
+    .day-num{width:40px;height:40px;font-size:20px;border-radius:12px}
+    .day-date{font-size:18px}
+    .day-date span{font-size:12px}
+    .day-theme{margin-left:auto;font-size:11.5px;padding:5px 10px;max-width:46%;text-align:right;line-height:1.25}
+  }
 </style>
 </head>
 <body>
@@ -179,19 +232,21 @@
   </div>
 </header>
 <section class="update-box" aria-label="Son güncelleme">
-  <div class="ub-head"><span class="ub-badge">Sürüm 3</span><span>4 Kasım 2026 · 00:36</span><span>· taslak</span></div>
+  <div class="ub-head"><span class="ub-badge">Sürüm 4</span><span>4 Kasım 2026 · 00:51</span><span>· taslak</span></div>
   <h3>Bu sürümde neler değişti</h3>
   <ul>
-    <li class="warn">⚠ <b>Salı 17 Kasım:</b> Buckingham'da muhafız değişimi yok. Tören 11:00'de Horse Guards'ta, atlı muhafızlarla — yeni durak olarak eklendi.</li>
-    <li class="warn">⚠ <b>Salı saatleri kaydı:</b> St James's Park 10:20, Horse Guards 10:50, Big Ben 11:45, London Eye 12:15. Fortnum (14:00) ve Bacchanalia (19:30) değişmedi.</li>
-    <li>Tasarım yenilendi: daha yumuşak, yuvarlak ve okunaklı.</li>
-    <li class="prev">Önceki sürüm (2): ilk üç gün aile planına göre kuruldu; Borough Market ve Tower Bridge Cuma'ya taşındı.</li>
+    <li><b>Pazar kahvaltısı NAC London'da</b> (10:30). Ralph Lauren artık 12:00'de kahve ve mağaza molası.</li>
+    <li class="warn">⚠ <b>NAC London:</b> Pazar açılış saati net değil — rezervasyon yaparken teyit edin.</li>
+    <li><b>Çarşamba:</b> Lion King öncesi 17:30'da Five Guys'ta akşam yemeği eklendi.</li>
+    <li class="warn">⚠ <b>Salı 17 Kasım:</b> Buckingham'da muhafız değişimi yok; tören 11:00'de Horse Guards'ta.</li>
+    <li><b>Yeni:</b> "Listemiz" bölümü (neyi ekledik, neyi eklemedik), arama kutusu, her güne ayrı renk, kaydırırken üstte sabit duran gün başlığı.</li>
+    <li class="prev">Önceki sürüm (3): Salı'ya Horse Guards eklendi, saatler kaydı; tasarım yenilendi.</li>
   </ul>
 </section>
 </div>
 
 <nav>
-  <div class="current-day-bar" id="currentDayBar">1. Gün · 15 Kasım Pazar</div>
+  <div class="search"><input type="search" id="q" placeholder="🔍  Ara: crumble, müze, Bacchanalia…" autocomplete="off" enterkeyhint="search" aria-label="Programda ara"><span id="qcount"></span></div>
   <div class="rail">
     <a href="#g1"><b>15 Kas Paz</b>Varış &amp; Bond Street</a>
     <a href="#g2"><b>16 Kas Pzt</b>Hyde Park &amp; Müzeler</a>
@@ -200,6 +255,7 @@
     <a href="#g5"><b>19 Kas Per</b>Notting Hill &amp; Wonderland</a>
     <a href="#g6"><b>20 Kas Cum</b>Borough &amp; Tower Bridge</a>
     <a href="#g7"><b>21 Kas Cmt</b>Dönüş</a>
+    <a href="#liste"><b>✓ / ✗</b>Listemiz</a>
     <a href="#rez"><b>Liste</b>Rezervasyon</a>
     <a href="#fiyat"><b>£ / TL</b>Fiyat rehberi</a>
     <a href="#notlar"><b>✎</b>Notlarım</a>
@@ -214,17 +270,18 @@
     <div class="day-date">15 Kasım<span>Pazar</span></div>
     <div class="day-theme">Varış, Bond Street &amp; Mayfair</div></div>
   <details class="day-route">
-    <summary>🗺️ Bugünün rotası · 6 durak · hepsi yürüyerek</summary>
+    <summary>🗺️ Bugünün rotası · 7 durak · hepsi yürüyerek</summary>
     <div class="day-route-panel">
       <ol>
-        <li>Ralph's Coffee · 1 New Bond Street</li>
+        <li>NAC London · kahvaltı</li>
+        <li>Ralph Lauren · Ralph's Coffee</li>
         <li>New Bond Street · Mayfair yürüyüşü</li>
         <li>Humble Crumble · Marylebone</li>
         <li>Uniqlo · Oxford Street</li>
         <li>Market alışverişi</li>
         <li>Circolo Popolare</li>
       </ol>
-      <a href="https://www.google.com/maps/dir/?api=1&origin=82+Margaret+Street+London&destination=Circolo+Popolare+40+Rathbone+Place+London&travelmode=walking&waypoints=Ralph%27s+Coffee+1+New+Bond+Street+London%7CNew+Bond+Street+London%7CHumble+Crumble+28+James+Street+London%7CUniqlo+311+Oxford+Street+London%7C82+Margaret+Street+London" target="_blank" rel="noopener" class="day-route-btn">Google Maps'te aç ↗</a>
+      <a href="https://www.google.com/maps/dir/?api=1&origin=82+Margaret+Street+London&destination=Circolo+Popolare+40+Rathbone+Place+London&travelmode=walking&waypoints=NAC+North+Audley+Cantine+41+North+Audley+Street+London%7CRalph%27s+Coffee+1+New+Bond+Street+London%7CNew+Bond+Street+London%7CHumble+Crumble+28+James+Street+London%7CUniqlo+311+Oxford+Street+London%7C82+Margaret+Street+London" target="_blank" rel="noopener" class="day-route-btn">Google Maps'te aç ↗</a>
     </div>
   </details>
 
@@ -273,17 +330,28 @@
         </div></details>
         <h3>Otel · Native Fitzrovia by Numa</h3><div class="addr">82 Margaret Street, W1W 8TA</div>
         <div class="tags"><span class="tag red">Geç girişi bildirin</span></div></div>
-      <div class="leg"><span class="step">Uyku · acele yok</span><span class="arrow">→</span><span class="step"><i>🚶</i>12 dk · Oxford Circus üzerinden New Bond Street'e</span></div></li>
+      <div class="leg"><span class="step">Uyku · acele yok</span><span class="arrow">→</span><span class="step"><i>🚶</i>15 dk · Oxford Street boyunca North Audley Street'e</span></div></li>
 
-    <li class="stop"><div class="clock">11:30<i></i></div>
+    <li class="stop res"><div class="clock">10:30<i></i></div>
       <div class="card">
         <details class="more"><summary></summary><div class="panel">
-          <h4>Saatler</h4><p>Ralph's Coffee Pazar günü <strong>11:30</strong>'da açılıyor, Ralph Lauren mağazası 12:00'de. Kahveyi alıp mağaza açılınca içeri geçin.</p>
-          <h4>Ne var</h4><p>New York tarzı kahve, taze meyve suyu ve tatlılar. Menü hafif — doyurucu bir kahvaltı değil, kahve ve tatlı molası gibi düşünün. Çocuklar acıkırsa bir saat sonra Humble Crumble var.</p>
+          <h4>Ne yenir</h4><p>Hafta sonu brunch'ı en çok övülen öğün: ricotta pankek ve speculoos'lu French toast. Tatlı olarak sütlü çikolatalı kurabiye + dondurma da meşhur. Fransız bistro havası; alt katta yeşil kadife koltuklu salon.</p>
+          <h4>İpucu</h4><p>Pankekler çok popüler, hafta sonu yer ayırtmak öneriliyor. Pazar açılış saati listelerde net değil — rezervasyonda teyit edin. Ana yemekler ~£15–25 <span class="try">(≈ 1.000–1.675 TL)</span>.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=NAC+North+Audley+Cantine+41+North+Audley+Street+London" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <div class="meal">Kahvaltı · brunch</div><h3>NAC London</h3><div class="addr">North Audley Cantine · 41 North Audley Street · Selfridges'in yanı</div>
+        <div class="tags"><span class="tag red">Rezervasyon</span><span class="tag warn">Pazar saatini teyit edin</span></div></div>
+      <div class="leg"><span class="step"><i>🚶</i>15 dk · South Molton Street ve New Bond Street boyunca güneye</span></div></li>
+
+    <li class="stop"><div class="clock">12:00<i></i></div>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Saatler</h4><p>Ralph Lauren mağazası Pazar günü 12:00'de açılıyor, içindeki Ralph's Coffee 11:30'da. Kahvaltıyı NAC'ta yaptığınız için burası kısa bir kahve ve mağaza molası.</p>
+          <h4>Ne var</h4><p>New York tarzı kahve, taze meyve suyu ve küçük tatlılar; yeşil-beyaz bardaklarıyla fotoğraflık bir köşe.</p>
           <a href="https://www.google.com/maps/search/?api=1&query=Ralph%27s+Coffee+1+New+Bond+Street+London" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
-        <div class="meal">Kahvaltı · kahve</div><h3>Ralph's Coffee · Ralph Lauren</h3><div class="addr">1 New Bond Street</div>
-        <div class="tags"><span class="tag">Kafe 11:30</span><span class="tag">Mağaza 12:00</span></div></div>
+        <div class="meal">Kahve molası</div><h3>Ralph Lauren · Ralph's Coffee</h3><div class="addr">1 New Bond Street</div>
+        <div class="tags"><span class="tag">Mağaza 12:00</span><span class="tag warn">Kahvaltı değil, kahve</span></div></div>
       <div class="leg"><span class="step"><i>🚶</i>caddenin içinde</span></div></li>
 
     <li class="stop"><div class="clock">12:30<i></i></div>
@@ -558,17 +626,18 @@
     <div class="day-date">18 Kasım<span>Çarşamba</span></div>
     <div class="day-theme">Regent Street &amp; The Lion King</div></div>
   <details class="day-route">
-    <summary>🗺️ Bugünün rotası · 6 durak</summary>
+    <summary>🗺️ Bugünün rotası · 7 durak</summary>
     <div class="day-route-panel">
       <ol>
         <li>The Breakfast Club · Soho</li>
         <li>Regent Street · Hamleys</li>
         <li>Leto · Piccadilly</li>
         <li>Covent Garden · Ben's Cookies</li>
+        <li>Five Guys · akşam yemeği</li>
         <li>Cream Dream</li>
         <li>Lyceum Theatre · The Lion King</li>
       </ol>
-      <a href="https://www.google.com/maps/dir/?api=1&origin=The+Breakfast+Club+Soho+London&destination=Lyceum+Theatre+21+Wellington+Street+London&travelmode=walking&waypoints=Hamleys+Regent+Street+London%7CLeto+Piccadilly+London%7CCovent+Garden+Market+London%7CCream+Dream+46+Bedford+Street+London" target="_blank" rel="noopener" class="day-route-btn">Google Maps'te aç ↗</a>
+      <a href="https://www.google.com/maps/dir/?api=1&origin=The+Breakfast+Club+Soho+London&destination=Lyceum+Theatre+21+Wellington+Street+London&travelmode=walking&waypoints=Hamleys+Regent+Street+London%7CLeto+Piccadilly+London%7CCovent+Garden+Market+London%7CFive+Guys+Covent+Garden+London%7CCream+Dream+46+Bedford+Street+London" target="_blank" rel="noopener" class="day-route-btn">Google Maps'te aç ↗</a>
     </div>
   </details>
 
@@ -615,11 +684,22 @@
       <div class="card">
         <details class="more"><summary></summary><div class="panel">
           <h4>Ne var</h4><p>Kapalı çarşı, sokak gösterileri ve dev Noel ağacı. Ben's Cookies'in pazar içindeki şubesinden sıcak kurabiye.</p>
-          <h4>Akşam yemeği</h4><p>Gösteri öncesi hızlı ve çocuk dostu bir şey: Covent Garden'daki Five Guys şubesi kolay seçenek. 18:30'da yemek bitmiş olsun.</p>
+          <h4>Sırada</h4><p>17:30'da Five Guys'ta akşam yemeği. Kurabiyeyi tatlı olarak sonraya da saklayabilirsiniz.</p>
           <a href="https://www.google.com/maps/search/?api=1&query=Ben%27s+Cookies+Covent+Garden+London" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
-        <div class="meal">Erken akşam yemeği</div><h3>Covent Garden · Ben's Cookies</h3><div class="addr">Covent Garden Piazza</div></div>
+        <h3>Covent Garden · Ben's Cookies</h3><div class="addr">Covent Garden Piazza</div></div>
       <div class="leg"><span class="step"><i>🚶</i>3 dk</span></div></li>
+
+    <li class="stop"><div class="clock">17:30<i></i></div>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne yenir</h4><p>Burger, patates ve milkshake. Çocuklar için "little" boy burgerler yeterli. Patates porsiyonları çok büyük — dört kişiye iki tane yeter.</p>
+          <h4>İpucu</h4><p>Servis hızlı. 18:15'te kalkın: Cream Dream'de tatlıya ya da doğrudan tiyatroya vakit kalır. Kişi başı ~£15–18 <span class="try">(≈ 1.000–1.205 TL)</span>.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Five+Guys+Covent+Garden+London" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <div class="meal">Akşam yemeği · gösteri öncesi</div><h3>Five Guys · Covent Garden</h3><div class="addr">Covent Garden · tiyatroya 5 dk</div>
+        <div class="tags"><span class="tag">Hızlı servis</span><span class="tag warn">Yeni</span></div></div>
+      <div class="leg"><span class="step"><i>🚶</i>3 dk · Cream Dream</span></div></li>
 
     <li class="stop"><div class="clock">18:25<i></i></div>
       <div class="card">
@@ -876,6 +956,49 @@
   </ul>
 </section>
 
+<!-- ============ LİSTEMİZ ============ -->
+<section class="block" id="liste">
+  <h2>Listemiz</h2>
+  <p>Sosyal medyadan topladığımız 33 yer: <b>29</b> programda, <b>2</b> kısmen, <b>2</b> eklenmedi. Güne dokununca o güne gider.</p>
+  <table class="list-table">
+    <tbody>
+      <tr><td>NAC London</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g1">Paz · 10:30 kahvaltı</a></span></td></tr>
+      <tr><td>Ralph Lauren · Ralph's Coffee</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g1">Paz · 12:00 kahve molası</a></span></td></tr>
+      <tr><td>Humble Crumble</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g1">Paz · 14:00</a></span></td></tr>
+      <tr><td>Uniqlo</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g1">Paz · 15:00</a></span></td></tr>
+      <tr><td>Circolo Popolare</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g1">Paz · 19:00</a></span></td></tr>
+      <tr><td>Granger &amp; Co · Pavilion Road</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g2">Pzt · 10:00</a></span></td></tr>
+      <tr><td>Hyde Park gölü</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g2">Pzt · 11:15</a></span></td></tr>
+      <tr><td>Natural History Museum</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g2">Pzt · 12:45</a></span></td></tr>
+      <tr><td>Science Museum</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g2">Pzt · 14:45</a></span></td></tr>
+      <tr><td>Ever After Garden</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g2">Pzt · 16:30</a></span></td></tr>
+      <tr><td>The Ivy Chelsea Garden</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g2">Pzt · 17:30</a></span></td></tr>
+      <tr><td>Chelsea · King's Road gezisi</td><td><span class="st part">Kısmen</span><span class="st-info"><a href="#g2">Kısmen: Ever After ve Ivy var, King's Road gezisi yok</a></span></td></tr>
+      <tr><td>Fortnum &amp; Mason · çay saati</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g3">Sal · 14:00</a></span></td></tr>
+      <tr><td>Bacchanalia</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g3">Sal · 19:30</a></span></td></tr>
+      <tr><td>The Breakfast Club</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g4">Çar · 09:30</a></span></td></tr>
+      <tr><td>Regent Street</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g4">Çar · 10:45</a></span></td></tr>
+      <tr><td>Leto · Piccadilly carrot cake</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g4">Çar · 12:15</a></span></td></tr>
+      <tr><td>Ben's Cookies</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g4">Çar · 17:00</a></span></td></tr>
+      <tr><td>Five Guys</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g4">Çar · 17:30</a></span></td></tr>
+      <tr><td>Cream Dream</td><td><span class="st part">Kısmen</span><span class="st-info"><a href="#g4">Çar · 18:25 · denk gelirse</a></span></td></tr>
+      <tr><td>The Lion King</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g4">Çar · 19:30 · bilet alındı</a></span></td></tr>
+      <tr><td>Notting Hill</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g5">Per · 10:00</a></span></td></tr>
+      <tr><td>Buns from Home</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g5">Per · 11:00</a></span></td></tr>
+      <tr><td>Dishoom Kensington</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g5">Per · 12:30</a></span></td></tr>
+      <tr><td>Hyde Park Winter Wonderland</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g5">Per · 15:30</a></span></td></tr>
+      <tr><td>Fortitude</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g6">Cum · 09:00</a></span></td></tr>
+      <tr><td>Borough Market</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g6">Cum · 10:30</a></span></td></tr>
+      <tr><td>Bread Ahead · donut</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g6">Cum · 10:30</a></span></td></tr>
+      <tr><td>Tower Bridge</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g6">Cum · 12:00</a></span></td></tr>
+      <tr><td>Goodman</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g6">Cum · 19:30</a></span></td></tr>
+      <tr><td>Tongue &amp; Brisket · sandviç</td><td><span class="st ok">Programda</span><span class="st-info"><a href="#g7">Cmt · 10:00</a></span></td></tr>
+      <tr><td>Chiltern Firehouse</td><td><span class="st no">Eklenmedi</span><span class="st-info">Eklenmedi: yangından beri kapalı, Nisan 2027'de açılacak</span></td></tr>
+      <tr><td>Soho House Greek Street</td><td><span class="st no">Eklenmedi</span><span class="st-info">Eklenmedi: sadece üyeler girebiliyor</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
 <!-- ============ REZERVASYON ============ -->
 <section class="block" id="rez">
   <h2>Rezervasyon listesi</h2>
@@ -885,6 +1008,7 @@
     <tbody>
       <tr class="must"><td>The Lion King · Lyceum Theatre</td><td>Alındı ✓</td></tr>
       <tr class="must"><td>easyJet dönüş koltukları (EZY8563)</td><td>Hemen</td></tr>
+      <tr class="must"><td>NAC London · brunch (Pazar saatini sorun)</td><td>15 Kas · 10:30</td></tr>
       <tr class="must"><td>Circolo Popolare · Rathbone Place</td><td>15 Kas · 19:00</td></tr>
       <tr class="must"><td>The Ivy Chelsea Garden · bahçede masa</td><td>16 Kas · 17:30</td></tr>
       <tr class="must"><td>Fortnum &amp; Mason · afternoon tea</td><td>17 Kas · 14:00</td></tr>
@@ -904,23 +1028,16 @@
   <h2>Rezervasyon almayan yerler</h2>
   <p>Bunlarda tek stratejiniz saat seçmek.</p>
   <table><tbody>
-    <tr><td>Ralph's Coffee · 1 New Bond Street</td><td>Pazar 11:30 açılış</td></tr>
+    <tr><td>Ralph Lauren · Ralph's Coffee</td><td>Pazar 12:00 · kahve</td></tr>
     <tr><td>Humble Crumble · Marylebone</td><td>Pazar saatini kontrol edin</td></tr>
     <tr><td>Granger &amp; Co</td><td>Pazartesi sabahı sakin</td></tr>
     <tr><td>The Breakfast Club</td><td>09:30'da kapıda</td></tr>
     <tr><td>Bread Ahead</td><td>Pazarda erken</td></tr>
     <tr><td>Dishoom</td><td>Öğlen sırası kısa</td></tr>
     <tr><td>Fortitude Bakehouse</td><td>Erken tükenir</td></tr>
+    <tr><td>Five Guys · Covent Garden</td><td>Hızlı servis</td></tr>
     <tr><td>Buns from Home · Leto · Ben's Cookies · Cream Dream</td><td>Serbest mola</td></tr>
   </tbody></table>
-</section>
-
-<section class="block">
-  <h2>Listeden çıkanlar</h2>
-  <ul class="notes">
-    <li><strong>Chiltern Firehouse</strong><span>Şubat 2025'teki yangından beri kapalı; Nisan 2027'de yeniden açılması bekleniyor.</span></li>
-    <li><strong>Soho House Greek Street</strong><span>Sadece üyeler ve getirdikleri misafirler girebiliyor. Üye bir tanıdık olursa eklenir.</span></li>
-  </ul>
 </section>
 
 <!-- ============ FİYAT ============ -->
@@ -969,7 +1086,7 @@
 </section>
 
 <footer>
-  <span>Sürüm 3 · 4 Kasım 2026, 00:36</span>
+  <span>Sürüm 4 · 4 Kasım 2026, 00:51</span>
   <span>2 yetişkin · 2 çocuk</span>
 </footer>
 
@@ -1052,6 +1169,37 @@
     .catch(function(){
       status.textContent = 'Notlar yüklenemedi, internet bağlantınızı kontrol edin.';
     });
+})();
+
+(function(){
+  var nav=document.querySelector('nav');
+  function set(){ if(nav) document.documentElement.style.setProperty('--navh', nav.offsetHeight+'px'); }
+  set(); window.addEventListener('resize', set); window.addEventListener('load', set);
+})();
+
+(function(){
+  var input=document.getElementById('q'), cnt=document.getElementById('qcount');
+  if(!input) return;
+  var items=[].slice.call(document.querySelectorAll('.stop, #liste tbody tr, #rez tbody tr, .block .notes li'));
+  function norm(s){ return (s||'').toLocaleLowerCase('tr').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+  var texts=items.map(function(el){ return norm(el.textContent); });
+  var hits=[], idx=-1, timer;
+  function go(i){ if(!hits.length) return; idx=i; hits[idx].scrollIntoView({behavior:'smooth', block:'center'}); cnt.textContent=(idx+1)+' / '+hits.length; }
+  function run(jump){
+    var q=norm(input.value.trim()); hits=[]; idx=-1;
+    items.forEach(function(el){ el.classList.remove('hit','dimmed'); });
+    if(q.length<2){ cnt.textContent=''; return; }
+    items.forEach(function(el,i){ if(texts[i].indexOf(q)>-1){ el.classList.add('hit'); hits.push(el); } else { el.classList.add('dimmed'); } });
+    if(!hits.length){ cnt.textContent='Sonuç yok'; return; }
+    cnt.textContent=hits.length+' sonuç';
+    if(jump) go(0);
+  }
+  input.addEventListener('input', function(){ clearTimeout(timer); timer=setTimeout(function(){ run(true); }, 300); });
+  input.addEventListener('keydown', function(e){
+    if(e.key==='Enter'){ e.preventDefault(); if(!hits.length){ run(true); } else { go((idx+1)%hits.length); } }
+    if(e.key==='Escape'){ input.value=''; run(false); input.blur(); }
+  });
+  input.addEventListener('search', function(){ if(!input.value) run(false); });
 })();
 </script>
 </body>
