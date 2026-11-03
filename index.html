@@ -6,134 +6,152 @@
 <title>Londra Programı · 14–21 Kasım 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#E6E9E4;--card:#FFFFFF;--ink:#14202A;--soft:#5D6E7A;--line:#CDD4CE;
-    --red:#C8102E;--sea:#1E3A5F;--sand:#B08D57;
+    --bg:#F6F2EC;--card:#FFFFFF;--ink:#1F2733;--soft:#6E7480;--line:#ECE6DE;--chip:#F2EEE8;
+    --accent:#34558B;--accent-soft:#E9EFF8;--gold:#C2955A;
+    --red:#D2455E;--red-soft:#FDEDF0;--amber:#A86B12;--amber-soft:#FFF3DF;--green:#2F7D5B;--green-soft:#E6F4EC;
+    --radius:20px;--radius-sm:14px;
+    --shadow:0 1px 2px rgba(31,39,51,.04),0 6px 22px rgba(31,39,51,.06);
+    --shadow-lg:0 2px 6px rgba(31,39,51,.06),0 18px 44px rgba(31,39,51,.14);
     --display:'Bricolage Grotesque',Georgia,serif;
-    --body:'Instrument Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    --data:'Barlow Condensed','Arial Narrow',sans-serif;
+    --body:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --data:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  html{scroll-behavior:smooth;scroll-padding-top:118px}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:56px}
-  .wrap{max-width:720px;margin:0 auto;padding:0 18px}
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:64px}
+  .wrap{max-width:720px;margin:0 auto;padding:0 16px}
 
-  header{padding:34px 0 22px}
-  .eyebrow{font-family:var(--data);font-size:15px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sea)}
-  h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,10vw,60px);line-height:.92;letter-spacing:-.02em;margin:8px 0 14px}
-  h1 em{font-style:normal;display:block;color:var(--sea)}
-  .facts{display:flex;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .fact{flex:1 1 130px;padding:12px 14px 12px 0;border-right:1px solid var(--line)}
-  .fact:last-child{border-right:0}
-  .fact dt{font-family:var(--data);font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
-  .fact dd{font-weight:600;font-size:15px;margin-top:2px}
-  .hint{margin-top:14px;font-size:14px;color:var(--soft)}
-  .hint b{display:inline-block;width:20px;height:20px;line-height:18px;text-align:center;border:1px solid var(--sea);color:var(--sea);border-radius:50%;font-weight:600;font-size:15px;margin-right:4px;vertical-align:-3px}
+  header{padding:30px 0 18px}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:999px}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(40px,11vw,62px);line-height:.95;letter-spacing:-.025em;margin:14px 0 18px}
+  h1 em{font-style:normal;display:block;color:var(--accent)}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .fact{background:var(--card);border-radius:var(--radius-sm);padding:12px 14px;box-shadow:var(--shadow)}
+  .fact dt{font-size:12px;font-weight:600;color:var(--soft)}
+  .fact dd{font-weight:600;font-size:14.5px;margin-top:2px;line-height:1.4}
+  .hint{margin-top:14px;font-size:14px;color:var(--soft);display:flex;gap:8px;align-items:flex-start}
+  .hint b{flex:0 0 auto;display:inline-block;width:24px;height:24px;line-height:24px;text-align:center;background:var(--accent);color:#fff;border-radius:50%;font-weight:700;font-size:15px}
+  .transit-guide{margin-top:14px;padding:14px 16px;background:var(--card);border-radius:var(--radius-sm);box-shadow:var(--shadow);font-size:13.5px;color:var(--soft)}
+  .transit-guide .icons{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+  .transit-guide .icons span{display:inline-flex;align-items:center;gap:6px;background:var(--chip);border-radius:999px;padding:4px 10px;color:var(--ink);font-weight:500}
+  .transit-guide .icons i{font-style:normal;font-size:15px}
 
-  nav{position:sticky;top:0;z-index:20;background:rgba(230,233,228,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  .current-day-bar{background:var(--ink);color:var(--paper);font-family:var(--data);font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:7px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .current-day-bar b{color:var(--sand);font-weight:600}
-  .note-list{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:10px}
-  .note-list li{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--sand);border-radius:3px;padding:14px 16px}
-  .note-list li .note-text{font-size:15px;line-height:1.5;color:var(--ink);word-break:break-word}
-  .note-list li .note-text a{color:var(--sea);text-decoration:underline;text-decoration-color:var(--line);word-break:break-all}
-  .note-list li .note-text a:active{color:var(--sand)}
-  .notes-status{margin-top:8px;font-family:var(--data);font-size:13px;color:var(--soft);letter-spacing:.06em;text-transform:uppercase;min-height:16px}
-  .rail{display:flex;gap:6px;overflow-x:auto;padding:10px 18px;max-width:720px;margin:0 auto;scrollbar-width:none}
+  /* Son güncelleme kutusu */
+  .update-box{margin:6px 0 4px;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;border:1px solid var(--line)}
+  .ub-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;color:var(--soft);font-weight:500}
+  .ub-badge{background:var(--accent);color:#fff;font-weight:700;border-radius:999px;padding:4px 11px;font-size:12.5px}
+  .update-box h3{font-family:var(--display);font-size:18px;font-weight:700;margin:10px 0 8px;letter-spacing:-.01em}
+  .update-box ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .update-box li{font-size:14px;line-height:1.45;padding:10px 12px;border-radius:12px;background:var(--chip)}
+  .update-box li.warn{background:var(--amber-soft);color:#5B3A06}
+  .update-box li.warn b{color:var(--amber)}
+  .update-box li.prev{background:transparent;color:var(--soft);padding:4px 2px;font-size:13px}
+
+  nav{position:sticky;top:0;z-index:20;background:rgba(246,242,236,.88);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px)}
+  .current-day-bar{max-width:720px;margin:0 auto;padding:10px 16px 0;font-size:13px;font-weight:700;color:var(--accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .current-day-bar b{color:var(--gold);font-weight:700}
+  .rail{display:flex;gap:8px;overflow-x:auto;padding:8px 16px 12px;max-width:720px;margin:0 auto;scrollbar-width:none}
   .rail::-webkit-scrollbar{display:none}
-  .rail a{flex:0 0 auto;text-decoration:none;color:var(--ink);font-family:var(--data);font-size:16px;font-weight:600;letter-spacing:.06em;padding:7px 12px;border:1px solid var(--line);border-radius:2px;background:var(--card);white-space:nowrap}
-  .rail a:hover,.rail a:focus-visible{border-color:var(--sea);color:var(--sea)}
-  .rail a b{display:block;font-size:12px;font-weight:500;color:var(--soft);letter-spacing:.1em;text-transform:uppercase}
+  .rail a{flex:0 0 auto;text-decoration:none;color:var(--ink);font-size:14px;font-weight:600;padding:8px 14px;border-radius:14px;background:var(--card);box-shadow:var(--shadow);white-space:nowrap;transition:transform .15s ease,box-shadow .15s ease}
+  .rail a:hover,.rail a:focus-visible{transform:translateY(-1px);box-shadow:var(--shadow-lg);outline:none}
+  .rail a b{display:block;font-size:11.5px;font-weight:600;color:var(--soft)}
+  .rail a b .w{color:var(--amber)}
 
-  .day{margin-top:44px}
-  .day-head{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:8px}
-  .day-num{font-family:var(--data);font-size:46px;font-weight:700;line-height:.8;color:var(--sand)}
-  .day-date{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.01em}
-  .day-date span{display:block;font-family:var(--data);font-size:15px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
-  .day-theme{margin-left:auto;font-family:var(--data);font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);text-align:right}
+  .note-list{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:10px}
+  .note-list li{background:var(--chip);border-radius:var(--radius-sm);padding:14px 16px}
+  .note-list li .note-text{font-size:15px;line-height:1.5;color:var(--ink);word-break:break-word}
+  .note-list li .note-text a{color:var(--accent);word-break:break-all}
+  .notes-status{margin-top:8px;font-size:13px;color:var(--soft);min-height:16px}
 
-  .day-fold summary{list-style:none;cursor:pointer;position:relative}
-  .day-fold summary::-webkit-details-marker{display:none}
-  .day-fold summary::after{content:"+ Göster";position:absolute;right:0;bottom:-6px;font-family:var(--data);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
-  .day-fold[open] summary::after{content:"– Gizle"}
-  .day-collapsed:not(:has(.day-fold[open])) .day-head{opacity:.55}
-  .day-fold-body{margin-top:4px}
+  .day{margin-top:40px}
+  .day-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .day-num{flex:0 0 auto;width:52px;height:52px;border-radius:16px;background:var(--accent);color:#fff;font-family:var(--display);font-size:26px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(52,85,139,.25)}
+  .day-date{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.015em;line-height:1.15}
+  .day-date span{display:block;font-family:var(--body);font-size:13px;font-weight:500;color:var(--soft);letter-spacing:0}
+  .day-theme{margin-left:auto;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:999px}
 
-  .day-route{margin-top:12px;border:1px solid var(--line);border-radius:3px;background:var(--card)}
-  .day-route summary{list-style:none;cursor:pointer;padding:12px 16px;font-family:var(--data);font-size:15px;font-weight:600;letter-spacing:.04em;color:var(--sea);display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .day-route{margin-top:16px;border-radius:var(--radius-sm);background:var(--card);box-shadow:var(--shadow);overflow:hidden}
+  .day-route summary{list-style:none;cursor:pointer;padding:13px 16px;font-size:14px;font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center;gap:10px}
   .day-route summary::-webkit-details-marker{display:none}
-  .day-route summary::after{content:"+";font-size:20px;line-height:1;color:var(--sea);flex:0 0 auto}
+  .day-route summary::after{content:"+";width:26px;height:26px;line-height:26px;text-align:center;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:18px;flex:0 0 auto}
   .day-route[open] summary::after{content:"–"}
-  .day-route-panel{padding:0 16px 16px;border-top:1px solid var(--line)}
-  .day-route-panel ol{margin:14px 0 14px 20px;padding:0}
-  .day-route-panel ol li{font-family:var(--body);font-size:14.5px;color:#37474F;padding:4px 0;line-height:1.4}
-  .day-route-btn{display:block;text-align:center;padding:11px 16px;background:var(--sea);color:var(--paper);text-decoration:none;border-radius:3px;font-family:var(--data);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  .day-route-panel{padding:2px 16px 16px}
+  .day-route-panel ol{margin:6px 0 14px 20px;padding:0}
+  .day-route-panel ol li{font-size:14.5px;color:#3B4452;padding:3px 0;line-height:1.4}
+  .day-route-btn{display:block;text-align:center;padding:12px 16px;background:var(--accent);color:#fff;text-decoration:none;border-radius:12px;font-size:14px;font-weight:700}
 
-  .stops{list-style:none;margin-top:6px}
-  .stop{display:grid;grid-template-columns:66px 1fr}
-  .clock{position:relative;padding-top:20px;font-family:var(--data);font-size:21px;font-weight:700;letter-spacing:.02em;color:var(--sea);font-variant-numeric:tabular-nums}
-  .clock::after{content:"";position:absolute;left:54px;top:0;bottom:0;width:1px;background:var(--line)}
-  .stop:first-child .clock::after{top:22px}
-  .stop:last-child .clock::after{bottom:auto;height:28px}
-  .clock i{position:absolute;left:50px;top:26px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--sea);font-style:normal}
-  .card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:3px;padding:14px 16px;margin:14px 0 0 18px}
-  .stop.res .card{border-left:3px solid var(--red)}
+  .stops{list-style:none;margin-top:8px}
+  .stop{display:grid;grid-template-columns:58px 1fr}
+  .clock{position:relative;padding-top:24px;font-size:15px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+  .clock::after{content:"";position:absolute;left:50px;top:0;bottom:0;width:2px;background:var(--line);border-radius:2px}
+  .stop:first-child .clock::after{top:26px}
+  .stop:last-child .clock::after{bottom:auto;height:30px}
+  .clock i{position:absolute;left:45px;top:27px;width:12px;height:12px;border-radius:50%;background:var(--card);border:3px solid var(--accent);font-style:normal;z-index:1}
+  .card{position:relative;background:var(--card);border-radius:var(--radius);padding:16px 18px;margin:12px 0 0 10px;box-shadow:var(--shadow)}
+  .stop.res .card{box-shadow:inset 4px 0 0 var(--red),var(--shadow)}
   .stop.res .clock i{border-color:var(--red)}
-  .meal{font-family:var(--data);font-size:14px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);margin-bottom:2px}
-  .card h3{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.01em;line-height:1.2;padding-right:34px}
-  .addr{font-family:var(--data);font-size:16px;letter-spacing:.03em;color:var(--soft);margin-top:2px}
-  .card p{font-size:14.5px;color:#37474F;margin-top:8px}
-  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-  .tag{font-family:var(--data);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border:1px solid var(--line);border-radius:2px;color:var(--soft)}
-  .tag.red{border-color:var(--red);color:var(--red)}
-  .tag.sea{border-color:var(--sea);color:var(--sea)}
-  .leg{grid-column:2;margin:10px 0 0 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
-  .leg .step{display:inline-flex;align-items:center;gap:6px;font-family:var(--body);font-size:14px;color:var(--soft);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:4px 12px 4px 10px}
-  .leg .step i{font-style:normal;font-size:16px;line-height:1}
-  .leg .arrow{color:var(--line);font-size:15px;padding:0 1px}
-  .transit-guide{margin-top:10px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:3px;font-size:13.5px;color:var(--soft)}
-  .transit-guide .icons{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:6px}
-  .transit-guide .icons span{display:inline-flex;align-items:center;gap:5px}
-  .transit-guide .icons i{font-style:normal;font-size:17px}
+  .stop.warn .card{box-shadow:inset 4px 0 0 var(--amber),var(--shadow)}
+  .stop.warn .clock i{border-color:var(--amber)}
+  .meal{display:inline-block;font-size:12px;font-weight:700;color:var(--gold);margin-bottom:4px}
+  .card h3{font-family:var(--display);font-weight:700;font-size:18.5px;letter-spacing:-.01em;line-height:1.25;padding-right:38px}
+  .addr{font-size:14px;color:var(--soft);margin-top:3px}
+  .card p{font-size:14.5px;color:#3B4452;margin-top:8px}
+  .alert{margin-top:10px;background:var(--amber-soft);color:#5B3A06;border-radius:12px;padding:10px 12px;font-size:14px;line-height:1.45}
+  .alert b{color:var(--amber)}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .tag{font-size:12.5px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--chip);color:var(--soft)}
+  .tag.red{background:var(--red-soft);color:var(--red)}
+  .tag.sea{background:var(--green-soft);color:var(--green)}
+  .tag.warn{background:var(--amber-soft);color:var(--amber)}
+  .leg{grid-column:2;margin:10px 0 0 10px;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+  .leg .step{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--soft);background:var(--chip);border-radius:999px;padding:5px 12px 5px 10px}
+  .leg .step i{font-style:normal;font-size:15px;line-height:1}
+  .leg .arrow{color:#C9C1B6;font-size:14px;padding:0 1px}
 
-  details.more{position:absolute;top:12px;right:12px}
-  details.more summary{list-style:none;cursor:pointer;width:26px;height:26px;border:1px solid var(--sea);border-radius:50%;color:var(--sea);font-family:var(--data);font-size:20px;font-weight:600;line-height:23px;text-align:center;background:var(--card)}
+  details.more{position:absolute;top:14px;right:14px}
+  details.more summary{list-style:none;cursor:pointer;width:30px;height:30px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:19px;font-weight:600;line-height:30px;text-align:center;transition:background .15s ease}
   details.more summary::-webkit-details-marker{display:none}
   details.more summary::after{content:"+"}
+  details.more[open] summary{background:var(--accent);color:#fff}
   details.more[open] summary::after{content:"–"}
-  details.more summary:focus-visible{outline:2px solid var(--sea);outline-offset:2px}
-  details.more .panel{position:absolute;right:0;top:32px;width:min(78vw,320px);z-index:9;background:var(--card);border:1px solid var(--sea);border-radius:3px;padding:12px 14px;box-shadow:0 10px 28px rgba(20,32,42,.14);font-size:14px;line-height:1.45;color:#37474F;text-align:left}
-  details.more .panel h4{font-family:var(--data);font-size:14px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);margin-bottom:4px}
-  details.more .panel p + h4{margin-top:10px}
-  details.more .panel a{display:inline-block;margin-top:12px;font-family:var(--data);font-size:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sea);text-decoration:none;border-bottom:1px solid var(--sea)}
+  details.more summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  details.more .panel{position:absolute;right:0;top:38px;width:min(80vw,330px);z-index:9;background:var(--card);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow-lg);font-size:14px;line-height:1.5;color:#3B4452;text-align:left;border:1px solid var(--line)}
+  details.more .panel h4{font-size:12.5px;font-weight:700;color:var(--gold);margin-bottom:3px}
+  details.more .panel p + h4{margin-top:12px}
+  details.more .panel a{display:inline-block;margin-top:12px;font-size:13.5px;font-weight:700;color:#fff;background:var(--accent);text-decoration:none;padding:8px 14px;border-radius:999px}
 
   .try{color:var(--soft);font-weight:400}
 
-  .block{margin-top:52px;border-top:2px solid var(--ink);padding-top:18px}
-  .block h2{font-family:var(--display);font-weight:800;font-size:27px;letter-spacing:-.02em}
-  .block > p{color:#37474F;font-size:15px;margin-top:8px}
-  table{width:100%;border-collapse:collapse;margin-top:14px;font-size:15px}
-  th{font-family:var(--data);font-size:15px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-align:left;color:var(--soft);border-bottom:1px solid var(--line);padding:6px 8px 6px 0}
-  td{border-bottom:1px solid var(--line);padding:10px 8px 10px 0;vertical-align:top}
-  td:last-child{font-family:var(--data);font-size:16px;letter-spacing:.03em;white-space:nowrap;color:var(--sea);font-weight:600}
+  .block{margin-top:30px;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 18px}
+  .block h2{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-.02em}
+  .block > p{color:#3B4452;font-size:14.5px;margin-top:6px}
+  table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14.5px}
+  th{font-size:12.5px;font-weight:600;text-align:left;color:var(--soft);border-bottom:1px solid var(--line);padding:6px 8px 8px 0}
+  td{border-bottom:1px solid var(--line);padding:11px 8px 11px 0;vertical-align:top}
+  tr:last-child td{border-bottom:0}
+  td:last-child{font-size:13.5px;white-space:nowrap;color:var(--accent);font-weight:700;text-align:right;padding-right:0}
   tr.must td:first-child{font-weight:600}
-  tr.must td:first-child::before{content:"● ";color:var(--red)}
-  .notes{list-style:none;margin-top:14px}
-  .notes li{border-bottom:1px solid var(--line);padding:12px 0}
-  .notes strong{font-family:var(--display);font-weight:600;font-size:16px;display:block;margin-bottom:3px}
-  .notes span{font-size:14.5px;color:#37474F}
+  tr.must td:first-child::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red);margin-right:8px;vertical-align:1px}
+  .notes{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:8px}
+  .notes li{background:var(--chip);border-radius:var(--radius-sm);padding:12px 14px}
+  .notes strong{font-family:var(--display);font-weight:700;font-size:15.5px;display:block;margin-bottom:2px}
+  .notes span{font-size:14px;color:#3B4452}
 
-  footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--data);font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  footer{margin-top:34px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--soft)}
+  footer span{background:var(--card);border-radius:999px;padding:6px 12px;box-shadow:var(--shadow)}
 
   @media (max-width:420px){
-    .stop{grid-template-columns:56px 1fr}
-    .clock{font-size:18px}.clock::after{left:44px}.clock i{left:40px}
-    .day-theme{flex-basis:100%;text-align:left;margin:6px 0 0}
+    .stop{grid-template-columns:52px 1fr}
+    .clock{font-size:14px}.clock::after{left:44px}.clock i{left:39px}
+    .card{margin-left:8px;padding:15px 16px}
+    .leg{margin-left:8px}
+    .day-theme{margin-left:64px}
   }
-  @media print{nav,details.more{display:none}body{background:#fff}.day{break-inside:avoid}}
+  @media print{nav,details.more{display:none}body{background:#fff}.day{break-inside:avoid}.card,.block{box-shadow:none;border:1px solid #ddd}}
 </style>
 </head>
 <body>
@@ -160,6 +178,16 @@
     Metroda her yetişkin kendi temassız kartını okutur — bir kart, bir kişi. 11 yaş altı çocuklar yanlarındaki yetişkinle ücretsiz geçer. Hat adları (Victoria, Central, Jubilee, Piccadilly) istasyonlarda kendi renkleriyle yazıyor; otelin en yakın istasyonu Oxford Circus, 5 dakika.
   </div>
 </header>
+<section class="update-box" aria-label="Son güncelleme">
+  <div class="ub-head"><span class="ub-badge">Sürüm 3</span><span>4 Kasım 2026 · 00:36</span><span>· taslak</span></div>
+  <h3>Bu sürümde neler değişti</h3>
+  <ul>
+    <li class="warn">⚠ <b>Salı 17 Kasım:</b> Buckingham'da muhafız değişimi yok. Tören 11:00'de Horse Guards'ta, atlı muhafızlarla — yeni durak olarak eklendi.</li>
+    <li class="warn">⚠ <b>Salı saatleri kaydı:</b> St James's Park 10:20, Horse Guards 10:50, Big Ben 11:45, London Eye 12:15. Fortnum (14:00) ve Bacchanalia (19:30) değişmedi.</li>
+    <li>Tasarım yenilendi: daha yumuşak, yuvarlak ve okunaklı.</li>
+    <li class="prev">Önceki sürüm (2): ilk üç gün aile planına göre kuruldu; Borough Market ve Tower Bridge Cuma'ya taşındı.</li>
+  </ul>
+</section>
 </div>
 
 <nav>
@@ -167,7 +195,7 @@
   <div class="rail">
     <a href="#g1"><b>15 Kas Paz</b>Varış &amp; Bond Street</a>
     <a href="#g2"><b>16 Kas Pzt</b>Hyde Park &amp; Müzeler</a>
-    <a href="#g3"><b>17 Kas Sal</b>Saray &amp; Westminster</a>
+    <a href="#g3"><b>17 Kas Sal <span class="w">⚠</span></b>Saray &amp; Horse Guards</a>
     <a href="#g4"><b>18 Kas Çar</b>Regent St &amp; Lion King</a>
     <a href="#g5"><b>19 Kas Per</b>Notting Hill &amp; Wonderland</a>
     <a href="#g6"><b>20 Kas Cum</b>Borough &amp; Tower Bridge</a>
@@ -417,19 +445,20 @@
 <section class="day" id="g3">
   <div class="day-head"><div class="day-num">3</div>
     <div class="day-date">17 Kasım<span>Salı</span></div>
-    <div class="day-theme">Saray, Westminster &amp; Piccadilly</div></div>
+    <div class="day-theme">Saray, Horse Guards &amp; Westminster</div></div>
   <details class="day-route">
-    <summary>🗺️ Bugünün rotası · 6 durak</summary>
+    <summary>🗺️ Bugünün rotası · 7 durak</summary>
     <div class="day-route-panel">
       <ol>
         <li>Buckingham Sarayı</li>
         <li>St James's Park</li>
+        <li>Horse Guards · 11:00 atlı muhafız töreni</li>
         <li>Big Ben · Westminster</li>
         <li>London Eye</li>
         <li>Fortnum &amp; Mason · çay saati</li>
         <li>Bacchanalia</li>
       </ol>
-      <a href="https://www.google.com/maps/dir/?api=1&origin=Buckingham+Palace+London&destination=Bacchanalia+Mayfair+London&travelmode=walking&waypoints=St+James%27s+Park+London%7CBig+Ben+London%7CLondon+Eye+London%7CFortnum+%26+Mason+181+Piccadilly+London" target="_blank" rel="noopener" class="day-route-btn">Google Maps'te aç ↗</a>
+      <a href="https://www.google.com/maps/dir/?api=1&origin=Buckingham+Palace+London&destination=Bacchanalia+Mayfair+London&travelmode=walking&waypoints=St+James%27s+Park+London%7CHorse+Guards+Parade+London%7CBig+Ben+London%7CLondon+Eye+London%7CFortnum+%26+Mason+181+Piccadilly+London" target="_blank" rel="noopener" class="day-route-btn">Google Maps'te aç ↗</a>
     </div>
   </details>
 
@@ -440,29 +469,42 @@
         <p>Pazar günü alınan marketle. Öğle yemeği yerine çay saati olacağı için doyurucu tutun.</p></div>
       <div class="leg"><span class="step"><i>🚶</i>5 dk · Oxford Circus</span><span class="arrow">→</span><span class="step"><i>🚇</i>Victoria hattı · 1 durak Green Park</span><span class="arrow">→</span><span class="step"><i>🚶</i>10 dk · park içinden</span></div></li>
 
-    <li class="stop"><div class="clock">10:00<i></i></div>
+    <li class="stop warn"><div class="clock">10:00<i></i></div>
       <div class="card">
         <details class="more"><summary></summary><div class="panel">
-          <h4>Muhafız değişimi bugün yok</h4><p>17 Kasım Salı günü tam tören programda yok; sadece 15:00'te kısa bir "Captain's Inspection" var ve o saatte çay saatindesiniz. Tam tören isteseydiniz Pazar 10:00 ya da Pazartesi 11:00 olurdu. Bugün sarayı ve kapıdaki nöbetçileri sakin bir ortamda görürsünüz.</p>
+          <h4>Neden burada tören yok</h4><p>17 Kasım Salı günü Buckingham'da tam muhafız değişimi yapılmıyor; sadece 15:00'te kısa bir denetim var ve o saatte çay saatindesiniz. Bu yüzden töreni 11:00'de Horse Guards'ta, atlı muhafızlarla izliyoruz. Sarayı ve kapıdaki nöbetçileri burada sakin bir ortamda görürsünüz.</p>
           <h4>İpucu</h4><p>Saray önündeki Victoria Memorial anıtının basamakları en iyi fotoğraf noktası.</p>
           <a href="https://www.google.com/maps/search/?api=1&query=Buckingham+Palace+London" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <h3>Buckingham Sarayı</h3><div class="addr">Dışarıdan ziyaret · Victoria Memorial</div>
-        <div class="tags"><span class="tag sea">Ücretsiz</span><span class="tag">Bugün tören yok</span></div></div>
+        <div class="alert">⚠ <b>Bugün burada muhafız değişimi yok.</b> Tören 11:00'de Horse Guards'ta — St James's Park'ın içinden 15 dakika.</div>
+        <div class="tags"><span class="tag sea">Ücretsiz</span><span class="tag warn">Tören Horse Guards'ta</span></div></div>
       <div class="leg"><span class="step"><i>🚶</i>2 dk</span></div></li>
 
-    <li class="stop"><div class="clock">10:30<i></i></div>
+    <li class="stop"><div class="clock">10:20<i></i></div>
       <div class="card">
         <details class="more"><summary></summary><div class="panel">
           <h4>Ne var</h4><p>Londra'nın en güzel parkı: göl, pelikanlar, cesur sincaplar, göl kenarında çocuk oyun alanı. Göl üstündeki köprüden saray ve London Eye aynı karede.</p>
-          <h4>Rota</h4><p>Parkın içinden doğuya yürüyün, Horse Guards Parade'den çıkıp Whitehall'dan Westminster'a inin.</p>
+          <h4>Rota</h4><p>Parkın içinden doğuya yürüyün; gölün bittiği yerde Horse Guards Parade meydanı başlıyor. 10:50'de meydanda olun.</p>
           <a href="https://www.google.com/maps/search/?api=1&query=St+James%27s+Park+London" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <h3>St James's Park</h3><div class="addr">Göl, pelikanlar, oyun alanı</div>
         <div class="tags"><span class="tag sea">Ücretsiz</span></div></div>
-      <div class="leg"><span class="step"><i>🚶</i>15 dk · park içinden Horse Guards'a, oradan Westminster'a</span></div></li>
+      <div class="leg"><span class="step"><i>🚶</i>10 dk · parkın doğu ucundan Horse Guards Parade'e</span></div></li>
 
-    <li class="stop"><div class="clock">11:30<i></i></div>
+    <li class="stop"><div class="clock">10:50<i></i></div>
+      <div class="card">
+        <details class="more"><summary></summary><div class="panel">
+          <h4>Ne var</h4><p>Kral'ın atlı muhafız birliği Household Cavalry: parlak miğferli, sorguçlu, kılıçlı askerler ve atları. 11:00'de meydanda King's Life Guard töreni yapılıyor.</p>
+          <h4>Salı günü</h4><p>Kaynaklar tam uyuşmuyor: birine göre tam değişim Pazartesi, Çarşamba ve Cuma, diğer günler aynı saatte daha kısa bir atlı denetim var; ordunun sitesine göre tören her hafta içi. Her iki durumda da 11:00'de atlı askerler meydanda.</p>
+          <h4>Sonrası</h4><p>Whitehall tarafındaki kapıda iki atlı nöbetçi 10:00–16:00 arası duruyor, saat başı değişiyor — fotoğraf için en iyi yer. Atlar ısırabilir ya da tekme atabilir; levhalara uyun, çocuklarla bir adım mesafe bırakın.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Horse+Guards+Parade+London" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
+        </div></details>
+        <h3>Horse Guards · atlı muhafızlar</h3><div class="addr">Horse Guards Parade · 11:00 King's Life Guard</div>
+        <div class="tags"><span class="tag red">10:50'de meydanda olun</span><span class="tag sea">Ücretsiz</span><span class="tag warn">Yeni durak</span></div></div>
+      <div class="leg"><span class="step"><i>🚶</i>8 dk · Whitehall boyunca Big Ben'e</span></div></li>
+
+    <li class="stop"><div class="clock">11:45<i></i></div>
       <div class="card">
         <details class="more"><summary></summary><div class="panel">
           <h4>Ne var</h4><p>Big Ben, Parlamento binası ve Westminster Abbey — dışarıdan görmek yeterli. Westminster Köprüsü'nün ortası Big Ben fotoğrafı için en iyi yer.</p>
@@ -471,7 +513,7 @@
         <h3>Big Ben · Westminster</h3><div class="addr">Parlamento · Westminster Abbey · Westminster Köprüsü</div></div>
       <div class="leg"><span class="step"><i>🚶</i>8 dk · köprüyü geçip karşı kıyıya</span></div></li>
 
-    <li class="stop"><div class="clock">12:00<i></i></div>
+    <li class="stop"><div class="clock">12:15<i></i></div>
       <div class="card">
         <details class="more"><summary></summary><div class="panel">
           <h4>Ne var</h4><p>Thames kıyısındaki dev dönme dolap; bir tur ~30 dakika, Londra'nın tamamını görürsünüz.</p>
@@ -927,7 +969,7 @@
 </section>
 
 <footer>
-  <span>Sürüm 2 · 4 Kasım 2026</span>
+  <span>Sürüm 3 · 4 Kasım 2026, 00:36</span>
   <span>2 yetişkin · 2 çocuk</span>
 </footer>
 
