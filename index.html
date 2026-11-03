@@ -205,6 +205,31 @@
     .day-date span{font-size:12px}
     .day-theme{margin-left:auto;font-size:11.5px;padding:5px 10px;max-width:46%;text-align:right;line-height:1.25}
   }
+
+  /* v6: arama */
+  .search [hidden]{display:none!important}
+  .search{position:relative;display:block}
+  .search-row{display:flex;gap:8px;align-items:center}
+  .search-box{position:relative;flex:1;min-width:0}
+  .search-box input{width:100%;padding-right:38px}
+  .search input::-webkit-search-cancel-button{-webkit-appearance:none;display:none}
+  .qclear{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;border:0;background:var(--chip);color:var(--soft);font-size:18px;line-height:28px;cursor:pointer}
+  .search-nav{flex:0 0 auto;display:flex;align-items:center;gap:4px;background:#fff;border-radius:999px;padding:3px;box-shadow:var(--shadow)}
+  .search-nav button{width:34px;height:34px;border-radius:50%;border:0;background:var(--accent-soft);color:var(--accent);font-size:22px;font-weight:700;line-height:32px;cursor:pointer}
+  .search-nav button:active{background:var(--accent);color:#fff}
+  #qcount{min-width:52px;text-align:center;font-size:12.5px;font-weight:700;color:var(--ink)}
+  .search-results{position:absolute;left:16px;right:16px;top:calc(100% + 6px);list-style:none;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lg);max-height:56vh;overflow:auto;padding:6px;z-index:40}
+  .search-results li button{display:block;width:100%;text-align:left;background:none;border:0;padding:10px 12px;border-radius:12px;font:inherit;font-size:14.5px;font-weight:600;color:var(--ink);cursor:pointer}
+  .search-results li button:hover,.search-results li button:focus-visible{background:var(--chip);outline:none}
+  .search-results li + li{border-top:1px solid var(--line)}
+  .search-results .sr-tag{display:block;font-size:12px;font-weight:600;color:var(--soft);margin-bottom:1px}
+  .search-results .empty{padding:12px;color:var(--soft);font-size:14px}
+  mark.qmark{background:#FFDF7E;color:inherit;border-radius:4px;padding:0 2px}
+  .stop.hit .card{box-shadow:0 0 0 2px rgba(242,184,75,.55),var(--shadow)!important}
+  .stop.current .card{box-shadow:0 0 0 3px #F2B84B,var(--shadow-lg)!important}
+  tr.hit td{background:#FFF8E8}
+  tr.current td{background:#FFEBC2}
+  .notes li.current{box-shadow:0 0 0 3px #F2B84B}
 </style>
 </head>
 <body>
@@ -232,20 +257,32 @@
   </div>
 </header>
 <section class="update-box" aria-label="Son güncelleme">
-  <div class="ub-head"><span class="ub-badge">Sürüm 5</span><span>4 Kasım 2026 · 01:43</span><span>· taslak</span></div>
+  <div class="ub-head"><span class="ub-badge">Sürüm 6</span><span>4 Kasım 2026 · 02:01</span><span>· taslak</span></div>
   <h3>Bu sürümde neler değişti</h3>
   <ul>
-    <li><b>NAC London rezervasyonu alındı ✓</b> — Pazar 10:45–12:45. Otelden 10:25'te çıkış; Ralph Lauren 12:45'e, Bond Street gezisi 13:15'e kaydı.</li>
-    <li><b>Fortnum &amp; Mason çay saati alındı ✓</b> — Salı 13:45 (14:00 değil). Çocuk menüsü ve fiyat bilgisi karta eklendi.</li>
-    <li class="warn">⚠ <b>Salı:</b> London Eye'dan en geç <b>13:15</b>'te çıkın, yoksa çay saatine yetişemezsiniz.</li>
+    <li><b>Arama yenilendi:</b> En az 3 harf yazın; yazarken sayfa kaymaz. Sonuçlar kutunun altında liste olarak çıkar — dokunduğunuz sonuca gider. <b>‹ ›</b> düğmeleriyle sonuçlar arasında ileri geri geçin; bulunan kelime sarıyla işaretlenir, + panelinin içindeyse panel kendiliğinden açılır. <b>×</b> ile temizleyin.</li>
+    <li class="warn">⚠ <b>Salı:</b> London Eye'dan en geç <b>13:15</b>'te çıkın, Fortnum çay saati 13:45.</li>
     <li class="warn">⚠ <b>Salı 17 Kasım:</b> Buckingham'da muhafız değişimi yok; tören 11:00'de Horse Guards'ta.</li>
-    <li class="prev">Önceki sürüm (4): NAC Pazar kahvaltısı, Five Guys akşam yemeği, Listemiz, arama, gün renkleri, sabit gün başlığı.</li>
+    <li class="prev">Önceki sürüm (5): NAC (Pazar 10:45) ve Fortnum (Salı 13:45) rezervasyonları alındı, saatler kaydı.</li>
   </ul>
 </section>
 </div>
 
 <nav>
-  <div class="search"><input type="search" id="q" placeholder="🔍  Ara: crumble, müze, Bacchanalia…" autocomplete="off" enterkeyhint="search" aria-label="Programda ara"><span id="qcount"></span></div>
+  <div class="search">
+    <div class="search-row">
+      <div class="search-box">
+        <input type="search" id="q" placeholder="🔍  Ara: cookie, müze, Bacchanalia…" autocomplete="off" enterkeyhint="search" aria-label="Programda ara">
+        <button type="button" id="qclear" class="qclear" aria-label="Aramayı temizle" hidden>×</button>
+      </div>
+      <div class="search-nav" id="qnav" hidden>
+        <button type="button" id="qprev" aria-label="Önceki sonuç">‹</button>
+        <span id="qcount"></span>
+        <button type="button" id="qnext" aria-label="Sonraki sonuç">›</button>
+      </div>
+    </div>
+    <ul class="search-results" id="qresults" hidden></ul>
+  </div>
   <div class="rail">
     <a href="#g1"><b>15 Kas Paz</b>Varış &amp; Bond Street</a>
     <a href="#g2"><b>16 Kas Pzt</b>Hyde Park &amp; Müzeler</a>
@@ -1088,7 +1125,7 @@
 </section>
 
 <footer>
-  <span>Sürüm 5 · 4 Kasım 2026, 01:43</span>
+  <span>Sürüm 6 · 4 Kasım 2026, 02:01</span>
   <span>2 yetişkin · 2 çocuk</span>
 </footer>
 
@@ -1180,28 +1217,107 @@
 })();
 
 (function(){
-  var input=document.getElementById('q'), cnt=document.getElementById('qcount');
+  var input=document.getElementById('q'), cnt=document.getElementById('qcount'), nav=document.getElementById('qnav'),
+      prev=document.getElementById('qprev'), next=document.getElementById('qnext'),
+      list=document.getElementById('qresults'), clr=document.getElementById('qclear');
   if(!input) return;
-  var items=[].slice.call(document.querySelectorAll('.stop, #liste tbody tr, #rez tbody tr, .block .notes li'));
-  function norm(s){ return (s||'').toLocaleLowerCase('tr').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
-  var texts=items.map(function(el){ return norm(el.textContent); });
-  var hits=[], idx=-1, timer;
-  function go(i){ if(!hits.length) return; idx=i; hits[idx].scrollIntoView({behavior:'smooth', block:'center'}); cnt.textContent=(idx+1)+' / '+hits.length; }
-  function run(jump){
-    var q=norm(input.value.trim()); hits=[]; idx=-1;
-    items.forEach(function(el){ el.classList.remove('hit','dimmed'); });
-    if(q.length<2){ cnt.textContent=''; return; }
-    items.forEach(function(el,i){ if(texts[i].indexOf(q)>-1){ el.classList.add('hit'); hits.push(el); } else { el.classList.add('dimmed'); } });
-    if(!hits.length){ cnt.textContent='Sonuç yok'; return; }
-    cnt.textContent=hits.length+' sonuç';
-    if(jump) go(0);
-  }
-  input.addEventListener('input', function(){ clearTimeout(timer); timer=setTimeout(function(){ run(true); }, 300); });
-  input.addEventListener('keydown', function(e){
-    if(e.key==='Enter'){ e.preventDefault(); if(!hits.length){ run(true); } else { go((idx+1)%hits.length); } }
-    if(e.key==='Escape'){ input.value=''; run(false); input.blur(); }
+  var DAYS={'Pazar':'Paz','Pazartesi':'Pzt','Salı':'Sal','Çarşamba':'Çar','Perşembe':'Per','Cuma':'Cum','Cumartesi':'Cmt'};
+  function nc(c){ var n=c.toLocaleLowerCase('tr').normalize('NFD').replace(/[̀-ͯ]/g,''); if(n==='ı') n='i'; return n.length===1 ? n : (n.charAt(0)||' '); }
+  function norm(s){ var o=''; for(var i=0;i<s.length;i++) o+=nc(s.charAt(i)); return o; }
+  function txt(el){ return el ? el.textContent.replace(/\s+/g,' ').trim() : ''; }
+
+  var items=[];
+  [].forEach.call(document.querySelectorAll('.stop'), function(el){
+    var day=el.closest('.day'), dd=day && day.querySelector('.day-date'), sp=dd && dd.querySelector('span');
+    var wd=sp ? sp.textContent.trim() : '';
+    items.push({el:el, label:(DAYS[wd]||wd)+' · '+txt(el.querySelector('.clock')), title:txt(el.querySelector('h3'))});
   });
-  input.addEventListener('search', function(){ if(!input.value) run(false); });
+  [].forEach.call(document.querySelectorAll('#liste tbody tr'), function(el){ items.push({el:el, label:'Listemiz', title:txt(el.cells[0])}); });
+  [].forEach.call(document.querySelectorAll('.block'), function(b){
+    if(b.id==='liste' || b.id==='notlar') return;
+    var h2=txt(b.querySelector('h2'));
+    [].forEach.call(b.querySelectorAll('tbody tr'), function(el){ items.push({el:el, label:h2, title:txt(el.cells[0])}); });
+    [].forEach.call(b.querySelectorAll('.notes li'), function(el){ items.push({el:el, label:h2, title:txt(el.querySelector('strong'))}); });
+  });
+  items.forEach(function(it){ it.text=norm(it.el.textContent); });
+
+  var hits=[], idx=-1, q='', timer, opened=[];
+
+  function removeMarks(){
+    [].forEach.call(document.querySelectorAll('mark.qmark'), function(m){
+      var p=m.parentNode; p.replaceChild(document.createTextNode(m.textContent), m); p.normalize();
+    });
+    opened.forEach(function(d){ d.open=false; }); opened=[];
+  }
+  function resetAll(){
+    removeMarks();
+    [].forEach.call(document.querySelectorAll('.hit,.current'), function(el){ el.classList.remove('hit','current'); });
+    hits=[]; idx=-1;
+  }
+  function markIn(el){
+    var w=document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), nodes=[], n, first=null;
+    while((n=w.nextNode())) nodes.push(n);
+    nodes.forEach(function(node){
+      var s=node.nodeValue, ns=norm(s), pos=ns.indexOf(q);
+      if(pos<0) return;
+      var frag=document.createDocumentFragment(), last=0;
+      while(pos>-1){
+        frag.appendChild(document.createTextNode(s.slice(last,pos)));
+        var m=document.createElement('mark'); m.className='qmark'; m.textContent=s.slice(pos,pos+q.length);
+        frag.appendChild(m); if(!first) first=m;
+        last=pos+q.length; pos=ns.indexOf(q,last);
+      }
+      frag.appendChild(document.createTextNode(s.slice(last)));
+      node.parentNode.replaceChild(frag,node);
+    });
+    return first;
+  }
+  function hideList(){ list.hidden=true; }
+  function renderList(){
+    list.innerHTML='';
+    if(!hits.length){ var e=document.createElement('li'); e.className='empty'; e.textContent='Sonuç yok'; list.appendChild(e); list.hidden=false; return; }
+    hits.forEach(function(it,i){
+      var li=document.createElement('li'), b=document.createElement('button'), t=document.createElement('span');
+      b.type='button'; t.className='sr-tag'; t.textContent=it.label;
+      b.appendChild(t); b.appendChild(document.createTextNode(it.title));
+      b.addEventListener('click', function(){ go(i); });
+      li.appendChild(b); list.appendChild(li);
+    });
+    list.hidden=false;
+  }
+  function go(i){
+    if(!hits.length) return;
+    idx=(i+hits.length)%hits.length;
+    removeMarks();
+    hits.forEach(function(h){ h.el.classList.remove('current'); });
+    var it=hits[idx]; it.el.classList.add('current');
+    var m=markIn(it.el);
+    if(m){ var d=m.closest('details.more'); if(d && !d.open){ d.open=true; opened.push(d); } }
+    hideList(); input.blur();
+    it.el.scrollIntoView({behavior:'smooth', block:'center'});
+    cnt.textContent=(idx+1)+' / '+hits.length;
+  }
+  function run(){
+    resetAll();
+    q=norm(input.value.trim());
+    clr.hidden=!input.value;
+    if(q.length<3){ hideList(); nav.hidden=true; cnt.textContent=''; return; }
+    hits=items.filter(function(it){ return it.text.indexOf(q)>-1; });
+    hits.forEach(function(it){ it.el.classList.add('hit'); });
+    nav.hidden=!hits.length;
+    cnt.textContent=hits.length ? hits.length+' sonuç' : '';
+    renderList();
+  }
+  input.addEventListener('input', function(){ clearTimeout(timer); timer=setTimeout(run, 250); });
+  input.addEventListener('keydown', function(e){
+    if(e.key==='Enter'){ e.preventDefault(); clearTimeout(timer); if(!hits.length) run(); if(hits.length) go(idx+1); }
+    if(e.key==='Escape'){ input.value=''; run(); input.blur(); }
+  });
+  input.addEventListener('focus', function(){ if(hits.length && idx<0) list.hidden=false; });
+  prev.addEventListener('click', function(){ go(idx<0 ? hits.length-1 : idx-1); });
+  next.addEventListener('click', function(){ go(idx+1); });
+  clr.addEventListener('click', function(){ input.value=''; run(); input.focus(); });
+  document.addEventListener('click', function(e){ if(!e.target.closest('.search')) hideList(); });
 })();
 </script>
 </body>
