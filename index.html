@@ -122,6 +122,9 @@
   details.more .panel{position:absolute;right:0;top:38px;width:min(80vw,330px);z-index:9;background:var(--card);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow-lg);font-size:14px;line-height:1.5;color:#3B4452;text-align:left;border:1px solid var(--line)}
   details.more .panel h4{font-size:12.5px;font-weight:700;color:var(--gold);margin-bottom:3px}
   details.more .panel p + h4{margin-top:12px}
+  details.more .panel ul{margin:6px 0 0;padding-left:18px}
+  details.more .panel li{margin:2px 0}
+  details.more .panel ul + h4{margin-top:12px}
   details.more .panel a{display:inline-block;margin-top:12px;font-size:13.5px;font-weight:700;color:#fff;background:var(--accent);text-decoration:none;padding:8px 14px;border-radius:999px}
 
   .try{color:var(--soft);font-weight:400}
@@ -257,16 +260,17 @@
   </div>
 </header>
 <section class="update-box" aria-label="Son güncelleme">
-  <div class="ub-head"><span class="ub-badge">Sürüm 10</span><span>8 Kasım 2026 · 00:19</span><span>· taslak</span></div>
+  <div class="ub-head"><span class="ub-badge">Sürüm 11</span><span>8 Kasım 2026 · 00:26</span><span>· taslak</span></div>
   <h3>Bu sürümde neler değişti</h3>
   <ul>
+    <li><b>Perşembe · Dishoom</b>: çocuk menüsü ve sipariş önerileri karta eklendi.</li>
     <li><b>Pazartesi 12:30 · Burger &amp; Lobster (yeni)</b>: Harvey Nichols 5. kat, Hyde Park'tan 10 dk. Müzeler kaydı: Natural History 13:45, Science 15:15 (16:10'da çıkış).</li>
     <li><b>Salı 19:00 · Brasserie Zédel</b>: Bacchanalia çıkarıldı (£340 ön ödeme).</li>
     <li class="warn">⚠ <b>Rezervasyonlar yapılacak:</b> Burger &amp; Lobster 16 Kas 12:30 · The Wolseley 17 Kas 13:45 · Brasserie Zédel 17 Kas 19:00 (hepsi 4 kişi).</li>
     <li class="warn">⚠ <b>Natural History Museum</b> saatli girişini 13:45 için alın.</li>
     <li class="warn">⚠ <b>12 Kasım:</b> Circolo'nun göndereceği hatırlatma mesajını onaylayın, yoksa rezervasyon düşebilir. Masa yalnızca 10 dk bekletiliyor (18:25).</li>
     <li class="warn">⚠ <b>Salı:</b> London Eye'dan en geç 13:15'te çıkın (Wolseley 13:45). Buckingham'da tören yok; tören 11:00'de Horse Guards'ta.</li>
-    <li class="prev">Önceki sürüm (9): Fortnum çay saati iptal, Salı öğlen The Wolseley eklendi.</li>
+    <li class="prev">Önceki sürüm (10): Pazartesi Burger &amp; Lobster, Salı akşam Brasserie Zédel.</li>
   </ul>
 </section>
 </div>
@@ -870,11 +874,15 @@
     <li class="stop"><div class="clock">12:30<i></i></div>
       <div class="card">
         <details class="more"><summary></summary><div class="panel">
-          <h4>Ne yenir</h4><p>Bombay kafeleri tarzı Hint mutfağı. Black daal, chicken ruby ve peynirli naan klasikleri; çocuklar için naan ve tavuk tikka güvenli seçim.</p>
-          <h4>İpucu</h4><p>Akşamları uzun kuyruk olur, öğlen çok daha kısa. Eski Barkers mağazasının binasında.</p>
+          <h4>Ne var</h4><p>Bombay'daki eski İran kafelerinden esinlenmiş, Londra'nın en sevilen restoranlarından. Bu şube 1930'lardan kalma art deco Barkers binasında.</p>
+          <h4>Siz için</h4><p><b>Black daal</b> (meşhur siyah mercimek), <b>chicken ruby</b> (köri), sarımsaklı naan; sonunda <b>chai</b>.</p>
+          <h4>Çocuklar için</h4><p>Çocuk menüsü bütün gün var; küçük porsiyon, neredeyse acısız. Öğlen ana yemek ve bir yan ürün <b>£9,70</b>:</p>
+          <ul><li><b>Murgh malai</b> · hafif marine ızgara tavuk</li><li><b>Chicken pau</b> · ev yapımı ekmekte çıtır tavuk burger</li><li>Yanına: közlenmiş mısır ya da havuç-salatalık çubukları</li><li>Tatlı: <b>kulfi</b> (Hint dondurması), mango ya da fıstıklı</li></ul>
+          <h4>İpucu</h4><p>Akşamları uzun kuyruk olur, öğlen çok daha kısa. Akşam Winter Wonderland'de yemek olduğu için öğleni çok ağır tutmayın.</p>
           <a href="https://www.google.com/maps/search/?api=1&query=Dishoom+Kensington+Derry+Street+London" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
-        <div class="meal">Öğle yemeği</div><h3>Dishoom Kensington</h3><div class="addr">The Barkers Building · Derry Street</div></div>
+        <div class="meal">Öğle yemeği</div><h3>Dishoom Kensington</h3><div class="addr">The Barkers Building · Derry Street</div>
+        <div class="tags"><span class="tag">Çocuk menüsü £9,70</span><span class="tag warn">Menü önerileri eklendi</span></div></div>
       <div class="leg"><span class="step"><i>🚶</i>5 dk · parka</span></div></li>
 
     <li class="stop"><div class="clock">14:00<i></i></div>
@@ -1188,7 +1196,7 @@
 </section>
 
 <footer>
-  <span>Sürüm 10 · 8 Kasım 2026, 00:19</span>
+  <span>Sürüm 11 · 8 Kasım 2026, 00:26</span>
   <span>2 yetişkin · 2 çocuk</span>
 </footer>
 
