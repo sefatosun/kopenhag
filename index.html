@@ -184,6 +184,7 @@
   .day details.more summary{background:var(--day-bg);color:var(--day-accent)}
   .day details.more[open] summary{background:var(--day-accent);color:#fff}
   .day details.more .panel a{background:var(--day-accent)}
+  .ticket-btn{display:inline-block;margin:8px 0 2px;font-size:14px;font-weight:700;color:#fff;background:var(--day-accent,var(--accent));text-decoration:none;padding:8px 16px;border-radius:999px;box-shadow:var(--shadow)}
   .day details.more .panel a.map{display:block;background:none;padding:0;margin:6px 0 0;border-radius:12px}
   .rail a[href^="#g"] b::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px;background:var(--dot)}
   .rail a[href="#g1"]{--dot:#E39168}.rail a[href="#g2"]{--dot:#5DB08F}.rail a[href="#g3"]{--dot:#9A84CF}.rail a[href="#g4"]{--dot:#6A9BD1}.rail a[href="#g5"]{--dot:#DE7BA0}.rail a[href="#g6"]{--dot:#CDA463}.rail a[href="#g7"]{--dot:#8DAF7B}
@@ -264,10 +265,11 @@
   </div>
 </header>
 <section class="update-box" aria-label="Son güncelleme">
-  <div class="ub-head"><span class="ub-badge">Sürüm 17</span><span>11 Kasım 2026 · 22:05</span><span>· taslak</span></div>
+  <div class="ub-head"><span class="ub-badge">Sürüm 18</span><span>11 Kasım 2026 · 22:07</span><span>· taslak</span></div>
   <h3>Bu sürümde neler değişti</h3>
   <ul>
-    <li><b>Perşembe · Winter Wonderland</b>: e-biletler geldi. Alan haritası, bileklik alma noktası ve hangi kapıdan girileceği karta eklendi (QR'lar güvenlik için sayfada yok).</li>
+    <li><b>Perşembe · Winter Wonderland</b>: bilet PDF'i karta eklendi — "🎟️ Biletler" düğmesi.</li>
+    <li><b>Perşembe · Winter Wonderland</b>: e-biletler geldi. Alan haritası, bileklik alma noktası ve hangi kapıdan girileceği karta eklendi.</li>
     <li><b>Üstteki gün kartları kaldırıldı</b>: arama kutusu ve kayarken sabit kalan gün başlığı yerinde.</li>
     <li><b>Ana ekran simgesi</b>: iPhone'da "Ana Ekrana Ekle" deyince Big Ben ve London Eye logosu görünür, adı "Londra".</li>
     <li><b>Winter Wonderland bilet alındı ✓</b>: Perşembe giriş 15:00–16:00, 2 Santa Land sınırsız pass + 2 çocuk menüsü. Oyuncak listesi karta eklendi.</li>
@@ -904,7 +906,8 @@
     <li class="stop res"><div class="clock">15:30<i></i></div>
       <div class="card">
         <details class="more"><summary></summary><div class="panel">
-          <h4>Biletler</h4><p>Alındı ✓ — giriş 15:00–16:00 arası, 4 kişi; içeride kapanışa (22:00) kadar kalabilirsiniz. E-biletler (8 adet QR: 4 giriş, 2 Santa Land pass, 2 çocuk menüsü) e-postada ve telefonda "Dosyalar"da. Güvenlik için QR'lar bu sayfada yok.</p>
+          <h4>Biletler</h4><p>Alındı ✓ — giriş 15:00–16:00 arası, 4 kişi; içeride kapanışa (22:00) kadar kalabilirsiniz. E-biletler 8 adet QR: 4 giriş, 2 Santa Land pass, 2 çocuk menüsü.</p>
+          <a href="ww-biletler.pdf" target="_blank" rel="noopener">🎟️ Biletleri aç (PDF)</a>
           <h4>İçeride sıra</h4><p>1) Girişte 4 giriş QR'ını okutun. 2) Santa Land'de <b>"Santa Land Pass Collection"</b> noktasından (haritada 1 numara) çocukların bilekliklerini alın; oyuncaklara bileklikle binilir. 3) Yemekte Jingle Bell Bistro'da (haritada 18) çocuk menüsü QR'larını okutun; gece 23:59'a kadar geçerli.</p>
           <h4>Hangi kapıdan</h4><p>Santa Land alanın kuzey ucunda, Marble Arch / Bond Street tarafında. Kensington Gardens'tan gelirken kuzey kapılarından girin; Hyde Park Corner (güney) kapısı Santa Land'e en uzak olan. Dönüşte yine kuzeyden çıkıp Marble Arch metrosuna yürüyün.</p>
           <h4>Alan haritası</h4><a class="map" href="ww-harita.jpg" target="_blank" rel="noopener"><img src="ww-harita.jpg" alt="Winter Wonderland alan haritası" loading="lazy" style="width:100%;border-radius:12px;margin:4px 0 2px;display:block"></a><p style="font-size:13px">Büyütmek için haritaya dokunun.</p>
@@ -914,6 +917,7 @@
           <a href="https://www.google.com/maps/search/?api=1&query=Hyde+Park+Winter+Wonderland+London" target="_blank" rel="noopener">Fotoğraflar ve harita ↗</a>
         </div></details>
         <h3>Hyde Park Winter Wonderland</h3><div class="addr">Kuzey kapısı · Marble Arch tarafı · Santa Land yanı</div>
+        <a class="ticket-btn" href="ww-biletler.pdf" target="_blank" rel="noopener">🎟️ Biletler</a>
         <div class="tags"><span class="tag sea">Bilet alındı ✓</span><span class="tag">Giriş 15:00–16:00</span><span class="tag">Açılış günü</span></div></div>
       <div class="leg"><span class="step"><i>🚇</i>Marble Arch → Central hattı · 2 durak Oxford Circus</span><span class="arrow">→</span><span class="step"><i>🚶</i>5 dk</span></div></li>
 
@@ -1206,7 +1210,7 @@
 </section>
 
 <footer>
-  <span>Sürüm 17 · 11 Kasım 2026, 22:05</span>
+  <span>Sürüm 18 · 11 Kasım 2026, 22:07</span>
   <span>2 yetişkin · 2 çocuk</span>
 </footer>
 
