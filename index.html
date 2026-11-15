@@ -99,6 +99,11 @@
   .stop.res .clock i{border-color:var(--red)}
   .stop.warn .card{box-shadow:inset 4px 0 0 var(--amber),var(--shadow)}
   .stop.warn .clock i{border-color:var(--amber)}
+  .stop.done .clock,.stop.done .card{opacity:.42;transition:opacity .2s}
+  .stop.done .clock i{background:var(--line);border-color:var(--line)}
+  .stop.now .card{box-shadow:0 0 0 2px var(--accent),var(--shadow)}
+  .stop.now .clock i{background:var(--accent)}
+  .stop.now .clock::before{content:"ŞİMDİ";position:absolute;top:6px;left:0;font-size:9.5px;font-weight:800;letter-spacing:.06em;color:#fff;background:var(--accent);padding:2px 6px;border-radius:999px}
   .meal{display:inline-block;font-size:12px;font-weight:700;color:var(--gold);margin-bottom:4px}
   .card h3{font-family:var(--display);font-weight:700;font-size:18.5px;letter-spacing:-.01em;line-height:1.25;padding-right:38px}
   .addr{font-size:14px;color:var(--soft);margin-top:3px}
@@ -245,7 +250,7 @@
 
 <div class="wrap">
 <header>
-  <div class="ver">Sürüm 20 · 13 Kasım 2026, 00:04</div>
+  <div class="ver">Sürüm 21 · 15 Kasım 2026, 11:28</div>
   <div class="eyebrow">14 – 21 Kasım 2026 · 2 yetişkin, 2 çocuk</div>
   <h1>Londra<em>gün gün</em></h1>
   <dl class="facts">
@@ -267,18 +272,16 @@
   </div>
 </header>
 <section class="update-box" aria-label="Son güncelleme">
-  <div class="ub-head"><span class="ub-badge">Sürüm 20</span><span>13 Kasım 2026 · 00:04</span><span>· taslak</span></div>
+  <div class="ub-head"><span class="ub-badge">Sürüm 21</span><span>15 Kasım 2026 · 11:28</span><span>· taslak</span></div>
   <h3>Bu sürümde neler değişti</h3>
   <ul>
-    <li><b>Pazartesi ↔ Salı gündüz programı yer değiştirdi</b> (Salı gün boyu yağmur bekleniyor). Rezervasyonlar aynı günlerinde kaldı.</li>
-    <li><b>Pazartesi</b>: 11:00 Buckingham'da gerçek nöbet değişimi töreni, St James's Park, Big Ben, London Eye, 14:00 <b>Alba</b> (yeni), Harrods, ardından Chelsea ve Ivy. Hyde Park yürüyüşü çıktı.</li>
-    <li><b>Salı</b>: Granger kahvaltı, Natural History ve Science Museum, sonra Wolseley, Fortnum, Donutelier, Zédel — hepsi kapalı mekân.</li>
-    <li><b>Çarşamba</b>: Five Guys yerine 17:00 <b>Burger &amp; Lobster Soho</b>; tiyatroya giderken Covent Garden ve Ben's Cookies. Cream Dream çıktı.</li>
+    <li><b>Program saate göre ilerliyor</b>: biten duraklar soluk görünüyor, şu anki durak <b>ŞİMDİ</b> etiketiyle vurgulanıyor. Sayfa açılınca doğrudan o saate kayıyor (Londra saati).</li>
+    <li><b>Bagaj</b> bilgisi güncellendi: 2 × 29 kg bavul + dönüşte 1 büyük kabin valizi.</li>
     <li class="warn">⚠ <b>Rezervasyonlar yapılacak:</b> Alba 16 Kas 14:00 · Burger &amp; Lobster Soho 18 Kas 17:00 (4 kişi).</li>
     <li class="warn">⚠ <b>Biletler:</b> London Eye Pzt 16 Kas 12:45 · Natural History Museum ücretsiz saatli giriş Sal 17 Kas 10:00.</li>
     <li class="warn">⚠ <b>Pazartesi:</b> Buckingham'da 10:15'te yer tutun; tören sabah iptal edilebilir, siteden kontrol edin.</li>
     <li class="warn">⚠ <b>Perşembe:</b> Kensington Gardens'tan 15:15'te çıkın; Winter Wonderland girişi en geç 16:00.</li>
-    <li class="prev">Önceki sürümler: Winter Wonderland biletleri ve haritası, Wolseley ✓, Zédel 18:45 ✓, sürüm bilgisi en üstte.</li>
+    <li class="prev">Önceki sürüm: Pazartesi ↔ Salı gündüz değişimi, Alba, Burger &amp; Lobster Soho (Çarşamba).</li>
   </ul>
 </section>
 </div>
@@ -303,7 +306,7 @@
 <div class="wrap">
 
 <!-- ============ GÜN 1 ============ -->
-<section class="day" id="g1">
+<section class="day" id="g1" data-start="2026-11-14">
   <div class="day-head"><div class="day-num">1</div>
     <div class="day-date">15 Kasım<span>Pazar</span></div>
     <div class="day-theme">Varış, Bond Street &amp; Mayfair</div></div>
@@ -329,11 +332,11 @@
       <div class="card">
         <details class="more"><summary></summary><div class="panel">
           <h4>Uçuş</h4><p>easyJet EZY8588, Dalaman → Londra Gatwick, <strong>14 Kasım Cumartesi</strong> akşamı. Koltuklar 6C–6F, yan yana.</p>
-          <h4>Bagaj</h4><p>2 adet 26 kg bavul (ağırlık ikisine paylaştırılabilir, tek bavul 32 kg'ı geçmesin) ve kişi başı 1 küçük kabin çantası (45×36×20 cm). Büyük kabin valizi bu yönde büyük bavulun içinde gidiyor.</p>
+          <h4>Bagaj</h4><p>2 adet 29 kg bavul (ağırlık ikisine paylaştırılabilir, tek bavul 32 kg'ı geçmesin) ve kişi başı 1 küçük kabin çantası (45×36×20 cm). Büyük kabin valizi bu yönde büyük bavulun içinde gidiyor.</p>
           <h4>Bebek arabası</h4><p>Ücretsiz. Check-in'de "kapıda teslim" etiketi isteyin, uçak kapısına kadar kullanın.</p>
         </div></details>
         <h3>Dalaman'dan kalkış</h3><div class="addr">EZY8588 · DLM → LGW · 14 Kasım akşamı</div>
-        <div class="tags"><span class="tag">Koltuk 6C–6F</span><span class="tag">2 × 26 kg</span></div></div>
+        <div class="tags"><span class="tag">Koltuk 6C–6F</span><span class="tag">2 × 29 kg</span></div></div>
       <div class="leg"><span class="step">✈️ ~4 sa 25 dk · İngiltere saati 3 saat geride</span></div></li>
 
     <li class="stop"><div class="clock">00:20<i></i></div>
@@ -457,7 +460,7 @@
 </section>
 
 <!-- ============ GÜN 2 ============ -->
-<section class="day" id="g2">
+<section class="day" id="g2" data-start="2026-11-16">
   <div class="day-head"><div class="day-num">2</div>
     <div class="day-date">16 Kasım<span>Pazartesi</span></div>
     <div class="day-theme">Buckingham Töreni, Westminster &amp; Chelsea</div></div>
@@ -591,7 +594,7 @@
 </section>
 
 <!-- ============ GÜN 3 ============ -->
-<section class="day" id="g3">
+<section class="day" id="g3" data-start="2026-11-17">
   <div class="day-head"><div class="day-num">3</div>
     <div class="day-date">17 Kasım<span>Salı</span></div>
     <div class="day-theme">Müzeler &amp; Piccadilly</div></div>
@@ -704,7 +707,7 @@
 </section>
 
 <!-- ============ GÜN 4 ============ -->
-<section class="day" id="g4">
+<section class="day" id="g4" data-start="2026-11-18">
   <div class="day-head"><div class="day-num">4</div>
     <div class="day-date">18 Kasım<span>Çarşamba</span></div>
     <div class="day-theme">Regent Street &amp; The Lion King</div></div>
@@ -813,7 +816,7 @@
 </section>
 
 <!-- ============ GÜN 5 ============ -->
-<section class="day" id="g5">
+<section class="day" id="g5" data-start="2026-11-19">
   <div class="day-head"><div class="day-num">5</div>
     <div class="day-date">19 Kasım<span>Perşembe</span></div>
     <div class="day-theme">Notting Hill &amp; Winter Wonderland</div></div>
@@ -904,7 +907,7 @@
 </section>
 
 <!-- ============ GÜN 6 ============ -->
-<section class="day" id="g6">
+<section class="day" id="g6" data-start="2026-11-20">
   <div class="day-head"><div class="day-num">6</div>
     <div class="day-date">20 Kasım<span>Cuma</span></div>
     <div class="day-theme">Borough Market &amp; Tower Bridge</div></div>
@@ -982,7 +985,7 @@
 
     <li class="stop"><div class="clock">16:30<i></i></div>
       <div class="card"><h3>Otel · dinlenme ve valiz</h3><div class="addr">Son akşam</div>
-        <p>Valizleri bu akşam hazırlayın. Ağırlık sınırları: 2 × 26 kg bavul, dönüşte ayrıca 1 büyük kabin valizi (56×45×25 cm).</p></div>
+        <p>Valizleri bu akşam hazırlayın. Ağırlık sınırları: 2 × 29 kg bavul + dönüşte 1 büyük kabin valizi (56×45×25 cm).</p></div>
       <div class="leg"><span class="step"><i>🚶</i>7 dk · Maddox Street</span></div></li>
 
     <li class="stop res"><div class="clock">19:30<i></i></div>
@@ -998,7 +1001,7 @@
 </section>
 
 <!-- ============ GÜN 7 ============ -->
-<section class="day" id="g7">
+<section class="day" id="g7" data-start="2026-11-21">
   <div class="day-head"><div class="day-num">7</div>
     <div class="day-date">21 Kasım<span>Cumartesi</span></div>
     <div class="day-theme">Dönüş</div></div>
@@ -1034,7 +1037,7 @@
       <div class="card">
         <details class="more"><summary></summary><div class="panel">
           <h4>Terminal</h4><p>easyJet'in North mu South mu kullandığını bir gün önce uygulamadan teyit edin; terminaller arası geçiş zaman alıyor.</p>
-          <h4>Bu yönde</h4><p>2 × 26 kg bavul + 1 büyük kabin valizi (56×45×25 cm, kendiniz üst dolaba kaldırabileceğiniz ağırlıkta) + Speedy Boarding. Bebek arabası yine kapıya kadar ücretsiz.</p>
+          <h4>Bu yönde</h4><p>2 × 29 kg bavul + 1 büyük kabin valizi (56×45×25 cm, kendiniz üst dolaba kaldırabileceğiniz ağırlıkta) + Speedy Boarding. Bebek arabası yine kapıya kadar ücretsiz.</p>
           <h4>Vergi iadesi yok</h4><p>İngiltere turistlere KDV iadesi yapmıyor, tax free gişesine uğramanıza gerek yok.</p>
         </div></details>
         <h3>Gatwick · bag drop</h3><div class="addr">Uçuştan ~2,5 saat önce</div></div>
@@ -1193,6 +1196,51 @@
 
 </div>
 <script>
+(function(){
+  // Saate göre geçmiş durakları soluklaştır, şimdiki durağı vurgula, açılışta oraya kaydır
+  function londonNow(){
+    try{
+      var f=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+      var o={}; f.formatToParts(new Date()).forEach(function(p){ o[p.type]=p.value; });
+      return Date.UTC(+o.year, +o.month-1, +o.day, +o.hour % 24, +o.minute);
+    }catch(e){ var d=new Date(); return Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate(),d.getUTCHours(),d.getUTCMinutes()); }
+  }
+  var stops=[];
+  [].forEach.call(document.querySelectorAll('section.day[data-start]'), function(day){
+    var s=day.getAttribute('data-start').split('-'), base=Date.UTC(+s[0], +s[1]-1, +s[2]), prev=-1, add=0;
+    [].forEach.call(day.querySelectorAll('.stop'), function(el){
+      var m=(el.querySelector('.clock')||{}).textContent; m=m && m.match(/(\d{1,2}):(\d{2})/);
+      if(!m) return;
+      var mins=(+m[1])*60+(+m[2]);
+      if(prev>=0 && mins<prev) add+=1;
+      prev=mins;
+      stops.push({el:el, t: base + add*864e5 + mins*6e4});
+    });
+  });
+  if(!stops.length) return;
+  var HOLD=4*36e5, target=null;
+  function update(){
+    var now=londonNow(), cur=-1;
+    for(var i=0;i<stops.length;i++){ if(stops[i].t<=now) cur=i; }
+    target=null;
+    stops.forEach(function(s,i){
+      var nextStarted = i<stops.length-1 ? stops[i+1].t<=now : false;
+      var done = s.t<=now && (nextStarted || now-s.t>HOLD);
+      var isNow = i===cur && !done;
+      s.el.classList.toggle('done', done);
+      s.el.classList.toggle('now', isNow);
+      if(!target && (isNow || s.t>now)) target=s.el;
+    });
+    if(cur<0) target=null; // gezi başlamadı
+  }
+  update();
+  setInterval(update, 60000);
+  if(!location.hash && target){
+    var go=function(){ if(target) target.scrollIntoView({block:'center'}); };
+    if(document.readyState==='complete') setTimeout(go,150); else window.addEventListener('load', function(){ setTimeout(go,150); });
+  }
+})();
+
 (function(){
   var days = Array.prototype.slice.call(document.querySelectorAll('.day'));
   var bar = document.getElementById('currentDayBar');
